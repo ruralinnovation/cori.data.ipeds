@@ -1,0 +1,5 @@
+^RELEASE_CALENDAR\.md$
+^renv\.lock$
+^\.Rbuildignore$
+^data$
+^data-raw$

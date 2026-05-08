@@ -1,0 +1,10 @@
+# globalVariables() declarations to silence R CMD check NOTEs for symbols
+# used in stats::aggregate() formula notation and data frame column references.
+
+utils::globalVariables(c(
+  # process_ipeds_gr.R — formula LHS/RHS in aggregate()
+  "cohort_size",
+  "completers",
+  "transfers",
+  "county_fips"
+))
