@@ -1,0 +1,33 @@
+Package: cori.data.ipeds
+Type: Package
+Title: Access and Analyze IPEDS Data
+Version: 0.1.0
+Authors@R: person("CORI", "Data", email = "data@ruralinnovation.us", role = c("aut", "cre"))
+Description: Access and analyze Integrated Postsecondary Education Data System (IPEDS)
+    data covering institutional characteristics, degree completions, and graduation rates
+    from 2000 to present. Provides tools to download source files from NCES, read
+    processed data from S3 at both institution and county level, and analyze higher
+    education trends across geographies.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Imports:
+    DBI,
+    duckdb,
+    stringr,
+    utils
+Remotes:
+    ruralinnovation/cori.db,
+    ruralinnovation/cori.data.pep
+Suggests:
+    cori.db,
+    cori.charts,
+    cori.utils,
+    cori.data.pep,
+    ruraldefinitions,
+    ggplot2,
+    ggrepel,
+    knitr,
+    rmarkdown,
+    scales
+RoxygenNote: 7.3.3
+VignetteBuilder: knitr
