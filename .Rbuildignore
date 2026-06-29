@@ -1,4 +1,6 @@
 ^RELEASE_CALENDAR\.md$
+^SESSION_LOG\.md$
+^archive$
 ^renv\.lock$
 ^\.Rbuildignore$
 ^data$

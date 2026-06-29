@@ -21,7 +21,7 @@ Default: all counties.}
 
 \item{variables}{Character vector. Variable names to return (e.g.
 \code{"completions_total"}, \code{"grad_rate_150pct"}). Default: all.
-See \code{\link{get_ipeds_codebook}} for the full list.}
+See \code{inst/extdata/codebook.csv} for the full list.}
 
 \item{surveys}{Character vector. One or more of \code{"ic"},
 \code{"completions"}, \code{"grad_rates"}. Default: all.}

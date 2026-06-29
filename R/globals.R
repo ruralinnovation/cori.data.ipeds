@@ -1,6 +1,7 @@
 # Package-level constants -----------------------------------------------------
 
 IPEDS_START_YEAR <- 2010L
+IPEDS_END_YEAR   <- 2024L
 IPEDS_SURVEYS    <- c("ic", "completions", "grad_rates")
 
 

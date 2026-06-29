@@ -111,10 +111,9 @@ process_ipeds_institution <- function(survey,
   # Read from local raw parquet
   raw_path <- .raw_local_path(survey, year, staging_dir)
   if (!file.exists(raw_path)) {
-    stop(sprintf(
-      "Raw parquet not found for %s %d: %s\nRun write_ipeds_raw_to_s3() first.",
-      survey, year, raw_path
-    ))
+    message(sprintf("  Skipping %s %d: raw parquet not found (NCES may not have released it yet)",
+                    survey, year))
+    return(NULL)
   }
 
   df <- .read_parquet_local(raw_path)

@@ -70,7 +70,7 @@
 #'   Default: all counties.
 #' @param variables Character vector. Variable names to return (e.g.
 #'   \code{"completions_total"}, \code{"grad_rate_150pct"}). Default: all.
-#'   See \code{\link{get_ipeds_codebook}} for the full list.
+#'   See \code{inst/extdata/codebook.csv} for the full list.
 #' @param surveys Character vector. One or more of \code{"ic"},
 #'   \code{"completions"}, \code{"grad_rates"}. Default: all.
 #' @param s3_bucket Character. S3 bucket name. Default:
@@ -106,7 +106,7 @@ read_ipeds_county_from_s3 <- function(
   on.exit(DBI::dbDisconnect(con, shutdown = TRUE), add = TRUE)
 
   glob  <- sprintf(
-    "s3://%s/%sdata_processed/year=*/county/*.parquet",
+    "s3://%s/%sdata_county/year=*/part-0.parquet",
     s3_bucket, s3_path_prefix
   )
 
@@ -193,8 +193,8 @@ read_ipeds_institution_from_s3 <- function(
   on.exit(DBI::dbDisconnect(con, shutdown = TRUE), add = TRUE)
 
   glob <- sprintf(
-    "s3://%s/%sdata_processed/year=*/%s/*.parquet",
-    s3_bucket, s3_path_prefix, dataset
+    "s3://%s/%sdata_institution/survey=%s/year=*/part-0.parquet",
+    s3_bucket, s3_path_prefix, survey
   )
 
   where <- .ipeds_where(

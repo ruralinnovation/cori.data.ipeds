@@ -204,8 +204,8 @@ archive/
 
 ### Immediate next steps
 
-1. **Run full backfill** — `write_ipeds_all(years = 2010:2023, sync_to_s3 = TRUE)`
-   (2024 raw data exists for IC and completions; grad rates lag one year)
+1. **Run full backfill** — `write_ipeds_all(years = 2010:2024, sync_to_s3 = TRUE)`
+   (2024 IC and completions will write; GR2024 will be skipped — grad rates lag one year)
 
 2. **Write vignette** — `vignettes/introduction.Rmd`
    Suggested structure:
@@ -215,10 +215,16 @@ archive/
    - Reading institution-level data
    - Annual update workflow for maintainers
 
-3. **Clean up legacy files** — `read_ipeds_ic_raw.R`, `read_ipeds_completions_raw.R`,
-   `read_ipeds_gr_raw.R`, `utils_ipeds_dictionary.R` are only needed if
-   `read_ipeds_from_s3.R` still uses the old dictionary CSVs. Evaluate whether
-   to migrate `read_ipeds_from_s3.R` to use the new codebook.
+3. **Clean up archive/** — if files in `archive/` remain unused after the
+   backfill is confirmed, delete them permanently.
+
+4. **CIP-to-SOC crosswalk** — completions data is stored at the institution ×
+   CIP × award level grain in `data_institution` but CIP detail is discarded
+   during county rollup. A CIP-to-SOC crosswalk would enable county-level
+   variables like "share of degrees in STEM fields" or alignment between local
+   degree production and employer demand. NCES publishes a CIP-to-SOC crosswalk;
+   BLS O*NET is an alternative source. This would add new variables to
+   `data_county` and new rows to `codebook.csv`.
 
 ---
 

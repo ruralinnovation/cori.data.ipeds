@@ -179,7 +179,7 @@ write_ipeds_county_to_s3 <- function(
 #' @return Invisibly returns a manifest data frame.
 #' @export
 write_ipeds_all <- function(
-    years          = IPEDS_START_YEAR:as.integer(format(Sys.Date(), "%Y")),
+    years          = IPEDS_START_YEAR:IPEDS_END_YEAR,
     staging_dir    = "data/ipeds",
     s3_bucket      = "cori.data.ipeds",
     s3_path_prefix = "",

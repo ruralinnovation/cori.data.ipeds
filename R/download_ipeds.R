@@ -152,3 +152,38 @@ resolve_ipeds_csv <- function(extract_dir, source_table_candidates) {
     paste(basename(all_csvs), collapse = ", ")
   ))
 }
+
+
+# Read a CSV safely, handling encoding issues common in IPEDS files.
+# Retries with latin1 if UTF-8 read fails; suppresses incomplete final line warnings.
+.read_csv_safe <- function(path) {
+  old_timeout <- getOption("timeout")
+  on.exit(options(timeout = old_timeout), add = TRUE)
+  options(timeout = 600)
+
+  df <- tryCatch(
+    utils::read.csv(path, stringsAsFactors = FALSE, na.strings = c("", ".", "NA")),
+    error = function(e) NULL,
+    warning = function(w) {
+      if (grepl("incomplete final line", conditionMessage(w))) {
+        suppressWarnings(
+          utils::read.csv(path, stringsAsFactors = FALSE, na.strings = c("", ".", "NA"))
+        )
+      } else {
+        NULL
+      }
+    }
+  )
+
+  if (is.null(df)) {
+    message(sprintf("UTF-8 read failed for %s -- retrying with latin1", basename(path)))
+    df <- utils::read.csv(
+      path,
+      stringsAsFactors = FALSE,
+      fileEncoding     = "latin1",
+      na.strings       = c("", ".", "NA")
+    )
+  }
+
+  df
+}

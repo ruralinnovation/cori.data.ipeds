@@ -163,7 +163,7 @@ write_ipeds_raw_to_s3 <- function(
 #' @return Invisibly returns a data frame summarising what was written.
 #' @keywords internal
 write_ipeds_raw_batch <- function(
-    years          = IPEDS_START_YEAR:as.integer(format(Sys.Date(), "%Y")),
+    years          = IPEDS_START_YEAR:IPEDS_END_YEAR,
     surveys        = IPEDS_SURVEYS,
     staging_dir    = "data/ipeds",
     s3_bucket      = "cori.data.ipeds",
