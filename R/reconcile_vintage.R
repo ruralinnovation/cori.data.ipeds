@@ -182,7 +182,7 @@ reconcile_gr_vintage <- function(df, year) {
 #'
 #' Dispatches to the appropriate per-survey reconciler.
 #'
-#' @param survey Character. One of \code{"ic"}, \code{"completions"},
+#' @param survey Character. One of \code{"institutional_characteristics"}, \code{"completions"},
 #'   \code{"grad_rates"}.
 #' @param df Data frame. Raw data for the vintage.
 #' @param year Integer. Vintage year.

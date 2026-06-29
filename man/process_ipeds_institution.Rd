@@ -13,7 +13,7 @@ process_ipeds_institution(
 )
 }
 \arguments{
-\item{survey}{Character. One of \code{"ic"}, \code{"completions"},
+\item{survey}{Character. One of \code{"institutional_characteristics"}, \code{"completions"},
 \code{"grad_rates"}.}
 
 \item{year}{Integer. Vintage year.}
@@ -27,7 +27,7 @@ avoid repeated disk reads when processing multiple surveys. If
 
 \item{geo_lookup}{Data frame or \code{NULL}. Pre-built unitid -> geo
 lookup from the processed IC data for this year. If \code{NULL} and
-survey is not \code{"ic"}, geo is looked up automatically from the
+survey is not \code{"institutional_characteristics"}, geo is looked up automatically from the
 local IC raw parquet.}
 }
 \value{

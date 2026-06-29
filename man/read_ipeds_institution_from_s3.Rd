@@ -14,7 +14,7 @@ read_ipeds_institution_from_s3(
 )
 }
 \arguments{
-\item{survey}{Character. One of \code{"ic"}, \code{"completions"},
+\item{survey}{Character. One of \code{"institutional_characteristics"}, \code{"completions"},
 \code{"grad_rates"}.}
 
 \item{years}{Integer vector. Years to return. Default: all available.}
@@ -55,7 +55,7 @@ one or more counties, then aggregate on your own terms.
 \examples{
 \dontrun{
 # All institutions in Grafton County NH
-read_ipeds_institution_from_s3("ic", county_fips = "33009")
+read_ipeds_institution_from_s3("institutional_characteristics", county_fips = "33009")
 
 # Completions for a specific institution
 read_ipeds_institution_from_s3("completions", unitids = "182670")

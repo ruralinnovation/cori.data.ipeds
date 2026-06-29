@@ -49,7 +49,7 @@
 #' Column names are original NCES uppercase. Values are original including
 #' IPEDS sentinel codes. Adds a \code{year} column.
 #'
-#' @param survey Character. One of \code{"ic"}, \code{"completions"},
+#' @param survey Character. One of \code{"institutional_characteristics"}, \code{"completions"},
 #'   \code{"grad_rates"}.
 #' @param year Integer. Vintage year.
 #' @param staging_dir Character. Local staging directory.

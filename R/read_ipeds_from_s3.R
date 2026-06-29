@@ -71,7 +71,7 @@
 #' @param variables Character vector. Variable names to return (e.g.
 #'   \code{"completions_total"}, \code{"grad_rate_150pct"}). Default: all.
 #'   See \code{inst/extdata/codebook.csv} for the full list.
-#' @param surveys Character vector. One or more of \code{"ic"},
+#' @param surveys Character vector. One or more of \code{"institutional_characteristics"},
 #'   \code{"completions"}, \code{"grad_rates"}. Default: all.
 #' @param s3_bucket Character. S3 bucket name. Default:
 #'   \code{"cori.data.ipeds"}.
@@ -146,7 +146,7 @@ read_ipeds_county_from_s3 <- function(
 #' queried per call. Use \code{county_fips} to pull all institutions in
 #' one or more counties, then aggregate on your own terms.
 #'
-#' @param survey Character. One of \code{"ic"}, \code{"completions"},
+#' @param survey Character. One of \code{"institutional_characteristics"}, \code{"completions"},
 #'   \code{"grad_rates"}.
 #' @param years Integer vector. Years to return. Default: all available.
 #' @param unitids Character vector. IPEDS unit IDs to return. Default: all.
@@ -172,7 +172,7 @@ read_ipeds_county_from_s3 <- function(
 #' @examples
 #' \dontrun{
 #' # All institutions in Grafton County NH
-#' read_ipeds_institution_from_s3("ic", county_fips = "33009")
+#' read_ipeds_institution_from_s3("institutional_characteristics", county_fips = "33009")
 #'
 #' # Completions for a specific institution
 #' read_ipeds_institution_from_s3("completions", unitids = "182670")

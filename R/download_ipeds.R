@@ -7,7 +7,7 @@
 #' file already exists locally. The URL comes directly from the data
 #' dictionary — no URL construction needed.
 #'
-#' @param survey Character. One of \code{"ic"}, \code{"completions"},
+#' @param survey Character. One of \code{"institutional_characteristics"}, \code{"completions"},
 #'   \code{"grad_rates"}.
 #' @param year Integer. Survey year.
 #' @param download_url Character. Full URL to the NCES ZIP file (from the

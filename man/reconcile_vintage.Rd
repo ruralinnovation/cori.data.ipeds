@@ -7,7 +7,7 @@
 reconcile_vintage(survey, df, year)
 }
 \arguments{
-\item{survey}{Character. One of \code{"ic"}, \code{"completions"},
+\item{survey}{Character. One of \code{"institutional_characteristics"}, \code{"completions"},
 \code{"grad_rates"}.}
 
 \item{df}{Data frame. Raw data for the vintage.}

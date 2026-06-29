@@ -86,7 +86,7 @@ apply_codebook_mapping <- function(df, survey, codebook) {
 #' lat/long from IC (for completions and grad rates), and returns the
 #' processed data frame.
 #'
-#' @param survey Character. One of \code{"ic"}, \code{"completions"},
+#' @param survey Character. One of \code{"institutional_characteristics"}, \code{"completions"},
 #'   \code{"grad_rates"}.
 #' @param year Integer. Vintage year.
 #' @param staging_dir Character. Local staging directory.
@@ -96,7 +96,7 @@ apply_codebook_mapping <- function(df, survey, codebook) {
 #'   \code{NULL}, the codebook is loaded automatically.
 #' @param geo_lookup Data frame or \code{NULL}. Pre-built unitid -> geo
 #'   lookup from the processed IC data for this year. If \code{NULL} and
-#'   survey is not \code{"ic"}, geo is looked up automatically from the
+#'   survey is not \code{"institutional_characteristics"}, geo is looked up automatically from the
 #'   local IC raw parquet.
 #'
 #' @return Processed data frame with canonical column names and lat/long.

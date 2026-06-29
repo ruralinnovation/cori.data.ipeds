@@ -23,7 +23,7 @@ Default: all counties.}
 \code{"completions_total"}, \code{"grad_rate_150pct"}). Default: all.
 See \code{inst/extdata/codebook.csv} for the full list.}
 
-\item{surveys}{Character vector. One or more of \code{"ic"},
+\item{surveys}{Character vector. One or more of \code{"institutional_characteristics"},
 \code{"completions"}, \code{"grad_rates"}. Default: all.}
 
 \item{s3_bucket}{Character. S3 bucket name. Default:

@@ -28,15 +28,15 @@ df_county <- read_ipeds_county_from_s3(
   years     = 2010:2023
 )
 
-# Institution-level IC data for a specific county
+# Institution-level data for a specific county
 df_inst <- read_ipeds_institution_from_s3(
-  survey      = "ic",
+  survey      = "institutional_characteristics",
   county_fips = "33009",  # Grafton County, NH
   years       = 2010:2023
 )
 
-# See all available county variables and their definitions
-get_ipeds_codebook()
+# See all available variables and their definitions
+load_codebook()
 ```
 
 ## Output Format
@@ -50,7 +50,7 @@ County-level functions return a six-column tidy format:
 | `variable` | character | Snake_case variable name |
 | `value` | numeric | The observation |
 | `agg_var` | numeric | Denominator or aggregation weight. For `share_degrees_*` variables: total degrees conferred (raw count = `value * agg_var`). For `grad_rate_*` variables: adjusted cohort size. `NA` for institution count variables. |
-| `survey` | character | Source survey: `"ic"`, `"completions"`, or `"grad_rates"` |
+| `survey` | character | Source survey: `"institutional_characteristics"`, `"completions"`, or `"grad_rates"` |
 
 Institution-level functions return wide format. Column structure varies by survey — see `read_ipeds_institution_from_s3()` documentation. `county_fips` is a foreign key to the county-level data.
 
@@ -60,13 +60,13 @@ All county-level aggregations are restricted to **degree-granting institutions o
 
 | Variable | Survey | Description |
 |---|---|---|
-| `inst_count` | ic | Degree-granting institutions |
-| `public_inst_count` | ic | Public degree-granting institutions |
-| `nonprofit_inst_count` | ic | Private nonprofit degree-granting institutions |
-| `fouryear_inst_count` | ic | Four-year degree-granting institutions |
-| `twoyear_inst_count` | ic | Two-year degree-granting institutions |
-| `hbcu_count` | ic | HBCUs |
-| `tribal_count` | ic | Tribal colleges |
+| `inst_count` | institutional_characteristics | Degree-granting institutions |
+| `public_inst_count` | institutional_characteristics | Public degree-granting institutions |
+| `nonprofit_inst_count` | institutional_characteristics | Private nonprofit degree-granting institutions |
+| `fouryear_inst_count` | institutional_characteristics | Four-year degree-granting institutions |
+| `twoyear_inst_count` | institutional_characteristics | Two-year degree-granting institutions |
+| `hbcu_count` | institutional_characteristics | HBCUs |
+| `tribal_count` | institutional_characteristics | Tribal colleges |
 | `count_degrees_total` | completions | Total degrees conferred (associate through doctoral) |
 | `share_degrees_assoc` | completions | Share of degrees that are associate level |
 | `share_degrees_bach` | completions | Share of degrees that are bachelor's level |
@@ -77,7 +77,7 @@ All county-level aggregations are restricted to **degree-granting institutions o
 | `grad_rate_150pct` | grad_rates | 150% graduation rate (bachelor's cohort) |
 | `transfer_out_rate` | grad_rates | Transfer-out rate (bachelor's cohort) |
 
-The four `share_degrees_*` level variables sum to exactly 1. Raw counts are recoverable as `value * agg_var`. Use `get_ipeds_codebook()` for full variable definitions.
+The four `share_degrees_*` level variables sum to exactly 1. Raw counts are recoverable as `value * agg_var`. Use `load_codebook()` for full variable definitions.
 
 ## Refreshing the Data
 
