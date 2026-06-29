@@ -33,7 +33,7 @@
 #' Reads \code{inst/extdata/codebook.csv} (installed package) or falls back
 #' to the local development path. Returns a data frame.
 #'
-#' @keywords internal
+#' @export
 load_codebook <- function() {
   path <- system.file("extdata", "codebook.csv", package = "cori.data.ipeds")
   if (!nzchar(path)) path <- file.path("inst", "extdata", "codebook.csv")
@@ -59,7 +59,7 @@ load_codebook <- function() {
 apply_codebook_mapping <- function(df, survey, codebook) {
   # Apply mappings for this survey AND cross-survey variables (level = "both")
   # e.g. unitid and county_fips appear in all three surveys but are defined
-  # under survey = "ic" with level = "both" in the codebook.
+  # under survey = "institutional_characteristics" with level = "both" in the codebook.
   cb <- codebook[
     (codebook$survey == survey | codebook$level == "both") &
     nzchar(codebook$nces_var),
@@ -125,7 +125,7 @@ process_ipeds_institution <- function(survey,
   df <- apply_codebook_mapping(df, survey, codebook)
 
   # Survey-specific post-processing
-  if (survey == "ic") {
+  if (survey == "institutional_characteristics") {
     df <- .post_process_ic(df)
   } else {
     # Attach geo from IC for non-IC surveys
@@ -134,6 +134,9 @@ process_ipeds_institution <- function(survey,
     }
     df <- .attach_geo(df, geo_lookup)
   }
+
+  # Keep only codebook-defined columns + derived flags + year
+  df <- .select_codebook_columns(df, survey, codebook)
 
   df
 }
@@ -157,7 +160,7 @@ process_ipeds_institution_all <- function(year,
   if (is.null(codebook)) codebook <- load_codebook()
 
   message(sprintf("  Processing IC %d...", year))
-  ic <- process_ipeds_institution("ic", year, staging_dir, codebook)
+  ic <- process_ipeds_institution("institutional_characteristics", year, staging_dir, codebook)
 
   # Build geo lookup once from the processed IC data
   geo_lookup <- .geo_lookup_from_ic(ic)
@@ -170,7 +173,28 @@ process_ipeds_institution_all <- function(year,
   gr <- process_ipeds_institution("grad_rates", year, staging_dir,
                                   codebook, geo_lookup)
 
-  list(ic = ic, completions = comp, grad_rates = gr)
+  list(institutional_characteristics = ic, completions = comp, grad_rates = gr)
+}
+
+
+# Column selection ------------------------------------------------------------
+
+# Retain only columns defined in the codebook for this survey, plus derived
+# IC flag columns and year. Drops all unrenamed NCES pass-through columns.
+.select_codebook_columns <- function(df, survey, codebook) {
+  # Canonical names defined for this survey (including shared "both" variables)
+  cb_cols <- codebook$variable[
+    (codebook$survey == survey | codebook$level == "both") &
+    codebook$level != "county"
+  ]
+
+  # Derived IC flag columns added by .post_process_ic() — not in codebook
+  derived <- c("is_public", "is_nonprofit", "is_forprofit",
+                "is_4yr", "is_2yr", "is_degree_granting",
+                "is_hbcu", "is_tribal")
+
+  keep <- unique(c(cb_cols, derived, "year"))
+  df[, intersect(keep, names(df)), drop = FALSE]
 }
 
 
@@ -217,7 +241,7 @@ process_ipeds_institution_all <- function(year,
 
 # Build geo lookup by reading and processing the IC raw parquet for a year.
 .build_geo_lookup <- function(year, staging_dir, codebook) {
-  ic <- process_ipeds_institution("ic", year, staging_dir, codebook)
+  ic <- process_ipeds_institution("institutional_characteristics", year, staging_dir, codebook)
   .geo_lookup_from_ic(ic)
 }
 

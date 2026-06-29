@@ -2,7 +2,7 @@
 
 IPEDS_START_YEAR <- 2010L
 IPEDS_END_YEAR   <- 2024L
-IPEDS_SURVEYS    <- c("ic", "completions", "grad_rates")
+IPEDS_SURVEYS    <- c("institutional_characteristics", "completions", "grad_rates")
 
 
 # globalVariables() declarations to silence R CMD check NOTEs for symbols

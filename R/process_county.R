@@ -9,7 +9,7 @@
 #   variable -- canonical variable name (from codebook)
 #   value    -- numeric value
 #   agg_var  -- denominator for share variables (NA for counts)
-#   survey   -- "ic", "completions", or "grad_rates"
+#   survey   -- "institutional_characteristics", "completions", or "grad_rates"
 #
 # All aggregations are restricted to degree-granting institutions
 # (is_degree_granting == 1) with a valid county_fips.
@@ -61,9 +61,9 @@
 process_ipeds_county <- function(inst_list) {
   parts <- list()
 
-  if (!is.null(inst_list$ic)) {
-    message("    Aggregating IC to county...")
-    ic_county <- .county_ic(inst_list$ic)
+  if (!is.null(inst_list$institutional_characteristics)) {
+    message("    Aggregating institutional characteristics to county...")
+    ic_county <- .county_ic(inst_list$institutional_characteristics)
     if (!is.null(ic_county)) parts <- c(parts, list(ic_county))
   }
 
@@ -106,7 +106,7 @@ process_ipeds_county <- function(inst_list) {
   parts <- lapply(names(flag_vars), function(var) {
     vals <- flag_vars[[var]]
     if (is.null(vals)) return(NULL)
-    .flag_to_county_tidy(base, vals, var, "ic")
+    .flag_to_county_tidy(base, vals, var, "institutional_characteristics")
   })
 
   do.call(rbind, Filter(Negate(is.null), parts))

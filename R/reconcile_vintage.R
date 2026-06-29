@@ -190,9 +190,9 @@ reconcile_gr_vintage <- function(df, year) {
 #' @keywords internal
 reconcile_vintage <- function(survey, df, year) {
   switch(survey,
-    ic          = reconcile_ic_vintage(df, year),
-    completions = reconcile_completions_vintage(df, year),
-    grad_rates  = reconcile_gr_vintage(df, year),
+    institutional_characteristics = reconcile_ic_vintage(df, year),
+    completions                   = reconcile_completions_vintage(df, year),
+    grad_rates                    = reconcile_gr_vintage(df, year),
     stop(sprintf("Unknown survey '%s'", survey))
   )
 }

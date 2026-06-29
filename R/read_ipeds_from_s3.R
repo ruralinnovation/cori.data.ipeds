@@ -186,8 +186,7 @@ read_ipeds_institution_from_s3 <- function(
     s3_bucket      = "cori.data.ipeds",
     s3_path_prefix = ""
 ) {
-  survey <- match.arg(survey, c("ic", "completions", "grad_rates"))
-  dataset <- paste0(survey, "_institution")
+  survey <- match.arg(survey, c("institutional_characteristics", "completions", "grad_rates"))
 
   con <- .ipeds_duckdb_con()
   on.exit(DBI::dbDisconnect(con, shutdown = TRUE), add = TRUE)
@@ -196,6 +195,7 @@ read_ipeds_institution_from_s3 <- function(
     "s3://%s/%sdata_institution/survey=%s/year=*/part-0.parquet",
     s3_bucket, s3_path_prefix, survey
   )
+
 
   where <- .ipeds_where(
     years       = years,

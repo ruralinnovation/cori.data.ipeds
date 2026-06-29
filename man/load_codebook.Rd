@@ -10,4 +10,3 @@ load_codebook()
 Reads \code{inst/extdata/codebook.csv} (installed package) or falls back
 to the local development path. Returns a data frame.
 }
-\keyword{internal}

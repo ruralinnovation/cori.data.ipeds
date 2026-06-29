@@ -27,9 +27,9 @@
 # Primary table name used in the ZIP filename and download URL.
 .raw_table_name <- function(survey, year) {
   switch(survey,
-    ic          = sprintf("HD%d",   year),
-    completions = sprintf("C%d_A",  year),
-    grad_rates  = sprintf("GR%d",   year),
+    institutional_characteristics = sprintf("HD%d",   year),
+    completions                   = sprintf("C%d_A",  year),
+    grad_rates                    = sprintf("GR%d",   year),
     stop(sprintf("Unknown survey '%s'", survey))
   )
 }
