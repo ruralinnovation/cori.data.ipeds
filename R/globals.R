@@ -1,3 +1,9 @@
+# Package-level constants -----------------------------------------------------
+
+IPEDS_START_YEAR <- 2010L
+IPEDS_SURVEYS    <- c("ic", "completions", "grad_rates")
+
+
 # globalVariables() declarations to silence R CMD check NOTEs for symbols
 # used in stats::aggregate() formula notation and data frame column references.
 

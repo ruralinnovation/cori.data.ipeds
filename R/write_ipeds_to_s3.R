@@ -1,338 +1,300 @@
-# Write processed IPEDS data to S3 -- year-partitioned, manifest-driven
+# Orchestrate the full IPEDS ETL pipeline
+#
+# Three-layer incremental pipeline:
+#   Layer 1: data_raw        -- untouched NCES parquet (write_raw_to_s3.R)
+#   Layer 2: data_institution -- codebook-renamed, geo-attached parquet
+#   Layer 3: data_county     -- tidy county aggregations parquet
+#
+# Each layer is skipped if already written (unless overwrite = TRUE).
+# Historic years are never reprocessed once written.
+#
+# S3 layout:
+#   s3://{bucket}/data_raw/survey={survey}/year={year}/part-0.parquet
+#   s3://{bucket}/data_institution/survey={survey}/year={year}/part-0.parquet
+#   s3://{bucket}/data_county/year={year}/part-0.parquet
 
 
-# Datasets written per year ---------------------------------------------------
+# Institution layer -----------------------------------------------------------
 
-# The four parquet files written per year
-.IPEDS_DATASETS <- c(
-  "ic_institution",
-  "completions_institution",
-  "grad_rates_institution",
-  "county"
-)
-
-
-#' Return the latest processed year from S3
+#' Write processed institution-level data for one year to S3
 #'
-#' Reads the \code{_LATEST} pointer from S3. Returns \code{NULL} if no
-#' data has been written yet.
+#' Reads from local raw parquet, processes all three surveys via
+#' \code{process_ipeds_institution_all()}, writes one parquet per survey
+#' locally, then uploads to S3. Skips if already written.
 #'
+#' @param year Integer.
+#' @param staging_dir Character. Default: \code{"data/ipeds"}.
 #' @param s3_bucket Character. Default: \code{"cori.data.ipeds"}.
 #' @param s3_path_prefix Character. Default: \code{""}.
-#' @keywords internal
-latest_ipeds_vintage <- function(s3_bucket      = "cori.data.ipeds",
-                                  s3_path_prefix = "") {
-  url <- sprintf(
-    "https://s3.us-east-1.amazonaws.com/%s/%sdata_processed/_LATEST",
-    s3_bucket, s3_path_prefix
-  )
-  tryCatch(
-    as.integer(readLines(url(url), n = 1L, warn = FALSE)),
-    error = function(e) NULL
-  )
-}
-
-
-#' Write processed IPEDS data to S3
-#'
-#' Orchestrates the full write pipeline for one or more years. For each year,
-#' writes up to four parquet files:
-#' \itemize{
-#'   \item \code{ic_institution} -- wide format institutional characteristics
-#'   \item \code{completions_institution} -- wide format completions by CIP/level
-#'   \item \code{grad_rates_institution} -- wide format graduation rate records
-#'   \item \code{county} -- 6-column tidy combining all three surveys
-#' }
-#'
-#' Incremental by default: checks the manifest and skips any
-#' (year, dataset) combinations already written. The county parquet is
-#' written only after all three institution-level surveys complete for
-#' that year. Set \code{overwrite = TRUE} to force reprocessing.
-#'
-#' @param years Integer vector. Years to process. Default: 2010 to current year.
-#' @param surveys Character vector. Surveys to include in county output.
-#'   Default: all three.
-#' @param staging_dir Character. Local staging directory. Default:
-#'   \code{"data/ipeds"}.
-#' @param s3_bucket Character. Default: \code{"cori.data.ipeds"}.
-#' @param s3_path_prefix Character. Optional prefix for test writes, e.g.
-#'   \code{"test/"}. Default: \code{""}.
-#' @param overwrite Logical. If \code{TRUE}, reprocess and overwrite existing
-#'   S3 files. Default: \code{FALSE}.
-#' @param sync_to_s3 Logical. Upload to S3. Set \code{FALSE} for local-only
-#'   testing. Default: \code{TRUE}.
+#' @param overwrite Logical. Default: \code{FALSE}.
+#' @param sync_to_s3 Logical. Default: \code{TRUE}.
 #'
 #' @return Invisibly returns a data frame summarising what was written.
 #' @keywords internal
-write_ipeds_processed_to_s3 <- function(
-    years          = IPEDS_START_YEAR:as.integer(format(Sys.Date(), "%Y")),
-    surveys        = c("ic", "completions", "grad_rates"),
+write_ipeds_institution_to_s3 <- function(
+    year,
     staging_dir    = "data/ipeds",
     s3_bucket      = "cori.data.ipeds",
     s3_path_prefix = "",
     overwrite      = FALSE,
     sync_to_s3     = TRUE
 ) {
-  manifest  <- get_ipeds_manifest(s3_bucket, s3_path_prefix)
-  written   <- list()
+  codebook    <- load_codebook()
+  inst_list   <- NULL
+  results     <- list()
 
-  for (yr in years) {
-    message(sprintf("\n--- Year %d ---", yr))
+  for (sv in IPEDS_SURVEYS) {
+    local_dir  <- file.path(staging_dir, "s3_institution",
+                            sprintf("survey=%s", sv),
+                            sprintf("year=%d",   year))
+    local_path <- file.path(local_dir, "part-0.parquet")
 
-    done <- .manifest_done(manifest, yr)
-
-    # ---- Institution-level datasets ----------------------------------------
-
-    if ("ic" %in% surveys) {
-      if (overwrite || !"ic_institution" %in% done) {
-        result <- .write_inst_dataset(
-          dataset     = "ic_institution",
-          pull_fn     = function() pull_ipeds_institutions(years = yr, staging_dir = staging_dir),
-          year        = yr,
-          staging_dir = staging_dir,
-          s3_bucket   = s3_bucket,
-          s3_path_prefix = s3_path_prefix,
-          sync_to_s3  = sync_to_s3
-        )
-        manifest <- .append_manifest(manifest, result)
-        written  <- c(written, list(result))
-      } else {
-        message(sprintf("  ic_institution %d: already in manifest, skipping", yr))
-      }
+    if (!overwrite && file.exists(local_path)) {
+      message(sprintf("  institution %s %d: already written locally, skipping", sv, year))
+      results <- c(results, list(.manifest_row(sv, year, "institution", local_path)))
+      next
     }
 
-    if ("completions" %in% surveys) {
-      if (overwrite || !"completions_institution" %in% done) {
-        result <- .write_inst_dataset(
-          dataset     = "completions_institution",
-          pull_fn     = function() pull_ipeds_completions_inst(years = yr, staging_dir = staging_dir),
-          year        = yr,
-          staging_dir = staging_dir,
-          s3_bucket   = s3_bucket,
-          s3_path_prefix = s3_path_prefix,
-          sync_to_s3  = sync_to_s3
-        )
-        manifest <- .append_manifest(manifest, result)
-        written  <- c(written, list(result))
-      } else {
-        message(sprintf("  completions_institution %d: already in manifest, skipping", yr))
-      }
-    }
-
-    if ("grad_rates" %in% surveys) {
-      if (overwrite || !"grad_rates_institution" %in% done) {
-        result <- .write_inst_dataset(
-          dataset     = "grad_rates_institution",
-          pull_fn     = function() pull_ipeds_grad_rates_inst(years = yr, staging_dir = staging_dir),
-          year        = yr,
-          staging_dir = staging_dir,
-          s3_bucket   = s3_bucket,
-          s3_path_prefix = s3_path_prefix,
-          sync_to_s3  = sync_to_s3
-        )
-        manifest <- .append_manifest(manifest, result)
-        written  <- c(written, list(result))
-      } else {
-        message(sprintf("  grad_rates_institution %d: already in manifest, skipping", yr))
-      }
-    }
-
-    # ---- County dataset (only after all three surveys complete) -------------
-
-    done_now <- .manifest_done(manifest, yr)
-    inst_datasets <- paste0(surveys, "_institution")
-    all_inst_done <- all(inst_datasets %in% done_now)
-
-    if (all_inst_done && (overwrite || !"county" %in% done_now)) {
-      result <- .write_county_dataset(
-        year        = yr,
-        surveys     = surveys,
-        staging_dir = staging_dir,
-        s3_bucket   = s3_bucket,
-        s3_path_prefix = s3_path_prefix,
-        sync_to_s3  = sync_to_s3
+    # Process all three surveys together once (shares geo lookup)
+    if (is.null(inst_list)) {
+      message(sprintf("  Processing institution data for %d...", year))
+      inst_list <- tryCatch(
+        process_ipeds_institution_all(year, staging_dir, codebook),
+        error = function(e) {
+          message(sprintf("  ERROR: institution %d: %s", year, e$message))
+          NULL
+        }
       )
-      manifest <- .append_manifest(manifest, result)
-      written  <- c(written, list(result))
-    } else if ("county" %in% done_now && !overwrite) {
-      message(sprintf("  county %d: already in manifest, skipping", yr))
-    } else if (!all_inst_done) {
-      message(sprintf("  county %d: skipping -- not all surveys complete", yr))
+      if (is.null(inst_list)) break
     }
-  }
 
-  # ---- Update manifest and _LATEST on S3 ------------------------------------
+    df <- inst_list[[sv]]
+    if (is.null(df)) {
+      message(sprintf("  institution %s %d: no data, skipping", sv, year))
+      next
+    }
 
-  if (length(written) > 0) {
-    update_ipeds_manifest(
-      new_rows       = do.call(rbind, written),
-      s3_bucket      = s3_bucket,
-      s3_path_prefix = s3_path_prefix,
-      staging_dir    = staging_dir
-    )
+    dir.create(local_dir, recursive = TRUE, showWarnings = FALSE)
+    .write_parquet(df, local_path)
+    message(sprintf("  institution %s %d: %s rows written", sv, year,
+                    format(nrow(df), big.mark = ",")))
 
     if (sync_to_s3) {
-      latest_year <- max(manifest$year[manifest$dataset == "county"], na.rm = TRUE)
-      if (is.finite(latest_year)) .write_latest(latest_year, staging_dir, s3_bucket, s3_path_prefix)
+      s3_uri <- sprintf("s3://%s/%sdata_institution/survey=%s/year=%d/",
+                        s3_bucket, s3_path_prefix, sv, year)
+      .s3_upload(local_path, s3_uri)
+    }
+
+    results <- c(results, list(.manifest_row(sv, year, "institution", local_path)))
+  }
+
+  invisible(do.call(rbind, results))
+}
+
+
+# County layer ----------------------------------------------------------------
+
+#' Write processed county-level data for one year to S3
+#'
+#' Reads institution-level parquets (written by \code{write_ipeds_institution_to_s3()}),
+#' derives county aggregations, writes one parquet per year, uploads to S3.
+#' Skips if already written.
+#'
+#' @param year Integer.
+#' @param staging_dir Character. Default: \code{"data/ipeds"}.
+#' @param s3_bucket Character. Default: \code{"cori.data.ipeds"}.
+#' @param s3_path_prefix Character. Default: \code{""}.
+#' @param overwrite Logical. Default: \code{FALSE}.
+#' @param sync_to_s3 Logical. Default: \code{TRUE}.
+#'
+#' @return Invisibly returns a one-row manifest data frame.
+#' @keywords internal
+write_ipeds_county_to_s3 <- function(
+    year,
+    staging_dir    = "data/ipeds",
+    s3_bucket      = "cori.data.ipeds",
+    s3_path_prefix = "",
+    overwrite      = FALSE,
+    sync_to_s3     = TRUE
+) {
+  local_dir  <- file.path(staging_dir, "s3_county", sprintf("year=%d", year))
+  local_path <- file.path(local_dir, "part-0.parquet")
+
+  if (!overwrite && file.exists(local_path)) {
+    message(sprintf("  county %d: already written locally, skipping", year))
+    return(invisible(.manifest_row("county", year, "county", local_path)))
+  }
+
+  # Load institution parquets for this year
+  inst_list <- .read_institution_local(year, staging_dir)
+  if (is.null(inst_list)) {
+    message(sprintf("  county %d: no institution data found, skipping", year))
+    return(invisible(NULL))
+  }
+
+  message(sprintf("  Deriving county data for %d...", year))
+  county <- tryCatch(
+    process_ipeds_county(inst_list),
+    error = function(e) {
+      message(sprintf("  ERROR: county %d: %s", year, e$message))
+      NULL
+    }
+  )
+
+  if (is.null(county) || nrow(county) == 0) {
+    message(sprintf("  county %d: no county rows produced, skipping", year))
+    return(invisible(NULL))
+  }
+
+  dir.create(local_dir, recursive = TRUE, showWarnings = FALSE)
+  .write_parquet(county, local_path)
+  message(sprintf("  county %d: %s rows written", year,
+                  format(nrow(county), big.mark = ",")))
+
+  if (sync_to_s3) {
+    s3_uri <- sprintf("s3://%s/%sdata_county/year=%d/",
+                      s3_bucket, s3_path_prefix, year)
+    .s3_upload(local_path, s3_uri)
+  }
+
+  invisible(.manifest_row("county", year, "county", local_path))
+}
+
+
+# Full pipeline ---------------------------------------------------------------
+
+#' Run the full IPEDS ETL pipeline for a range of years
+#'
+#' Runs all three layers (raw → institution → county) for each year in order.
+#' Each layer skips already-written vintages unless \code{overwrite = TRUE}.
+#'
+#' @param years Integer vector. Default: 2010 to current year.
+#' @param staging_dir Character.
+#' @param s3_bucket Character.
+#' @param s3_path_prefix Character.
+#' @param overwrite Logical. Reprocess even if already written. Default: \code{FALSE}.
+#' @param sync_to_s3 Logical. Upload to S3 after writing locally. Default: \code{TRUE}.
+#' @param layers Character vector. Which layers to run. Default: all three.
+#'
+#' @return Invisibly returns a manifest data frame.
+#' @export
+write_ipeds_all <- function(
+    years          = IPEDS_START_YEAR:as.integer(format(Sys.Date(), "%Y")),
+    staging_dir    = "data/ipeds",
+    s3_bucket      = "cori.data.ipeds",
+    s3_path_prefix = "",
+    overwrite      = FALSE,
+    sync_to_s3     = TRUE,
+    layers         = c("raw", "institution", "county")
+) {
+  results <- list()
+
+  for (yr in years) {
+    message(sprintf("\n=== Year %d ===", yr))
+
+    if ("raw" %in% layers) {
+      r <- tryCatch(
+        write_ipeds_raw_batch(
+          years          = yr,
+          staging_dir    = staging_dir,
+          s3_bucket      = s3_bucket,
+          s3_path_prefix = s3_path_prefix,
+          overwrite      = overwrite,
+          sync_to_s3     = sync_to_s3
+        ),
+        error = function(e) {
+          message(sprintf("  ERROR: raw %d: %s", yr, e$message))
+          NULL
+        }
+      )
+      if (!is.null(r)) results <- c(results, list(r))
+    }
+
+    if ("institution" %in% layers) {
+      r <- tryCatch(
+        write_ipeds_institution_to_s3(
+          year           = yr,
+          staging_dir    = staging_dir,
+          s3_bucket      = s3_bucket,
+          s3_path_prefix = s3_path_prefix,
+          overwrite      = overwrite,
+          sync_to_s3     = sync_to_s3
+        ),
+        error = function(e) {
+          message(sprintf("  ERROR: institution %d: %s", yr, e$message))
+          NULL
+        }
+      )
+      if (!is.null(r)) results <- c(results, list(r))
+    }
+
+    if ("county" %in% layers) {
+      r <- tryCatch(
+        write_ipeds_county_to_s3(
+          year           = yr,
+          staging_dir    = staging_dir,
+          s3_bucket      = s3_bucket,
+          s3_path_prefix = s3_path_prefix,
+          overwrite      = overwrite,
+          sync_to_s3     = sync_to_s3
+        ),
+        error = function(e) {
+          message(sprintf("  ERROR: county %d: %s", yr, e$message))
+          NULL
+        }
+      )
+      if (!is.null(r)) results <- c(results, list(r))
     }
   }
 
-  invisible(do.call(rbind, written))
+  invisible(do.call(rbind, Filter(Negate(is.null), results)))
 }
 
 
 # Internal helpers ------------------------------------------------------------
 
-# Which datasets are already written for a given year (from current manifest)
-.manifest_done <- function(manifest, year) {
-  if (nrow(manifest) == 0) return(character(0))
-  manifest$dataset[manifest$year == year]
+# Read the three institution parquets for a year from local staging.
+# Returns a named list (ic, completions, grad_rates) or NULL if none found.
+.read_institution_local <- function(year, staging_dir) {
+  out <- list()
+  for (sv in IPEDS_SURVEYS) {
+    path <- .institution_local_path(sv, year, staging_dir)
+    if (file.exists(path)) {
+      out[[sv]] <- .read_parquet_local(path)
+    }
+  }
+  if (length(out) == 0) NULL else out
 }
 
-# Append a single result row to the in-memory manifest
-.append_manifest <- function(manifest, result_row) {
-  key <- paste(result_row$year, result_row$dataset)
-  existing_key <- paste(manifest$year, manifest$dataset)
-  manifest <- manifest[!existing_key %in% key, ]
-  rbind(manifest, result_row)
-}
-
-
-# Write one institution-level parquet and return a manifest row
-.write_inst_dataset <- function(dataset, pull_fn, year, staging_dir,
-                                 s3_bucket, s3_path_prefix, sync_to_s3) {
-  message(sprintf("  Pulling %s %d...", dataset, year))
-  df <- pull_fn()
-
-  n <- nrow(df)
-  message(sprintf("  %s %d: %s rows", dataset, year, format(n, big.mark = ",")))
-
-  local_path <- .write_parquet_local(df, year, dataset, staging_dir)
-
-  if (sync_to_s3) {
-    s3_uri <- sprintf("s3://%s/%sdata_processed/year=%d/%s/",
-                      s3_bucket, s3_path_prefix, year, dataset)
-    .upload_to_s3(local_path, s3_uri)
-  }
-
-  data.frame(
-    year         = as.integer(year),
-    dataset      = dataset,
-    processed_at = format(Sys.time(), "%Y-%m-%d %H:%M:%S"),
-    row_count    = as.integer(n),
-    stringsAsFactors = FALSE
-  )
-}
-
-
-# Pull all county pull_* functions for all surveys, bind, write parquet
-.write_county_dataset <- function(year, surveys, staging_dir,
-                                   s3_bucket, s3_path_prefix, sync_to_s3) {
-  message(sprintf("  Building county %d...", year))
-
-  county_parts <- list()
-
-  if ("ic" %in% surveys) {
-    message("    IC county pull_*...")
-    ic_parts <- list(
-      pull_inst_count(years = year,           staging_dir = staging_dir),
-      pull_public_inst_count(years = year,    staging_dir = staging_dir),
-      pull_nonprofit_inst_count(years = year, staging_dir = staging_dir),
-      pull_fouryear_inst_count(years = year,  staging_dir = staging_dir),
-      pull_twoyear_inst_count(years = year,   staging_dir = staging_dir),
-      pull_hbcu_count(years = year,           staging_dir = staging_dir),
-      pull_tribal_count(years = year,         staging_dir = staging_dir)
-    )
-    county_parts <- c(county_parts, Filter(Negate(is.null), ic_parts))
-  }
-
-  if ("completions" %in% surveys) {
-    message("    Completions county pull_*...")
-    comp_parts <- list(
-      pull_count_degrees_total(years = year,    staging_dir = staging_dir),
-      pull_share_degrees_assoc(years = year,    staging_dir = staging_dir),
-      pull_share_degrees_bach(years = year,     staging_dir = staging_dir),
-      pull_share_degrees_masters(years = year,  staging_dir = staging_dir),
-      pull_share_degrees_doctoral(years = year, staging_dir = staging_dir),
-      pull_share_degrees_men(years = year,      staging_dir = staging_dir),
-      pull_share_degrees_women(years = year,    staging_dir = staging_dir)
-    )
-    county_parts <- c(county_parts, Filter(Negate(is.null), comp_parts))
-  }
-
-  if ("grad_rates" %in% surveys) {
-    message("    Grad rates county pull_*...")
-    gr_parts <- list(
-      pull_grad_rate_150pct(years = year,  staging_dir = staging_dir),
-      pull_transfer_out_rate(years = year, staging_dir = staging_dir)
-    )
-    county_parts <- c(county_parts, Filter(Negate(is.null), gr_parts))
-  }
-
-  county <- do.call(rbind, county_parts)
-  n      <- nrow(county)
-  message(sprintf("  county %d: %s rows", year, format(n, big.mark = ",")))
-
-  local_path <- .write_parquet_local(county, year, "county", staging_dir)
-
-  if (sync_to_s3) {
-    s3_uri <- sprintf("s3://%s/%sdata_processed/year=%d/county/",
-                      s3_bucket, s3_path_prefix, year)
-    .upload_to_s3(local_path, s3_uri)
-  }
-
-  data.frame(
-    year         = as.integer(year),
-    dataset      = "county",
-    processed_at = format(Sys.time(), "%Y-%m-%d %H:%M:%S"),
-    row_count    = as.integer(n),
-    stringsAsFactors = FALSE
-  )
-}
-
-
-# Write a data frame to a local parquet file via DuckDB.
-# Returns the path to the written file.
-.write_parquet_local <- function(df, year, dataset, staging_dir) {
-  out_dir <- file.path(staging_dir, "s3_processed",
-                       sprintf("year=%d", year), dataset)
-  dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
-  out_file <- file.path(out_dir, "part-0.parquet")
-
-  # DuckDB requires valid UTF-8. Sanitize all character columns before writing --
-  # IPEDS institution names and addresses sometimes contain latin1 characters.
+# Write a data frame to parquet via DuckDB.
+.write_parquet <- function(df, path) {
+  # Sanitize character columns to valid UTF-8.
   chr_cols <- names(df)[sapply(df, is.character)]
   for (col in chr_cols) {
     df[[col]] <- iconv(df[[col]], from = "", to = "UTF-8", sub = "\uFFFD")
   }
-
   con <- DBI::dbConnect(duckdb::duckdb())
   on.exit(DBI::dbDisconnect(con, shutdown = TRUE), add = TRUE)
-
   DBI::dbWriteTable(con, "df", df, overwrite = TRUE)
-  DBI::dbExecute(con, sprintf("COPY df TO '%s' (FORMAT 'parquet')", out_file))
-
-  out_file
+  DBI::dbExecute(con, sprintf("COPY df TO '%s' (FORMAT 'parquet')", path))
 }
 
-
-# Upload a local file to an S3 URI via AWS CLI.
-.upload_to_s3 <- function(local_path, s3_uri) {
-  message(sprintf("    Uploading to %s...", s3_uri))
-  exit_code <- base::system2(
-    "aws", args = c("s3", "cp", local_path, s3_uri)
-  )
+# Upload a local file to S3 via the AWS CLI.
+.s3_upload <- function(local_path, s3_uri) {
+  exit_code <- base::system2("aws", args = c("s3", "cp", local_path, s3_uri))
   if (exit_code != 0) {
     stop(sprintf("AWS CLI upload failed: %s -> %s", local_path, s3_uri))
   }
 }
 
-
-# Write the _LATEST pointer file to S3
-.write_latest <- function(latest_year, staging_dir, s3_bucket, s3_path_prefix) {
-  local_path <- file.path(staging_dir, "s3_processed", "_LATEST")
-  writeLines(as.character(latest_year), local_path)
-  s3_uri <- sprintf("s3://%s/%sdata_processed/_LATEST", s3_bucket, s3_path_prefix)
-  .upload_to_s3(local_path, s3_uri)
-  message(sprintf("_LATEST updated to: %s", latest_year))
+# Build a one-row manifest data frame.
+.manifest_row <- function(survey, year, layer, local_path) {
+  data.frame(
+    survey       = survey,
+    year         = as.integer(year),
+    layer        = layer,
+    processed_at = format(Sys.time(), "%Y-%m-%d %H:%M:%S"),
+    local_path   = local_path,
+    stringsAsFactors = FALSE
+  )
 }

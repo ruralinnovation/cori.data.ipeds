@@ -1,185 +1,234 @@
 # Session Log — cori.data.ipeds
 
-## Status as of 2026-05-07
+## Status as of 2026-06-29
 
-### What is complete
+### Architecture overview (current)
 
-The full package is built and passing `devtools::check()` with 0 errors, 0 warnings, 0 notes.
+The package has been fully refactored from a single-layer dictionary-driven
+pipeline into a clean three-layer architecture. Legacy processing files have
+been archived.
 
-**Package structure**
-- `DESCRIPTION` — MIT license, Imports: DBI, duckdb, stringr, utils
-- `NAMESPACE` — 3 exported functions only
-- `R/` — 13 source files
-- `inst/extdata/` — 3 data dictionary CSVs (IC, completions, grad rates), 2010--2024
-- `man/` — generated Rd files
-- `vignettes/introduction.Rmd` — stub, not yet written
-- `data-raw/build_dictionaries.R` — documents dictionary origin
-- `data-raw/validate_etl.R` — post-ETL validation script (new this session)
-- `RELEASE_CALENDAR.md` — NCES release dates 2021--2025
-- `LICENSE` / `LICENSE.md` — MIT
+**Three-layer ETL**
 
-**Public API (3 exported functions)**
-- `read_ipeds_county_from_s3()` — 6-column tidy, all surveys combined
-- `read_ipeds_institution_from_s3()` — wide format, one survey at a time
-- `get_ipeds_codebook()` — variable definitions for all 16 county variables
+```
+NCES CSV (download)
+      ↓
+data_raw/           -- untouched NCES parquet; original uppercase col names;
+                       original sentinel codes; only addition is `year` column
+      ↓  reconcile_vintage()   (era-specific fixes: sentinel→NA, zero-pad, renames)
+      ↓  apply_codebook_mapping()  (NCES uppercase → snake_case canonical names)
+data_institution/   -- one parquet per survey×year; canonical names; geo attached
+      ↓  process_ipeds_county()   (tidy 6-col aggregations)
+data_county/        -- one parquet per year; 16 variables; tidy long format
+```
 
-**Internal pipeline**
-- Download, unzip, resolve CSV (prefers `_rv` revised files)
-- Dictionary-driven column rename via `inst/extdata/*.csv`
-- Negative IPEDS sentinel codes (-1, -2, -3) converted to NA before zero-padding
-- UTF-8 sanitization via `iconv()` before DuckDB parquet write
-- Manifest-driven incremental ETL (`_MANIFEST.csv` on S3)
-- Year-partitioned S3 layout: `data_processed/year=YYYY/{dataset}/part-0.parquet`
+**S3 layout**
+```
+s3://cori.data.ipeds/
+  data_raw/survey={survey}/year={year}/part-0.parquet
+  data_institution/survey={survey}/year={year}/part-0.parquet
+  data_county/year={year}/part-0.parquet
+```
 
----
-
-### County variable design decisions (important context)
-
-**Degree-granting filter**: ALL county aggregations are restricted to
-`degree_granting_status_code == 1`. This filter is applied in:
-- `.ic_county_base()` — IC institution counts
-- `.ic_unitid_county_lookup()` — the bridge that gates completions and grad rates
-
-Non-degree-granting institutions (cosmetology schools, professional development
-orgs, etc.) appear in the wide institution tables but are excluded from county
-output. This was validated against Grafton County NH (33009) where Upper Valley
-Educators Institute (sector 2, 4-yr) and New England School of Hair Design
-(sector 9, <2yr) are correctly excluded from county aggregations.
-
-**Completions county variables — shares, not counts**
-
-The county completions output uses shares with `count_degrees_total` as the
-anchor. All four level shares sum to exactly 1 by construction.
-
-| Variable | Value | agg_var |
-|---|---|---|
-| `count_degrees_total` | raw count of tracked degrees | NA |
-| `share_degrees_assoc` | assoc / total | total |
-| `share_degrees_bach` | bach / total | total |
-| `share_degrees_masters` | masters / total | total |
-| `share_degrees_doctoral` | doctoral / total | total |
-| `share_degrees_men` | men / total | total |
-| `share_degrees_women` | women / total | total |
-
-Raw count is recoverable as `value * agg_var`.
-
-**TRACKED_DEGREE_LEVELS**: IPEDS AWLEVEL codes 2, 3, 5, 7, 17, 18, 19.
-Excludes certificates (1, 4, 6, 8) and the undocumented code 21 that appears
-in some institution records. The denominator (`count_degrees_total`) and all
-share numerators use this same set, so shares sum to 1.
-
-**DOCTORAL_LEVELS corrected**: Was `c(9, 10, 11)` (pre-2009 codes).
-Corrected to `c(17, 18, 19)` (post-2009 IPEDS revision). This was discovered
-by finding that Dartmouth's doctoral completions (codes 17 and 18 in the raw
-data) were not appearing in Grafton County. The 2009 revision split doctoral
-from "first-professional" into three categories with new codes.
-
-**`degree_granting_count` removed**: Was redundant once the degree-granting
-filter was applied — `inst_count` equals it by definition. Dropped from county
-output and codebook.
+**Incremental by design**: each layer skips vintages already written.
+Historic years are never reprocessed once written. Adding a new year =
+run `write_ipeds_all(years = NEW_YEAR)`.
 
 ---
 
-### ETL run in progress
+### What was completed this session
 
-Full production write: `write_ipeds_processed_to_s3(years = 2010:2024)` was
-running as of session end, at approximately year 2017.
+**ETL infrastructure (all new files)**
 
-**2024 dictionary entries**: NCES released 2024 data September 2025.
-Dictionary rows for 2024 were added to all three CSVs this session by
-copying 2023 rows with year/filename substitution:
-- IC: `hd2024`, `HD2024.zip`
-- Completions: `c2024_a`, `C2024_A.zip`
-- Grad rates: `gr2024`, `GR2024.zip`
+| File | Purpose |
+|---|---|
+| `R/reconcile_vintage.R` | Era-specific fixes between raw and codebook rename |
+| `R/write_raw_to_s3.R` | Layer 1: read NCES CSV untouched, write to raw parquet |
+| `R/process_institution.R` | Layer 2: reconcile + rename + geo attach |
+| `R/process_county.R` | Layer 3: tidy county aggregations |
+| `R/write_ipeds_to_s3.R` | Orchestrator: runs all three layers |
+| `inst/extdata/codebook.csv` | Opinionated codebook (47 variables, 10 cols) |
+
+**Archived (no longer active)**
+```
+archive/
+  process_ipeds_ic.R
+  process_ipeds_completions.R
+  process_ipeds_gr.R
+  write_ipeds_to_s3.R   (old version)
+  get_ipeds_codebook.R
+```
 
 ---
 
-### Immediate next steps (in order)
+### Key design decisions
 
-1. **Let the ETL finish** — resume `write_ipeds_processed_to_s3()` from where
-   it left off (manifest will skip already-written years automatically):
-   ```r
-   devtools::load_all()
-   write_ipeds_processed_to_s3(
-     years       = 2010:2024,
-     staging_dir = "data/ipeds",
-     s3_bucket   = "cori.data.ipeds",
-     overwrite   = FALSE,
-     sync_to_s3  = TRUE
-   )
-   ```
+**Codebook as source of truth**
 
-2. **Run validation** after ETL completes:
-   ```r
-   source("data-raw/validate_etl.R")
-   ```
-   Key things to confirm:
-   - All 4 datasets written for all years 2010--2024
-   - Degree shares sum to 1 for all county-years
-   - No bad geoids
-   - Grafton County (33009) present in all years with sensible values
-   - Dartmouth doctoral completions now showing in `share_degrees_doctoral`
+`inst/extdata/codebook.csv` defines all 47 variables with:
+- `variable` — canonical snake_case name used throughout the package
+- `nces_var` — original NCES uppercase name in raw data (e.g. `COUNTYCD`)
+- `survey` — which survey the variable belongs to
+- `level` — `"both"` for variables shared across surveys (unitid, county_fips)
+- `era_notes` — documents known schema breaks across vintages
+- `alignment_notes` — joins/crosswalks to other datasets
 
-3. **Commit everything** — all R files, dictionaries, README, RELEASE_CALENDAR
+Critical: `unitid` and `county_fips` have `level = "both"`, which causes
+`apply_codebook_mapping()` to rename them in ALL surveys (not just IC).
+Without this, geo joins to completions and grad_rates would silently fail.
 
-4. **Write vignette** (`vignettes/introduction.Rmd`) — narrative not yet started.
+**Era reconciliation layer**
+
+`reconcile_vintage()` sits between raw parquet and codebook renaming.
+Era fixes by survey:
+
+*IC*:
+- 2024+: `C00CARNEGIE` → `CARNEGIE` (NCES renamed column)
+- All: sentinel codes (-1, -2, -3) → NA
+- All: UNITID zero-padded to 6 digits
+- All: COUNTYCD zero-padded to 5 digits (after sentinel removal)
+- All: geo columns added as NA if absent (guard for pre-2009 attempts)
+
+*Completions*:
+- All: sentinel → NA, UNITID pad
+- All: race/demographic columns added as NA if absent (schema evolution)
+- Warns if pre-2009 doctoral AWLEVEL codes (9/10/11) appear
+
+*Grad rates*:
+- All: sentinel → NA, UNITID pad, race columns padded
+
+**Grad rate GRTYPE structure (important)**
+
+GRTYPE (mapped to `cohort_type`) uniquely identifies the row's role:
+- GRTYPE 1 = starting cohort (not used in county aggregation)
+- GRTYPE 2 = adjusted cohort **denominator**
+- GRTYPE 3 = completers within 150% of normal time **numerator** → `grad_rate_150pct`
+- GRTYPE 4 = transfer-out students **numerator** → `transfer_out_rate`
+- GRTYPE ≥ 6 = other sections (part-time, transfer-in, etc.) — excluded
+
+County aggregation filters directly on GRTYPE values 2/3/4, not on CHRTSTAT.
+
+**County variables (16 total)**
+
+*IC survey (7 counts)*: inst_count, public_inst_count, nonprofit_inst_count,
+fouryear_inst_count, twoyear_inst_count, hbcu_count, tribal_count
+
+*Completions survey (7)*: count_degrees_total (raw count, agg_var=NA),
+share_degrees_assoc/bach/masters/doctoral/men/women (proportions, agg_var=total)
+
+*Grad rates survey (2)*: grad_rate_150pct, transfer_out_rate (proportions, agg_var=NA)
+
+All county aggregations restricted to degree-granting institutions
+(`is_degree_granting == 1`) with a valid `county_fips`. Excluded sectors: 0, 99.
+
+**Tracked degree levels**: AWLEVEL codes 2, 3 (associate's), 5 (bachelor's),
+7 (master's), 17, 18, 19 (doctoral). Excludes certificates and undocumented codes.
+All four level shares use this same universe → shares sum to exactly 1.
+
+---
+
+### Validation (2023 data)
+
+```
+County rows: 21,092
+Variables: 16 (all expected)
+
+Share level sum: min=1, median=1, max=1  ✓
+Sex share sum:   min=1, median=1, max=1  ✓
+Grad rate range: [0, 1]                  ✓
+
+Grafton County NH (33009) 2023:
+  inst_count = 2 (Dartmouth + Plymouth State)
+  count_degrees_total = 6,620
+  share_degrees_bach = 0.665
+  share_degrees_masters = 0.270
+  share_degrees_doctoral = 0.065  ← Dartmouth doctoral present ✓
+  share_degrees_assoc = 0          ← no community college ✓
+```
+
+---
+
+### Running the full pipeline
+
+```r
+devtools::load_all()
+
+# One year (new vintage)
+write_ipeds_all(years = 2024, sync_to_s3 = TRUE)
+
+# Full backfill 2010–2023 (skips already-written)
+write_ipeds_all(years = 2010:2023, sync_to_s3 = TRUE)
+
+# Layer-by-layer (useful for debugging)
+write_ipeds_all(years = 2023, layers = "raw",         sync_to_s3 = FALSE)
+write_ipeds_all(years = 2023, layers = "institution", sync_to_s3 = FALSE)
+write_ipeds_all(years = 2023, layers = "county",      sync_to_s3 = FALSE)
+```
+
+---
+
+### File map (current)
+
+```
+R/
+  reconcile_vintage.R       -- era fixes: sentinel→NA, zero-pad, col renames
+  write_raw_to_s3.R         -- Layer 1: NCES CSV → raw parquet (untouched)
+  process_institution.R     -- Layer 2: reconcile + codebook rename + geo
+  process_county.R          -- Layer 3: tidy county aggregations
+  write_ipeds_to_s3.R       -- Orchestrator: write_ipeds_all()
+  fetch_ipeds_dictionary.R  -- Fetch NCES dictionary xlsx (bootstrap once/vintage)
+  read_ipeds_from_s3.R      -- Public read functions (DuckDB + S3)
+  download_ipeds.R          -- ZIP download with skip-if-present guard
+  utils_ipeds_read.R        -- CSV safe read, helpers
+  utils_ipeds_dictionary.R  -- (legacy; kept for read_ipeds_from_s3 dependency)
+  read_ipeds_ic_raw.R       -- (legacy thin wrapper)
+  read_ipeds_completions_raw.R -- (legacy thin wrapper)
+  read_ipeds_gr_raw.R       -- (legacy thin wrapper)
+  globals.R                 -- IPEDS_START_YEAR, IPEDS_SURVEYS, globalVariables()
+
+inst/extdata/
+  codebook.csv              -- 47-variable opinionated codebook (NEW)
+  institutional_characteristics.csv  -- legacy IC dictionary (still used by read_ipeds_from_s3)
+  completions.csv           -- legacy completions dictionary
+  grad_rates.csv            -- legacy grad rates dictionary
+
+archive/
+  process_ipeds_ic.R
+  process_ipeds_completions.R
+  process_ipeds_gr.R
+  write_ipeds_to_s3.R
+  get_ipeds_codebook.R
+```
+
+---
+
+### Immediate next steps
+
+1. **Run full backfill** — `write_ipeds_all(years = 2010:2023, sync_to_s3 = TRUE)`
+   (2024 raw data exists for IC and completions; grad rates lag one year)
+
+2. **Write vignette** — `vignettes/introduction.Rmd`
    Suggested structure:
    - What IPEDS is and what this package provides
    - Reading county data, filtering by variable/year/geography
    - Using `agg_var` to recover raw counts from shares
-   - Reading institution-level data, joining to county
-   - Using `get_ipeds_codebook()`
+   - Reading institution-level data
    - Annual update workflow for maintainers
 
-5. **Final `devtools::check()`** with vignettes enabled (requires Pandoc)
+3. **Clean up legacy files** — `read_ipeds_ic_raw.R`, `read_ipeds_completions_raw.R`,
+   `read_ipeds_gr_raw.R`, `utils_ipeds_dictionary.R` are only needed if
+   `read_ipeds_from_s3.R` still uses the old dictionary CSVs. Evaluate whether
+   to migrate `read_ipeds_from_s3.R` to use the new codebook.
 
 ---
 
 ### Known issues / things to watch
 
-- **ed_level 21** appears in raw completions data for Plymouth State and
-  hair school in 2022. Not a documented NCES AWLEVEL code. Safely excluded
-  by `TRACKED_DEGREE_LEVELS` filter but worth monitoring across all years.
+- **GR2024 returns 404**: Grad rates lag by an extra year. 2023 is the latest
+  available. This is expected NCES behavior.
 
-- **Vignette requires Pandoc** — `devtools::check()` currently run with
-  `vignettes = FALSE` because Pandoc is not available in the check environment.
-  Will need to resolve before CRAN-style submission.
+- **ed_level 21** appears in raw completions data. Not a documented NCES AWLEVEL
+  code. Safely excluded by `TRACKED_DEGREE_LEVELS` filter.
 
-- **Pre-2009 extension** — planned future work. HUD ZIP-to-county crosswalk
-  is the preferred approach. IPEDS coding changes in 2009 (county FIPS added
-  to IC, doctoral award level codes changed) need to be handled carefully.
-
-- **ed_level 21 in grad_rates** — `GR_PRIMARY_COHORT = 1L` and
-  `GR_ADJUSTED_COHORT = 12L` / `GR_COMPLETERS_150PCT = 13L` should be
-  verified against the 2024 grad rates data dictionary when that year
-  is processed.
-
----
-
-### File map
-
-```
-R/
-  utils_ipeds_dictionary.R   -- dictionary parsing, manifest, unprocessed check
-  utils_ipeds_read.R         -- core read engine, CSV safe read, zero-padding
-  download_ipeds.R           -- ZIP download with skip-if-present guard
-  read_ipeds_ic_raw.R        -- thin wrapper: IC survey
-  read_ipeds_completions_raw.R -- thin wrapper: completions survey
-  read_ipeds_gr_raw.R        -- thin wrapper: grad rates survey
-  process_ipeds_ic.R         -- institution + county pull_* functions (IC)
-  process_ipeds_completions.R -- institution + county pull_* functions (completions)
-  process_ipeds_gr.R         -- institution + county pull_* functions (grad rates)
-  write_ipeds_to_s3.R        -- manifest-driven ETL orchestrator
-  read_ipeds_from_s3.R       -- public read functions (DuckDB + S3)
-  get_ipeds_codebook.R       -- exported codebook data frame
-  globals.R                  -- globalVariables() declarations
-
-inst/extdata/
-  institutional_characteristics.csv  -- IC dictionary 2010--2024
-  completions.csv                    -- completions dictionary 2010--2024
-  grad_rates.csv                     -- grad rates dictionary 2010--2024
-
-data-raw/
-  build_dictionaries.R   -- documents how dictionaries were built
-  validate_etl.R         -- post-ETL QA script (9 checks)
-```
+- **Pre-2009 extension** — planned future work. `county_fips` was added to IC
+  in 2009; would need ZIP-to-county crosswalk for earlier years.
