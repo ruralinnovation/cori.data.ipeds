@@ -11,7 +11,7 @@ apply_codebook_mapping(df, survey, codebook)
 
 \item{survey}{Character. Survey name used to filter the codebook.}
 
-\item{codebook}{Data frame. Output of \code{load_codebook()}.}
+\item{codebook}{Data frame. Output of \code{get_ipeds_codebook()}.}
 }
 \value{
 Data frame with codebook columns renamed to canonical names.

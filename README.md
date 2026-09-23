@@ -23,20 +23,20 @@ remotes::install_github("ruralinnovation/cori.data.ipeds")
 library(cori.data.ipeds)
 
 # County-level tidy data — degree-granting institutions only
-df_county <- read_ipeds_county_from_s3(
+df_county <- get_ipeds_county(
   variables = c("count_degrees_total", "share_degrees_bach", "inst_count"),
   years     = 2010:2023
 )
 
 # Institution-level data for a specific county
-df_inst <- read_ipeds_institution_from_s3(
+df_inst <- get_ipeds_institution(
   survey      = "institutional_characteristics",
   county_fips = "33009",  # Grafton County, NH
   years       = 2010:2023
 )
 
 # See all available variables and their definitions
-load_codebook()
+get_ipeds_codebook()
 ```
 
 ## Output Format
@@ -52,7 +52,7 @@ County-level functions return a six-column tidy format:
 | `agg_var` | numeric | Denominator or aggregation weight. For `share_degrees_*` variables: total degrees conferred (raw count = `value * agg_var`). For `grad_rate_*` variables: adjusted cohort size. `NA` for institution count variables. |
 | `survey` | character | Source survey: `"institutional_characteristics"`, `"completions"`, or `"grad_rates"` |
 
-Institution-level functions return wide format. Column structure varies by survey — see `read_ipeds_institution_from_s3()` documentation. `county_fips` is a foreign key to the county-level data.
+Institution-level functions return wide format. Column structure varies by survey — see `get_ipeds_institution()` documentation. `county_fips` is a foreign key to the county-level data.
 
 ### County variables
 
@@ -77,7 +77,7 @@ All county-level aggregations are restricted to **degree-granting institutions o
 | `grad_rate_150pct` | grad_rates | 150% graduation rate (bachelor's cohort) |
 | `transfer_out_rate` | grad_rates | Transfer-out rate (bachelor's cohort) |
 
-The four `share_degrees_*` level variables sum to exactly 1. Raw counts are recoverable as `value * agg_var`. Use `load_codebook()` for full variable definitions.
+The four `share_degrees_*` level variables sum to exactly 1. Raw counts are recoverable as `value * agg_var`. Use `get_ipeds_codebook()` for full variable definitions.
 
 ## Refreshing the Data
 

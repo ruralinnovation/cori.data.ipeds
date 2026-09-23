@@ -28,13 +28,15 @@
 
 # Codebook loading ------------------------------------------------------------
 
-#' Load the opinionated codebook
+#' Get the opinionated IPEDS codebook
 #'
 #' Reads \code{inst/extdata/codebook.csv} (installed package) or falls back
 #' to the local development path. Returns a data frame.
 #'
+#' @seealso [get_ipeds_county()], [get_ipeds_institution()]
+#'
 #' @export
-load_codebook <- function() {
+get_ipeds_codebook <- function() {
   path <- system.file("extdata", "codebook.csv", package = "cori.data.ipeds")
   if (!nzchar(path)) path <- file.path("inst", "extdata", "codebook.csv")
   if (!file.exists(path)) stop("codebook.csv not found")
@@ -52,7 +54,7 @@ load_codebook <- function() {
 #'
 #' @param df Data frame. Reconciled raw data (output of \code{reconcile_vintage()}).
 #' @param survey Character. Survey name used to filter the codebook.
-#' @param codebook Data frame. Output of \code{load_codebook()}.
+#' @param codebook Data frame. Output of \code{get_ipeds_codebook()}.
 #'
 #' @return Data frame with codebook columns renamed to canonical names.
 #' @keywords internal
@@ -106,7 +108,7 @@ process_ipeds_institution <- function(survey,
                                       staging_dir = "data/ipeds",
                                       codebook    = NULL,
                                       geo_lookup  = NULL) {
-  if (is.null(codebook)) codebook <- load_codebook()
+  if (is.null(codebook)) codebook <- get_ipeds_codebook()
 
   # Read from local raw parquet
   raw_path <- .raw_local_path(survey, year, staging_dir)
@@ -157,7 +159,7 @@ process_ipeds_institution <- function(survey,
 process_ipeds_institution_all <- function(year,
                                            staging_dir = "data/ipeds",
                                            codebook    = NULL) {
-  if (is.null(codebook)) codebook <- load_codebook()
+  if (is.null(codebook)) codebook <- get_ipeds_codebook()
 
   message(sprintf("  Processing IC %d...", year))
   ic <- process_ipeds_institution("institutional_characteristics", year, staging_dir, codebook)

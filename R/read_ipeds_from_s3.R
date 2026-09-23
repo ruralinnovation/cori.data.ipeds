@@ -1,22 +1,14 @@
 # Read processed IPEDS data from S3 via DuckDB
 
 
-# Internal: establish a DuckDB connection with S3 credentials configured.
+# Internal: establish a DuckDB connection via cori.data.s3::connect_to_s3().
+# Uses local AWS credentials when present (maintainers); otherwise falls back
+# to short-lived, read-only, bucket-scoped vended credentials, so the public
+# read functions work with no AWS credentials configured at all.
 # Caller is responsible for on.exit(DBI::dbDisconnect(con, shutdown = TRUE)).
-.ipeds_duckdb_con <- function() {
-  con <- DBI::dbConnect(duckdb::duckdb())
-
-  DBI::dbExecute(con, "INSTALL httpfs; LOAD httpfs;")
-  DBI::dbExecute(con, "INSTALL aws;   LOAD aws;")
+.ipeds_duckdb_con <- function(bucket = "cori.data.ipeds") {
+  con <- cori.data.s3::connect_to_s3(bucket)
   DBI::dbExecute(con, sprintf("SET temp_directory = '%s';", tempdir()))
-  DBI::dbExecute(con, "CREATE OR REPLACE SECRET s3_secret (
-    TYPE S3,
-    PROVIDER CREDENTIAL_CHAIN,
-    CHAIN 'env;config',
-    REGION 'us-east-1',
-    URL_STYLE 'path'
-  );")
-
   con
 }
 
@@ -56,7 +48,7 @@
 }
 
 
-#' Read county-level IPEDS data from S3
+#' Get county-level IPEDS data
 #'
 #' Queries the processed county-level parquet files from S3 via DuckDB.
 #' Returns the 6-column tidy format: one row per county / year / variable.
@@ -64,6 +56,8 @@
 #' County data combines all three IPEDS surveys (IC, completions, graduation
 #' rates) into a single table. Use the \code{surveys} argument to filter to
 #' a specific survey, or \code{variables} to select specific metrics.
+#'
+#' @importFrom cori.data.s3 connect_to_s3
 #'
 #' @param years Integer vector. Years to return. Default: all available.
 #' @param geoids Character vector. 5-digit county FIPS codes to return.
@@ -82,19 +76,21 @@
 #'   \code{year} (integer), \code{variable} (character), \code{value}
 #'   (numeric), \code{agg_var} (numeric), \code{survey} (character).
 #'
+#' @seealso [get_ipeds_institution()], [get_ipeds_codebook()]
+#'
 #' @examples
 #' \dontrun{
 #' # All county data for Grafton County NH
-#' read_ipeds_county_from_s3(geoids = "33009")
+#' get_ipeds_county(geoids = "33009")
 #'
 #' # Graduation rates for all counties, 2015-2023
-#' read_ipeds_county_from_s3(
+#' get_ipeds_county(
 #'   variables = "grad_rate_150pct",
 #'   years     = 2015:2023
 #' )
 #' }
 #' @export
-read_ipeds_county_from_s3 <- function(
+get_ipeds_county <- function(
     years          = NULL,
     geoids         = NULL,
     variables      = NULL,
@@ -102,7 +98,7 @@ read_ipeds_county_from_s3 <- function(
     s3_bucket      = "cori.data.ipeds",
     s3_path_prefix = ""
 ) {
-  con <- .ipeds_duckdb_con()
+  con <- .ipeds_duckdb_con(s3_bucket)
   on.exit(DBI::dbDisconnect(con, shutdown = TRUE), add = TRUE)
 
   glob  <- sprintf(
@@ -133,11 +129,16 @@ read_ipeds_county_from_s3 <- function(
   out$agg_var <- as.numeric(out$agg_var)
   out$survey  <- as.character(out$survey)
 
+  message(sprintf(
+    "cori.data.ipeds: county | %s rows",
+    format(nrow(out), big.mark = ",")
+  ))
+
   out
 }
 
 
-#' Read institution-level IPEDS data from S3
+#' Get institution-level IPEDS data
 #'
 #' Queries processed institution-level parquet files from S3 via DuckDB.
 #' Returns wide-format data — column structure varies by survey.
@@ -169,16 +170,18 @@ read_ipeds_county_from_s3 <- function(
 #'       demographic count columns (vary by vintage), year
 #'   }
 #'
+#' @seealso [get_ipeds_county()], [get_ipeds_codebook()]
+#'
 #' @examples
 #' \dontrun{
 #' # All institutions in Grafton County NH
-#' read_ipeds_institution_from_s3("institutional_characteristics", county_fips = "33009")
+#' get_ipeds_institution("institutional_characteristics", county_fips = "33009")
 #'
 #' # Completions for a specific institution
-#' read_ipeds_institution_from_s3("completions", unitids = "182670")
+#' get_ipeds_institution("completions", unitids = "182670")
 #' }
 #' @export
-read_ipeds_institution_from_s3 <- function(
+get_ipeds_institution <- function(
     survey,
     years          = NULL,
     unitids        = NULL,
@@ -188,7 +191,7 @@ read_ipeds_institution_from_s3 <- function(
 ) {
   survey <- match.arg(survey, c("institutional_characteristics", "completions", "grad_rates"))
 
-  con <- .ipeds_duckdb_con()
+  con <- .ipeds_duckdb_con(s3_bucket)
   on.exit(DBI::dbDisconnect(con, shutdown = TRUE), add = TRUE)
 
   glob <- sprintf(
@@ -214,6 +217,11 @@ read_ipeds_institution_from_s3 <- function(
   if ("unitid"      %in% names(out)) out$unitid      <- as.character(out$unitid)
   if ("county_fips" %in% names(out)) out$county_fips <- as.character(out$county_fips)
   if ("year"        %in% names(out)) out$year        <- as.integer(out$year)
+
+  message(sprintf(
+    "cori.data.ipeds: institution | survey: %s | %s rows",
+    survey, format(nrow(out), big.mark = ",")
+  ))
 
   out
 }

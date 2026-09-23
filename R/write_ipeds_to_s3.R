@@ -39,7 +39,7 @@ write_ipeds_institution_to_s3 <- function(
     overwrite      = FALSE,
     sync_to_s3     = TRUE
 ) {
-  codebook    <- load_codebook()
+  codebook    <- get_ipeds_codebook()
   inst_list   <- NULL
   results     <- list()
 
@@ -177,7 +177,7 @@ write_ipeds_county_to_s3 <- function(
 #' @param layers Character vector. Which layers to run. Default: all three.
 #'
 #' @return Invisibly returns a manifest data frame.
-#' @export
+#' @keywords internal
 write_ipeds_all <- function(
     years          = IPEDS_START_YEAR:IPEDS_END_YEAR,
     staging_dir    = "data/ipeds",

@@ -11,13 +11,15 @@ Description: Access and analyze Integrated Postsecondary Education Data System (
 License: MIT + file LICENSE
 Encoding: UTF-8
 Imports:
+    cori.data.s3,
     DBI,
     duckdb,
     stringr,
     utils
 Remotes:
     ruralinnovation/cori.db,
-    ruralinnovation/cori.data.pep
+    ruralinnovation/cori.data.pep,
+    ruralinnovation/cori.data.s3
 Suggests:
     cori.db,
     cori.charts,
@@ -28,6 +30,8 @@ Suggests:
     ggrepel,
     knitr,
     rmarkdown,
-    scales
+    scales,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 RoxygenNote: 7.3.3
 VignetteBuilder: knitr

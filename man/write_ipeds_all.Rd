@@ -36,3 +36,4 @@ Invisibly returns a manifest data frame.
 Runs all three layers (raw → institution → county) for each year in order.
 Each layer skips already-written vintages unless \code{overwrite = TRUE}.
 }
+\keyword{internal}
