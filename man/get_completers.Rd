@@ -33,7 +33,7 @@ Coverage is 2010 to present.}
 }
 \value{
 County grain: \code{geoid}, \code{year}, \code{variable}, \code{value}, \code{agg_var},
-\code{survey}. Institution grain: \code{unitid}, \code{county_fips},
+\code{survey}. Institution grain: \code{unitid}, \code{geoid},
 \code{award_level_category}, \code{count_men}, \code{count_women},
 \code{count_total_students}, \code{year}, \code{survey}.
 }

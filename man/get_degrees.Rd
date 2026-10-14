@@ -34,7 +34,7 @@ Coverage is 2010 to present.}
 \value{
 County grain: \code{geoid}, \code{year}, \code{variable}, \code{value}, \code{agg_var},
 \code{survey}, where \code{agg_var} is total degrees so \code{value * agg_var} recovers
-a raw count. Institution grain: \code{unitid}, \code{county_fips}, \code{cipcode},
+a raw count. Institution grain: \code{unitid}, \code{geoid}, \code{cipcode},
 \code{major_num}, \code{ed_level}, \code{count_men}, \code{count_women},
 \code{count_total_students}, \code{year}, \code{survey}.
 }

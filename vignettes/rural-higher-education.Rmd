@@ -85,8 +85,8 @@ drops exactly the counties the question is about.
 
 ```{r access}
 has_university <- get_institutions(geography = "institution", years = YR) |>
-  filter(is_degree_granting == 1, is_4yr == 1, !is.na(county_fips)) |>
-  distinct(geoid = county_fips) |>
+  filter(is_degree_granting == 1, is_4yr == 1, !is.na(geoid)) |>
+  distinct(geoid) |>
   mutate(has_university = TRUE)
 
 access <- rural |>
@@ -131,7 +131,6 @@ same function, same arguments, different grain.
 
 ```{r institution-type}
 ic <- get_institutions(geography = "institution", years = YR) |>
-  mutate(geoid = county_fips) |>
   inner_join(rural, by = "geoid") |>
   filter(is_degree_granting == 1)
 
@@ -304,7 +303,7 @@ tech <- get_degrees(geography = "institution", years = 2022:2024) |>
     cipcode != "99.0000",         # drop NCES grand-total rows
     ed_level %in% c(3L, 5L, 7L, 17L, 18L, 19L)
   ) |>
-  group_by(geoid = county_fips) |>
+  group_by(geoid) |>
   summarize(tech_degrees = sum(count_total_students), .groups = "drop")
 
 rural |>
@@ -340,7 +339,7 @@ MY_STATE <- "MT"
 
 state_counties <- get_institutions(geography = "institution", years = YR) |>
   filter(st_abbr == MY_STATE) |>
-  distinct(geoid = county_fips) |>
+  distinct(geoid) |>
   pull(geoid)
 
 # Any getter then takes those geoids directly

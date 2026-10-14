@@ -101,10 +101,11 @@ get_ipeds_codebook <- function() {
       )
     ),
     .cb_row(
-      "county_fips", "COUNTYCD", "County FIPS",
+      "geoid", "COUNTYCD", "County GEOID",
       "character (5-digit zero-padded)", ic, "both",
       paste0(
-        "Five-digit county FIPS code (state + county), zero-padded. On the ",
+        "Five-digit county FIPS code (state + county), zero-padded. Named ",
+        "geoid to match the rest of the cori.data family. On the ",
         "completions, completers and grad_rates tables this is joined from ",
         "the ",
         "institutional_characteristics file for the same year, keyed on ",

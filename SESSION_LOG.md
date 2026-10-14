@@ -69,11 +69,11 @@ archive/
 - `variable` — canonical snake_case name used throughout the package
 - `nces_var` — original NCES uppercase name in raw data (e.g. `COUNTYCD`)
 - `survey` — which survey the variable belongs to
-- `level` — `"both"` for variables shared across surveys (unitid, county_fips)
+- `level` — `"both"` for variables shared across surveys (unitid, geoid)
 - `era_notes` — documents known schema breaks across vintages
 - `alignment_notes` — joins/crosswalks to other datasets
 
-Critical: `unitid` and `county_fips` have `level = "both"`, which causes
+Critical: `unitid` and `geoid` have `level = "both"`, which causes
 `apply_codebook_mapping()` to rename them in ALL surveys (not just IC).
 Without this, geo joins to completions and grad_rates would silently fail.
 
@@ -119,7 +119,7 @@ share_degrees_assoc/bach/masters/doctoral/men/women (proportions, agg_var=total)
 *Grad rates survey (2)*: grad_rate_150pct, transfer_out_rate (proportions, agg_var=NA)
 
 All county aggregations restricted to degree-granting institutions
-(`is_degree_granting == 1`) with a valid `county_fips`. Excluded sectors: 0, 99.
+(`is_degree_granting == 1`) with a valid `geoid`. Excluded sectors: 0, 99.
 
 **Tracked degree levels**: AWLEVEL codes 2, 3 (associate's), 5 (bachelor's),
 7 (master's), 17, 18, 19 (doctoral). Excludes certificates and undocumented codes.
@@ -236,5 +236,5 @@ archive/
 - **ed_level 21** appears in raw completions data. Not a documented NCES AWLEVEL
   code. Safely excluded by `TRACKED_DEGREE_LEVELS` filter.
 
-- **Pre-2009 extension** — planned future work. `county_fips` was added to IC
+- **Pre-2009 extension** — planned future work. `geoid` (NCES `COUNTYCD`) was added to IC
   in 2009; would need ZIP-to-county crosswalk for earlier years.

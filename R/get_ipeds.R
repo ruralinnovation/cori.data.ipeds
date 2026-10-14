@@ -51,7 +51,7 @@ MEASURE_SURVEY <- c(
            "columns after the call instead.", call. = FALSE)
     }
     .ipeds_institution_query(
-      survey = survey, years = years, unitids = unitids, county_fips = geoids,
+      survey = survey, years = years, unitids = unitids, geoids = geoids,
       s3_bucket = s3_bucket, s3_path_prefix = s3_path_prefix
     )
   }
@@ -116,7 +116,7 @@ get_institutions <- function(geography      = "county",
 #'
 #' @return County grain: `geoid`, `year`, `variable`, `value`, `agg_var`,
 #'   `survey`, where `agg_var` is total degrees so `value * agg_var` recovers
-#'   a raw count. Institution grain: `unitid`, `county_fips`, `cipcode`,
+#'   a raw count. Institution grain: `unitid`, `geoid`, `cipcode`,
 #'   `major_num`, `ed_level`, `count_men`, `count_women`,
 #'   `count_total_students`, `year`, `survey`.
 #'
@@ -154,7 +154,7 @@ get_degrees <- function(geography      = "county",
 #' @inheritParams get_institutions
 #'
 #' @return County grain: `geoid`, `year`, `variable`, `value`, `agg_var`,
-#'   `survey`. Institution grain: `unitid`, `county_fips`,
+#'   `survey`. Institution grain: `unitid`, `geoid`,
 #'   `award_level_category`, `count_men`, `count_women`,
 #'   `count_total_students`, `year`, `survey`.
 #'
@@ -193,7 +193,7 @@ get_completers <- function(geography      = "county",
 #' @inheritParams get_institutions
 #'
 #' @return County grain: `geoid`, `year`, `variable`, `value`, `agg_var`,
-#'   `survey`. Institution grain: `unitid`, `county_fips`, `cohort_type`,
+#'   `survey`. Institution grain: `unitid`, `geoid`, `cohort_type`,
 #'   `grad_rate_status`, `count_men`, `count_women`, `count_total_students`,
 #'   `year`, `survey`.
 #'
@@ -277,7 +277,7 @@ get_ipeds <- function(geography      = "county",
   }
 
   .ipeds_institution_query(
-    survey = surveys, years = years, unitids = unitids, county_fips = geoids,
+    survey = surveys, years = years, unitids = unitids, geoids = geoids,
     s3_bucket = s3_bucket, s3_path_prefix = s3_path_prefix
   )
 }

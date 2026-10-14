@@ -12,7 +12,7 @@
 #   survey   -- "institutional_characteristics", "completions", or "grad_rates"
 #
 # All aggregations are restricted to degree-granting institutions
-# (is_degree_granting == 1) with a valid county_fips. Only the IC table
+# (is_degree_granting == 1) with a valid geoid. Only the IC table
 # carries that flag, so it defines the universe and gates the other two
 # surveys: process_ipeds_county() derives the set of degree-granting unitids
 # from IC and filters completions and grad_rates against it.
@@ -182,9 +182,9 @@ process_ipeds_county <- function(inst_list) {
 }
 
 # Filter IC to the base used for all county aggregations:
-# degree-granting, valid county_fips, not administrative/unclassified sector.
+# degree-granting, valid geoid, not administrative/unclassified sector.
 .ic_county_base <- function(ic_df) {
-  required <- c("unitid", "county_fips", "is_degree_granting",
+  required <- c("unitid", "geoid", "is_degree_granting",
                 "sector_code", "year")
   missing  <- setdiff(required, names(ic_df))
   if (length(missing) > 0) {
@@ -193,8 +193,8 @@ process_ipeds_county <- function(inst_list) {
   }
 
   ic_df[
-    !is.na(ic_df$county_fips) &
-    nzchar(ic_df$county_fips) &
+    !is.na(ic_df$geoid) &
+    nzchar(ic_df$geoid) &
     !is.na(ic_df$is_degree_granting) &
     ic_df$is_degree_granting == 1L &
     !is.na(ic_df$sector_code) &
@@ -206,7 +206,7 @@ process_ipeds_county <- function(inst_list) {
 .flag_to_county_tidy <- function(base, flag_vals, variable_name, survey) {
   agg <- stats::aggregate(
     flag_vals,
-    by   = list(geoid = base$county_fips, year = base$year),
+    by   = list(geoid = base$geoid, year = base$year),
     FUN  = sum,
     na.rm = TRUE
   )
@@ -221,7 +221,7 @@ process_ipeds_county <- function(inst_list) {
 # Completions county aggregations ---------------------------------------------
 
 .county_completions <- function(comp_df, dg_unitids) {
-  required <- c("unitid", "county_fips", "cipcode", "major_num", "ed_level",
+  required <- c("unitid", "geoid", "cipcode", "major_num", "ed_level",
                 "count_total_students", "count_men", "count_women", "year")
   missing  <- setdiff(required, names(comp_df))
   if (length(missing) > 0) {
@@ -234,8 +234,8 @@ process_ipeds_county <- function(inst_list) {
   # (CIPCODE 99) and second majors (MAJORNUM 2). Without the last two every
   # degree would be counted about twice over.
   df <- comp_df[
-    !is.na(comp_df$county_fips) &
-    nzchar(comp_df$county_fips) &
+    !is.na(comp_df$geoid) &
+    nzchar(comp_df$geoid) &
     comp_df$unitid %in% dg_unitids &
     !.is_cip_total(comp_df$cipcode) &
     !is.na(comp_df$major_num) &
@@ -249,7 +249,7 @@ process_ipeds_county <- function(inst_list) {
 
   total <- stats::aggregate(
     tracked$count_total_students,
-    by   = list(geoid = tracked$county_fips, year = tracked$year),
+    by   = list(geoid = tracked$geoid, year = tracked$year),
     FUN  = sum,
     na.rm = TRUE
   )
@@ -286,7 +286,7 @@ process_ipeds_county <- function(inst_list) {
 
   level <- stats::aggregate(
     sub$count_total_students,
-    by   = list(geoid = sub$county_fips, year = sub$year),
+    by   = list(geoid = sub$geoid, year = sub$year),
     FUN  = sum,
     na.rm = TRUE
   )
@@ -309,7 +309,7 @@ process_ipeds_county <- function(inst_list) {
 
   sex <- stats::aggregate(
     tracked[[sex_col]],
-    by   = list(geoid = tracked$county_fips, year = tracked$year),
+    by   = list(geoid = tracked$geoid, year = tracked$year),
     FUN  = sum,
     na.rm = TRUE
   )
@@ -337,7 +337,7 @@ process_ipeds_county <- function(inst_list) {
 # NCES publishes in C{year}_B by about 6%).
 
 .county_completers <- function(completers_df, dg_unitids) {
-  required <- c("unitid", "county_fips", "award_level_category",
+  required <- c("unitid", "geoid", "award_level_category",
                 "count_total_students", "year")
   missing  <- setdiff(required, names(completers_df))
   if (length(missing) > 0) {
@@ -347,8 +347,8 @@ process_ipeds_county <- function(inst_list) {
   }
 
   df <- completers_df[
-    !is.na(completers_df$county_fips) &
-    nzchar(completers_df$county_fips) &
+    !is.na(completers_df$geoid) &
+    nzchar(completers_df$geoid) &
     completers_df$unitid %in% dg_unitids,
   ]
   if (nrow(df) == 0) return(NULL)
@@ -361,7 +361,7 @@ process_ipeds_county <- function(inst_list) {
 
     agg <- stats::aggregate(
       sub$count_total_students,
-      by    = list(geoid = sub$county_fips, year = sub$year),
+      by    = list(geoid = sub$geoid, year = sub$year),
       FUN   = sum,
       na.rm = TRUE
     )
@@ -380,7 +380,7 @@ process_ipeds_county <- function(inst_list) {
 # Grad rates county aggregations ----------------------------------------------
 
 .county_grad_rates <- function(gr_df, dg_unitids) {
-  required <- c("unitid", "county_fips", "cohort_type",
+  required <- c("unitid", "geoid", "cohort_type",
                 "count_total_students", "year")
   missing  <- setdiff(required, names(gr_df))
   if (length(missing) > 0) {
@@ -391,8 +391,8 @@ process_ipeds_county <- function(inst_list) {
 
   # Restrict to the degree-granting universe and valid county FIPS
   df <- gr_df[
-    !is.na(gr_df$county_fips) &
-    nzchar(gr_df$county_fips) &
+    !is.na(gr_df$geoid) &
+    nzchar(gr_df$geoid) &
     gr_df$unitid %in% dg_unitids,
   ]
   if (nrow(df) == 0) return(NULL)
@@ -402,7 +402,7 @@ process_ipeds_county <- function(inst_list) {
 
   cohort_total <- stats::aggregate(
     denom$count_total_students,
-    by   = list(geoid = denom$county_fips, year = denom$year),
+    by   = list(geoid = denom$geoid, year = denom$year),
     FUN  = sum,
     na.rm = TRUE
   )
@@ -425,7 +425,7 @@ process_ipeds_county <- function(inst_list) {
 
   num <- stats::aggregate(
     num_df$count_total_students,
-    by   = list(geoid = num_df$county_fips, year = num_df$year),
+    by   = list(geoid = num_df$geoid, year = num_df$year),
     FUN  = sum,
     na.rm = TRUE
   )

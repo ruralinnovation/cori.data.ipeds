@@ -13,7 +13,7 @@
 #   - Warn on unexpected values for known break points
 #
 # Responsibilities explicitly NOT here:
-#   - Canonical renaming (COUNTYCD -> county_fips) -- that is process_institution.R
+#   - Canonical renaming (COUNTYCD -> geoid) -- that is process_institution.R
 #   - Aggregation or filtering -- that is process_institution.R / process_county.R
 #   - Download or parquet I/O -- that is write_raw_to_s3.R
 
@@ -77,7 +77,7 @@ reconcile_ic_vintage <- function(df, year) {
 
   # -- COUNTYCD: zero-pad to 5 digits ----------------------------------------
   # Must happen after sentinel removal so negative integers are already NA.
-  df <- .pad_county_fips(df, col = "COUNTYCD")
+  df <- .pad_geoid(df, col = "COUNTYCD")
 
   # -- Geo columns: ensure present (defensive guard for pre-2009 data) --------
   # COUNTYCD, COUNTYNM, LATITUDE, LONGITUD were added to HD in 2009.
@@ -278,7 +278,7 @@ reconcile_vintage <- function(survey, df, year) {
 
 # Zero-pad a county FIPS column to 5 characters.
 # Assumes sentinel codes have already been replaced with NA.
-.pad_county_fips <- function(df, col = "COUNTYCD") {
+.pad_geoid <- function(df, col = "COUNTYCD") {
   if (col %in% names(df)) {
     df[[col]] <- ifelse(
       is.na(df[[col]]),
