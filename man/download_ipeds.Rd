@@ -12,8 +12,8 @@ download_ipeds(survey, year, download_url, staging_dir = "data/ipeds")
 
 \item{year}{Integer. Survey year.}
 
-\item{download_url}{Character. Full URL to the NCES ZIP file (from the
-data dictionary \code{download_url} column).}
+\item{download_url}{Character. Full URL to the NCES ZIP file, as built by
+\code{.raw_download_url()} from the survey and year.}
 
 \item{staging_dir}{Character. Root staging directory.
 Default: \code{"data/ipeds"}.}
@@ -23,7 +23,6 @@ Invisibly returns the local path to the downloaded ZIP.
 }
 \description{
 Downloads the ZIP for a given survey vintage. Skips the download if the
-file already exists locally. The URL comes directly from the data
-dictionary — no URL construction needed.
+file already exists locally.
 }
 \keyword{internal}

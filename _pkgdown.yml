@@ -6,16 +6,22 @@ template:
 reference:
 - title: IPEDS
   contents:
-  - get_ipeds_county
-  - get_ipeds_institution
+  - get_institutions
+  - get_degrees
+  - get_completers
+  - get_graduation_rates
+  - get_ipeds
 
 - title: Utilities
   contents:
   - get_ipeds_codebook
+  - get_cip_soc_crosswalk
 
 - title: Internal
   desc: Functions for data processing and maintenance
   contents:
+  - .ipeds_county_query
+  - .ipeds_institution_query
   - write_ipeds_all
   - write_ipeds_institution_to_s3
   - write_ipeds_county_to_s3
@@ -32,4 +38,5 @@ reference:
   - reconcile_vintage
   - reconcile_ic_vintage
   - reconcile_completions_vintage
+  - reconcile_completers_vintage
   - reconcile_gr_vintage

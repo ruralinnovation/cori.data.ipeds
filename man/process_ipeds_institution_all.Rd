@@ -18,8 +18,11 @@ process_ipeds_institution_all(
 \item{codebook}{Data frame or \code{NULL}.}
 }
 \value{
-Named list with elements \code{ic}, \code{completions},
-  \code{grad_rates}.
+Named list with elements
+\code{institutional_characteristics}, \code{completions},
+\code{completers}, \code{grad_rates}. An element is \code{NULL} when
+NCES has not published that survey for the year -- \code{completers}
+starts in 2012, and grad rates lag the other surveys by about a year.
 }
 \description{
 Convenience wrapper that processes IC first (to build the geo lookup),

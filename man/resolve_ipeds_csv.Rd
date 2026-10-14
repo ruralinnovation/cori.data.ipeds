@@ -18,7 +18,8 @@ Character. Full path to the resolved CSV file.
 \description{
 IPEDS ZIPs sometimes include both a revised file (\code{*_rv.csv}) and an
 original (\code{*_a.csv}). The revised file is always preferred when present.
-Some years encode two possible filenames in the dictionary
-(\code{source_table_candidates}); this function tries each in turn.
+Candidate filenames come from \code{.raw_csv_candidates()}, which supplies
+both the lowercase and uppercase spelling of the NCES table name; this
+function tries each in turn.
 }
 \keyword{internal}

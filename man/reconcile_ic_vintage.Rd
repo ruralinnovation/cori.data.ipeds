@@ -22,12 +22,12 @@ clean values ready for codebook renaming in \code{process_institution.R}.
 \details{
 Known era fixes applied:
 \itemize{
-  \item 2024+: \code{C00CARNEGIE} normalised to \code{CARNEGIE}
-  \item All years: IPEDS sentinel codes (-1, -2, -3) converted to NA
-  \item All years: \code{UNITID} zero-padded to 6 digits
-  \item All years: \code{COUNTYCD} zero-padded to 5 digits (after sentinel removal)
-  \item All years: geo columns (\code{COUNTYCD}, \code{COUNTYNM},
-    \code{LATITUDE}, \code{LONGITUD}) added as NA if absent
+\item 2024+: \code{C00CARNEGIE} normalised to \code{CARNEGIE}
+\item All years: IPEDS sentinel codes (-1, -2, -3) converted to NA
+\item All years: \code{UNITID} zero-padded to 6 digits
+\item All years: \code{COUNTYCD} zero-padded to 5 digits (after sentinel removal)
+\item All years: geo columns (\code{COUNTYCD}, \code{COUNTYNM},
+\code{LATITUDE}, \code{LONGITUD}) added as NA if absent
 }
 }
 \keyword{internal}

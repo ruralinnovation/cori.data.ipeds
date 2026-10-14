@@ -21,10 +21,8 @@ from \code{data_raw}.
 \details{
 Known era fixes applied:
 \itemize{
-  \item All years: IPEDS sentinel codes converted to NA
-  \item All years: \code{UNITID} zero-padded to 6 digits
-  \item All years: race/demographic count columns not present in a given
-    vintage are added as \code{NA_integer_} for schema consistency
+\item All years: IPEDS sentinel codes converted to NA
+\item All years: \code{UNITID} zero-padded to 6 digits
 }
 }
 \keyword{internal}

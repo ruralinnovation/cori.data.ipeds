@@ -13,8 +13,8 @@ process_ipeds_institution(
 )
 }
 \arguments{
-\item{survey}{Character. One of \code{"institutional_characteristics"}, \code{"completions"},
-\code{"grad_rates"}.}
+\item{survey}{Character. One of \code{"institutional_characteristics"},
+\code{"completions"}, \code{"completers"}, \code{"grad_rates"}.}
 
 \item{year}{Integer. Vintage year.}
 

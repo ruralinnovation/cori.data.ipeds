@@ -11,7 +11,8 @@ apply_codebook_mapping(df, survey, codebook)
 
 \item{survey}{Character. Survey name used to filter the codebook.}
 
-\item{codebook}{Data frame. Output of \code{get_ipeds_codebook()}.}
+\item{codebook}{Data frame. Output of \code{get_ipeds_codebook()}; the
+\code{raw_variable} column supplies the NCES source name.}
 }
 \value{
 Data frame with codebook columns renamed to canonical names.

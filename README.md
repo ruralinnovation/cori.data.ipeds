@@ -22,22 +22,34 @@ remotes::install_github("ruralinnovation/cori.data.ipeds")
 ```r
 library(cori.data.ipeds)
 
-# County-level tidy data — degree-granting institutions only
-df_county <- get_ipeds_county(
-  variables = c("count_degrees_total", "share_degrees_bach", "inst_count"),
-  years     = 2010:2023
-)
+# One function per measure, `geography` first — same shape as
+# cori.data.qcew::get_employment() and the rest of the family.
+get_institutions(geoids = "33009", years = 2022)      # institutional presence
+get_degrees(geoids = "33009", years = 2022)           # credentials conferred
+get_completers(geoids = "33009", years = 2022)        # students completing
+get_graduation_rates(geoids = "33009", years = 2022)  # completion outcomes
 
-# Institution-level data for a specific county
-df_inst <- get_ipeds_institution(
-  survey      = "institutional_characteristics",
-  county_fips = "33009",  # Grafton County, NH
-  years       = 2010:2023
-)
+# `geography` switches grain. County is tidy long; institution is wide.
+get_degrees(geography = "institution", geoids = "33009", years = 2022)
+# unitid | county_fips | cipcode | major_num | ed_level | count_* | year
 
-# See all available variables and their definitions
+# Everything about a county, across all four surveys, in one call
+get_ipeds(geoids = "33009", years = 2022)
+
+# Variable definitions, coverage and vintage caveats
 get_ipeds_codebook()
+
+# Map programs to occupations
+get_cip_soc_crosswalk()
 ```
+
+| Function | Measure | IPEDS survey |
+|---|---|---|
+| `get_institutions()` | Institutional presence and composition | Institutional Characteristics |
+| `get_degrees()` | Credentials conferred, by program at institution grain | Completions |
+| `get_completers()` | Students completing, by award level (2012+) | Completions (completers file) |
+| `get_graduation_rates()` | Completion and transfer-out rates | Graduation Rates |
+| `get_ipeds()` | All of the above, or filtered across surveys | any |
 
 ## Output Format
 
@@ -52,7 +64,7 @@ County-level functions return a six-column tidy format:
 | `agg_var` | numeric | Denominator or aggregation weight. For `share_degrees_*` variables: total degrees conferred (raw count = `value * agg_var`). For `grad_rate_*` variables: adjusted cohort size. `NA` for institution count variables. |
 | `survey` | character | Source survey: `"institutional_characteristics"`, `"completions"`, or `"grad_rates"` |
 
-Institution-level functions return wide format. Column structure varies by survey — see `get_ipeds_institution()` documentation. `county_fips` is a foreign key to the county-level data.
+Institution-level functions return wide format. Column structure varies by survey — see `get_ipeds(geography = "institution", surveys = )` documentation. `county_fips` is a foreign key to the county-level data.
 
 ### County variables
 
@@ -68,7 +80,7 @@ All county-level aggregations are restricted to **degree-granting institutions o
 | `hbcu_count` | institutional_characteristics | HBCUs |
 | `tribal_count` | institutional_characteristics | Tribal colleges |
 | `count_degrees_total` | completions | Total degrees conferred (associate through doctoral) |
-| `share_degrees_assoc` | completions | Share of degrees that are associate level |
+| `share_degrees_assoc` | completions | Share of degrees that are associate level (AWLEVEL 3) |
 | `share_degrees_bach` | completions | Share of degrees that are bachelor's level |
 | `share_degrees_masters` | completions | Share of degrees that are master's level |
 | `share_degrees_doctoral` | completions | Share of degrees that are doctoral level |
@@ -78,6 +90,19 @@ All county-level aggregations are restricted to **degree-granting institutions o
 | `transfer_out_rate` | grad_rates | Transfer-out rate (bachelor's cohort) |
 
 The four `share_degrees_*` level variables sum to exactly 1. Raw counts are recoverable as `value * agg_var`. Use `get_ipeds_codebook()` for full variable definitions.
+
+### Counting conventions
+
+IPEDS ships rows that will double-count degrees if summed naively. The county aggregations handle this; if you aggregate the institution-level tables yourself, you need to as well.
+
+| Convention | What it is | How county output handles it |
+|---|---|---|
+| `cipcode` 99 | Each institution's grand total across all programs, shipped alongside the per-program rows | Excluded. Including it exactly doubles every degree count. |
+| `major_num` 2 | Second major of a double-majoring student | Excluded, so counts are credentials awarded rather than major-credential pairs. |
+| Award level | `ed_level` spans certificates through doctorates | Only degrees are counted: AWLEVEL 3, 5, 7, 17, 18, 19. Certificate levels (1, 2, 4, 6, 8) are excluded entirely, including the sub-associate "1 to 2 year" award (code 2). |
+| Cohort type | `grad_rates` rows cover four different cohort universes | Only the four-year full-time first-time bachelor's cohort (`cohort_type` 2, 3, 4) is aggregated. |
+
+Graduation rates are cohort-weighted across a county's institutions -- the county-wide completer total over the county-wide adjusted cohort -- not an unweighted mean of institutional rates. NCES publishes graduation rates about a year behind the other two surveys, so the most recent year typically has completions and institutional characteristics but no grad rates.
 
 ## Refreshing the Data
 

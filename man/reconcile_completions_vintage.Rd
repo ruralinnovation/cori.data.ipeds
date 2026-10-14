@@ -21,12 +21,12 @@ from \code{data_raw}.
 \details{
 Known era fixes applied:
 \itemize{
-  \item All years: IPEDS sentinel codes converted to NA
-  \item All years: \code{UNITID} zero-padded to 6 digits
-  \item All years: race/demographic count columns not present in a given
-    vintage are added as \code{NA_integer_} for schema consistency
-  \item 2010+: warns if pre-revision doctoral AWLEVEL codes (9/10/11) are
-    found (should not appear for years >= 2010)
+\item All years: IPEDS sentinel codes converted to NA
+\item All years: \code{UNITID} zero-padded to 6 digits
+\item All years: \code{CIPCODE} restored to the canonical zero-padded
+\code{"xx.xxxx"} string
+\item 2010+: warns if pre-revision doctoral AWLEVEL codes (9/10/11) are
+found (should not appear for years >= 2010)
 }
 }
 \keyword{internal}
