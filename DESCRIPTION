@@ -26,6 +26,7 @@ Remotes:
     ruralinnovation/ruraldefinitions
 Suggests:
     cori.db,
+    dplyr,
     ggbeeswarm,
     readxl,
     cori.charts,
@@ -37,7 +38,8 @@ Suggests:
     knitr,
     rmarkdown,
     scales,
-    testthat (>= 3.0.0)
+    testthat (>= 3.0.0),
+    tidyr
 Config/testthat/edition: 3
 RoxygenNote: 7.3.3
 Roxygen: list(markdown = TRUE)

@@ -8,9 +8,10 @@ get_ipeds_codebook()
 }
 \value{
 A data frame with columns: \code{variable}, \code{raw_variable}, \code{label},
-\code{unit}, \code{survey}, \code{level}, \code{notes}.
+\code{unit}, \code{survey}, \code{level}, \code{notes}, \code{codes}.
 \code{raw_variable} is the original NCES column name, as stored in the
 \code{data_raw} layer on S3; it is empty for derived county-level variables.
+\code{codes} decodes the categorical variables -- a \code{"1 = Public; 2 = Private not-for-profit"} string -- and is empty for the rest.
 }
 \description{
 Returns documentation for every variable available via
@@ -27,12 +28,26 @@ in every table.
 \code{notes} records vintage caveats -- which years a variable covers, NCES
 column renames, and taxonomy changes -- so cross-year comparability is
 documented alongside the variable rather than in separate prose.
+
+Much of IPEDS is categorical, and the institution-grain output returns
+those columns as the bare integers NCES publishes. \code{codes} carries the
+value labels for them, transcribed from the NCES data dictionary
+workbooks, so a \code{sector_code} of 4 can be resolved without leaving the
+package. Only codes that actually occur in this package's output are
+listed. NCES sentinel values (-1, -2, -3) are converted to \code{NA} during the
+ETL and so do not appear.
 }
 \examples{
 cb <- get_ipeds_codebook()
 
 # County-level variables only
 cb[cb$level == "county", c("variable", "label", "unit")]
+
+# Which variables are categorical, and what do their numbers mean?
+cb[nzchar(cb$codes), c("variable", "codes")]
+
+# Decode one
+cb$codes[cb$variable == "sector_code"]
 
 }
 \seealso{

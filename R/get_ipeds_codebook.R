@@ -13,8 +13,9 @@
 # editing the processing code.
 #
 # Columns follow the cori.data family convention (`variable`, `raw_variable`,
-# `label`, `unit`, `notes`) plus two this package needs to drive the ETL:
-# `survey` and `level`.
+# `label`, `unit`, `notes`) plus two this package needs to drive the ETL --
+# `survey` and `level` -- and one IPEDS needs because so much of it is
+# categorical: `codes`.
 #
 # The family's `nominal` column is deliberately omitted. It is undocumented
 # everywhere it appears and used inconsistently -- cori.data.bps marks a count
@@ -37,7 +38,8 @@
 
 # Row constructor -------------------------------------------------------------
 
-.cb_row <- function(variable, raw_variable, label, unit, survey, level, notes) {
+.cb_row <- function(variable, raw_variable, label, unit, survey, level, notes,
+                    codes = "") {
   data.frame(
     variable     = variable,
     raw_variable = raw_variable,
@@ -46,8 +48,31 @@
     survey       = survey,
     level        = level,
     notes        = notes,
+    codes        = codes,
     stringsAsFactors = FALSE
   )
+}
+
+
+# Value labels for encoded variables ------------------------------------------
+#
+# Collapses code/label pairs into one "1 = Public; 2 = Private" string so an
+# encoded variable's meaning travels in the codebook row itself rather than in
+# a separate lookup table.
+#
+# Labels are transcribed from the NCES data dictionary workbooks shipped
+# alongside the data files (the Frequencies sheet of HD2023_Dict.xlsx,
+# C2023_A_Dict.xlsx, C2023_C_Dict.xlsx and GR2023_Dict.xlsx). Only codes that
+# actually occur in this package's 2010-present output are listed; NCES
+# documents some aggregate codes that its downloadable files do not contain.
+#
+# NCES sentinel values -1, -2 and -3 ("not reported", "not applicable", "not
+# available") are converted to NA by .replace_sentinel_codes() during the ETL,
+# so they are deliberately absent here.
+
+.codes <- function(...) {
+  kv <- c(...)
+  paste(sprintf("%s = %s", names(kv), unname(kv)), collapse = "; ")
 }
 
 
@@ -67,10 +92,20 @@
 #' column renames, and taxonomy changes -- so cross-year comparability is
 #' documented alongside the variable rather than in separate prose.
 #'
+#' Much of IPEDS is categorical, and the institution-grain output returns
+#' those columns as the bare integers NCES publishes. `codes` carries the
+#' value labels for them, transcribed from the NCES data dictionary
+#' workbooks, so a `sector_code` of 4 can be resolved without leaving the
+#' package. Only codes that actually occur in this package's output are
+#' listed. NCES sentinel values (-1, -2, -3) are converted to `NA` during the
+#' ETL and so do not appear.
+#'
 #' @return A data frame with columns: `variable`, `raw_variable`, `label`,
-#'   `unit`, `survey`, `level`, `notes`.
+#'   `unit`, `survey`, `level`, `notes`, `codes`.
 #'   `raw_variable` is the original NCES column name, as stored in the
 #'   `data_raw` layer on S3; it is empty for derived county-level variables.
+#'   `codes` decodes the categorical variables -- a `"1 = Public; 2 =
+#'   Private not-for-profit"` string -- and is empty for the rest.
 #'
 #' @seealso [get_ipeds()], [get_ipeds()]
 #'
@@ -79,6 +114,12 @@
 #'
 #' # County-level variables only
 #' cb[cb$level == "county", c("variable", "label", "unit")]
+#'
+#' # Which variables are categorical, and what do their numbers mean?
+#' cb[nzchar(cb$codes), c("variable", "codes")]
+#'
+#' # Decode one
+#' cb$codes[cb$variable == "sector_code"]
 #'
 #' @export
 get_ipeds_codebook <- function() {
@@ -176,6 +217,19 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "sector_code", "SECTOR", "Sector code",
       "integer (1-9; 0 = admin; 99 = unknown)", ic, "institution",
+      codes = .codes(
+        "0" = "Administrative unit only",
+        "1" = "Public, 4-year or above",
+        "2" = "Private not-for-profit, 4-year or above",
+        "3" = "Private for-profit, 4-year or above",
+        "4" = "Public, 2-year",
+        "5" = "Private not-for-profit, 2-year",
+        "6" = "Private for-profit, 2-year",
+        "7" = "Public, less-than-2-year",
+        "8" = "Private not-for-profit, less-than-2-year",
+        "9" = "Private for-profit, less-than-2-year",
+        "99" = "Sector unknown (not active)"
+      ),
       paste0(
         "Nine-category sector combining control (public / nonprofit / ",
         "for-profit) and level (4-year / 2-year / less-than-2-year). ",
@@ -188,6 +242,11 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "funding_source_code", "CONTROL", "Funding source code",
       "integer (1-3)", ic, "institution",
+      codes = .codes(
+        "1" = "Public",
+        "2" = "Private not-for-profit",
+        "3" = "Private for-profit"
+      ),
       paste0(
         "Control of institution: 1 = Public, 2 = Private nonprofit, ",
         "3 = Private for-profit. Coverage: 2010-present."
@@ -196,6 +255,11 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "inst_level_code", "ICLEVEL", "Institution level code",
       "integer (1-3)", ic, "institution",
+      codes = .codes(
+        "1" = "Four or more years",
+        "2" = "At least 2 but less than 4 years",
+        "3" = "Less than 2 years (below associate)"
+      ),
       paste0(
         "Highest level of degree or certificate program offered: 1 = Four or ",
         "more years, 2 = At least two but less than four years, 3 = Less ",
@@ -205,6 +269,10 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "hbcu_code", "HBCU", "HBCU flag code",
       "integer (1-2)", ic, "institution",
+      codes = .codes(
+        "1" = "Yes",
+        "2" = "No"
+      ),
       paste0(
         "Whether the institution is a Historically Black College or ",
         "University as designated by the U.S. Department of Education. ",
@@ -214,11 +282,19 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "has_hospital_code", "HOSPITAL", "Hospital flag code",
       "integer (1-2)", ic, "institution",
+      codes = .codes(
+        "1" = "Yes",
+        "2" = "No"
+      ),
       "Whether the institution owns or operates a hospital. 1 = Yes, 2 = No. Coverage: 2010-present."
     ),
     .cb_row(
       "tribal_college_code", "TRIBAL", "Tribal college flag code",
       "integer (1-2)", ic, "institution",
+      codes = .codes(
+        "1" = "Yes",
+        "2" = "No"
+      ),
       paste0(
         "Whether the institution is a tribal college or university as ",
         "defined by the Tribally Controlled Colleges and Universities ",
@@ -228,6 +304,10 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "degree_granting_status_code", "DEGGRANT", "Degree-granting status code",
       "integer (1-2)", ic, "institution",
+      codes = .codes(
+        "1" = "Degree-granting",
+        "2" = "Nondegree-granting, primarily postsecondary"
+      ),
       paste0(
         "Whether the institution is degree-granting: 1 = Degree-granting, ",
         "2 = Non-degree-granting. All county-level aggregations in this ",
@@ -241,11 +321,33 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "carnegie_classification_code", "CARNEGIE", "Carnegie classification code",
       "integer", ic, "institution",
+      codes = .codes(
+        "15" = "Doctoral/Research Universities--Extensive",
+        "16" = "Doctoral/Research Universities--Intensive",
+        "21" = "Master's Colleges and Universities I",
+        "22" = "Master's Colleges and Universities II",
+        "31" = "Baccalaureate Colleges--Liberal Arts",
+        "32" = "Baccalaureate Colleges--General",
+        "33" = "Baccalaureate/Associate's Colleges",
+        "40" = "Associate's Colleges",
+        "51" = "Theological seminaries and other specialized faith-related institutions",
+        "52" = "Medical schools and medical centers",
+        "53" = "Other separate health profession schools",
+        "54" = "Schools of engineering and technology",
+        "55" = "Schools of business and management",
+        "56" = "Schools of art, music, and design",
+        "57" = "Schools of law",
+        "58" = "Teachers colleges",
+        "59" = "Other specialized institutions",
+        "60" = "Tribal colleges"
+      ),
       paste0(
         "2000 Carnegie Classification code, distinguishing research ",
         "universities, doctoral universities, master's colleges, ",
         "baccalaureate colleges, associate's colleges, and special-focus ",
-        "institutions. See the NCES data dictionary for the full code list. ",
+        "institutions. Roughly half of all institution-years are NA: NCES ",
+        "codes institutions outside the Carnegie universe (unaccredited or ",
+        "nondegree-granting) as -2, which the ETL converts to NA. ",
         "NCES renamed this column from CARNEGIE (2010-2023) to C00CARNEGIE ",
         "in 2024; reconcile_ic_vintage() normalizes C00CARNEGIE back to ",
         "CARNEGIE so the mapping is consistent across vintages. Values are ",
@@ -254,24 +356,53 @@ get_ipeds_codebook <- function() {
     ),
     .cb_row(
       "highest_level_offered_code", "HLOFFER", "Highest level offered code",
-      "integer (1-11)", ic, "institution",
+      "integer (1-9)", ic, "institution",
+      codes = .codes(
+        "1" = "Award of less than one academic year",
+        "2" = "At least 1 but less than 2 academic years",
+        "3" = "Associate's degree",
+        "4" = "At least 2 but less than 4 academic years",
+        "5" = "Bachelor's degree",
+        "6" = "Postbaccalaureate certificate",
+        "7" = "Master's degree",
+        "8" = "Post-master's certificate",
+        "9" = "Doctor's degree"
+      ),
       paste0(
         "Highest award level offered, from certificates of less than one ",
-        "year (1) through doctoral degrees (11). Coverage: 2010-present."
+        "year (1) through doctoral degrees (9). Unlike ",
+        "highest_degree_offered_code, this one is ordered: a larger value is ",
+        "a higher award level. Coverage: 2010-present."
       )
     ),
     .cb_row(
       "highest_degree_offered_code", "HDEGOFR1", "Highest degree offered code",
-      "integer (0-6)", ic, "institution",
+      "integer (0; 11-14; 20; 30; 40)", ic, "institution",
+      codes = .codes(
+        "0" = "Non-degree granting",
+        "11" = "Doctor's degree - research/scholarship and professional practice",
+        "12" = "Doctor's degree - research/scholarship",
+        "13" = "Doctor's degree - professional practice",
+        "14" = "Doctor's degree - other",
+        "20" = "Master's degree",
+        "30" = "Bachelor's degree",
+        "40" = "Associate's degree"
+      ),
       paste0(
-        "Highest degree offered: 0 = Non-degree-granting, 1 = Certificate, ",
-        "2 = Associate's, 3 = Bachelor's, 4 = Master's, 5 = Doctor's, ",
-        "6 = First professional. Coverage: 2010-present."
+        "Highest degree offered. Note that the codes run in the opposite ",
+        "direction to every other level variable here: higher numbers mean ",
+        "lower degrees, so 40 is an associate's degree and 11-14 are ",
+        "doctorates. Code 0 matches degree_granting_status_code = 2 exactly. ",
+        "Coverage: 2010-present."
       )
     ),
     .cb_row(
       "undergrad_degree_offered_code", "UGOFFER", "Undergrad degree offered code",
       "integer (1-2)", ic, "institution",
+      codes = .codes(
+        "1" = "Undergraduate degree or certificate offering",
+        "2" = "No undergraduate offering"
+      ),
       paste0(
         "Whether the institution offers undergraduate degree or certificate ",
         "programs. 1 = Yes, 2 = No. Coverage: 2010-present."
@@ -280,6 +411,10 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "grad_degree_offered_code", "GROFFER", "Graduate degree offered code",
       "integer (1-2)", ic, "institution",
+      codes = .codes(
+        "1" = "Graduate degree or certificate offering",
+        "2" = "No graduate offering"
+      ),
       paste0(
         "Whether the institution offers graduate degree or certificate ",
         "programs. 1 = Yes, 2 = No. Coverage: 2010-present."
@@ -288,6 +423,20 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "urbanization_level_code", "LOCALE", "Urbanization level code",
       "integer (11-43)", ic, "institution",
+      codes = .codes(
+        "11" = "City: Large",
+        "12" = "City: Midsize",
+        "13" = "City: Small",
+        "21" = "Suburb: Large",
+        "22" = "Suburb: Midsize",
+        "23" = "Suburb: Small",
+        "31" = "Town: Fringe",
+        "32" = "Town: Distant",
+        "33" = "Town: Remote",
+        "41" = "Rural: Fringe",
+        "42" = "Rural: Distant",
+        "43" = "Rural: Remote"
+      ),
       paste0(
         "Degree of urbanization using the NCES urban-centric locale ",
         "classification, from large city (11) to remote rural (43). Aligns ",
@@ -298,6 +447,10 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "land_grant_code", "LANDGRNT", "Land grant flag code",
       "integer (1-2)", ic, "institution",
+      codes = .codes(
+        "1" = "Land grant institution",
+        "2" = "Not a land grant institution"
+      ),
       paste0(
         "Whether the institution is a land-grant university designated under ",
         "the Morrill Acts. 1 = Yes, 2 = No. Land-grant institutions receive ",
@@ -308,6 +461,13 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "institution_size_code", "INSTSIZE", "Institution size code",
       "integer (1-5)", ic, "institution",
+      codes = .codes(
+        "1" = "Under 1,000",
+        "2" = "1,000 - 4,999",
+        "3" = "5,000 - 9,999",
+        "4" = "10,000 - 19,999",
+        "5" = "20,000 and above"
+      ),
       paste0(
         "Enrollment-based size classification: 1 = Under 1,000, ",
         "2 = 1,000-4,999, 3 = 5,000-9,999, 4 = 10,000-19,999, ",
@@ -340,6 +500,10 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "major_num", "MAJORNUM", "Major number",
       "integer (1-2)", "completions", "institution",
+      codes = .codes(
+        "1" = "First major",
+        "2" = "Second major"
+      ),
       paste0(
         "Whether the award is counted as a first major (1) or second major ",
         "(2). A student completing a double major appears once under each. ",
@@ -351,6 +515,21 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "ed_level", "AWLEVEL", "Award level code",
       "integer", "completions", "institution",
+      codes = .codes(
+        "1" = "Certificates of less than 1 year (through 2019)",
+        "2" = "Certificates of at least 1 but less than 2 years",
+        "3" = "Associate's degree",
+        "4" = "Certificates of at least 2 but less than 4 years",
+        "5" = "Bachelor's degree",
+        "6" = "Postbaccalaureate certificate",
+        "7" = "Master's degree",
+        "8" = "Post-master's certificate",
+        "17" = "Doctor's degree - research/scholarship",
+        "18" = "Doctor's degree - professional practice",
+        "19" = "Doctor's degree - other",
+        "20" = "Certificates of less than 12 weeks (2020 onward)",
+        "21" = "Certificates of at least 12 weeks but less than 1 year (2020 onward)"
+      ),
       paste0(
         "IPEDS award level code identifying the type of credential: ",
         "1 = award of less than 1 year, 2 = award of 1 to 2 years, ",
@@ -361,7 +540,9 @@ get_ipeds_codebook <- function() {
         "County degree aggregations use codes 3, 5, 7, 17, 18, 19 only -- ",
         "that is, degrees from associate's through doctoral, excluding all ",
         "sub-associate and post-award certificates. Doctoral codes changed ",
-        "in 2009 (9/10/11 became 17/18/19); this package starts at 2010, so ",
+        "in 2008 (9, 10 and 11 -- doctor's, first-professional degree and ",
+        "first-professional certificate -- became 17/18/19); this package ",
+        "starts at 2010, so ",
         "only the post-revision codes appear. A second break lands inside ",
         "the covered period: code 1 (award of less than 1 academic year) is ",
         "present 2010-2019 and absent from 2020, when NCES replaced it with ",
@@ -407,6 +588,17 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "award_level_category", "AWLEVELC", "Award level category code",
       "integer", "completers", "institution",
+      codes = .codes(
+        "1" = "Not labelled in the current NCES dictionary (2012-2019 only)",
+        "2" = "Certificate of at least 1 but less than 4 years",
+        "3" = "Associate's degree",
+        "5" = "Bachelor's degree",
+        "7" = "Master's degree",
+        "9" = "Doctor's degree",
+        "10" = "Postbaccalaureate or post-master's certificate",
+        "11" = "Certificate of less than 12 weeks (2020 onward)",
+        "12" = "Certificate of at least 12 weeks but less than 1 year (2020 onward)"
+      ),
       paste0(
         "NCES award level category, a coarser grouping than the completions ",
         "survey's ed_level: 3 = Associate's, 5 = Bachelor's, 7 = Master's, ",
@@ -458,6 +650,54 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "cohort_type", "GRTYPE", "Cohort type code",
       "integer", "grad_rates", "institution",
+      codes = .codes(
+        "1" = "4-year institutions, revised cohort",
+        "2" = "4-year institutions, adjusted cohort (revised cohort minus exclusions)",
+        "3" = "4-year institutions, completers within 150% of normal time",
+        "4" = "4-year institutions, transfer-out students",
+        "5" = "Not labelled in the current NCES dictionary (2010 only)",
+        "6" = "Bachelor's or equivalent subcohort (4-year institution)",
+        "7" = "Bachelor's or equivalent subcohort, exclusions",
+        "8" = "Bachelor's or equivalent subcohort, adjusted cohort",
+        "9" = "Bachelor's or equivalent subcohort, completers within 150% of normal time, total",
+        "10" = "Bachelor's or equivalent subcohort, completers of programs of less than 2 years (150% of normal time)",
+        "11" = "Bachelor's or equivalent subcohort, completers of programs of 2 but less than 4 years (150% of normal time)",
+        "12" = "Bachelor's or equivalent subcohort, completers of bachelor's or equivalent degrees, total (150% of normal time)",
+        "13" = "Bachelor's or equivalent subcohort, completers of bachelor's or equivalent degrees in 4 years or less",
+        "14" = "Bachelor's or equivalent subcohort, completers of bachelor's or equivalent degrees in 5 years",
+        "15" = "Bachelor's or equivalent subcohort, completers of bachelor's or equivalent degrees in 6 years",
+        "16" = "Bachelor's or equivalent subcohort, transfer-out students",
+        "17" = "Not labelled in the current NCES dictionary (2010 only)",
+        "18" = "Other degree/certificate-seeking subcohort (4-year institution)",
+        "19" = "Other degree/certificate-seeking subcohort, exclusions",
+        "20" = "Other degree/certificate-seeking subcohort, adjusted cohort",
+        "21" = "Other degree/certificate-seeking subcohort, completers within 150% of normal time, total",
+        "22" = "Other degree/certificate-seeking subcohort, completers of programs of less than 2 years (150% of normal time)",
+        "23" = "Other degree/certificate-seeking subcohort, completers of programs of 2 but less than 4 years (150% of normal time)",
+        "24" = "Other degree/certificate-seeking subcohort, completers of bachelor's or equivalent degrees (150% of normal time)",
+        "25" = "Other degree/certificate-seeking subcohort, transfer-out students",
+        "26" = "Not labelled in the current NCES dictionary (2010 only)",
+        "27" = "Degree/certificate-seeking students (2-year institution), revised cohort",
+        "28" = "Degree/certificate-seeking subcohort (2-year institution), exclusions",
+        "29" = "Degree/certificate-seeking students (2-year institution), adjusted cohort",
+        "30" = "Degree/certificate-seeking students (2-year institution), completers within 150% of normal time, total",
+        "31" = "Degree/certificate-seeking students (2-year institution), completers of programs of less than 2 years (150% of normal time)",
+        "32" = "Degree/certificate-seeking students (2-year institution), completers of programs of 2 but less than 4 years (150% of normal time)",
+        "33" = "Degree/certificate-seeking students (2-year institution), transfer-out students",
+        "34" = "Not labelled in the current NCES dictionary (2010 only)",
+        "35" = "Degree/certificate-seeking students (2-year institution), completers within 100% of normal time, total",
+        "36" = "Degree/certificate-seeking students (2-year institution), completers of programs of less than 2 years (100% of normal time)",
+        "37" = "Degree/certificate-seeking students (2-year institution), completers of programs of 2 but less than 4 years (100% of normal time)",
+        "40" = "Total exclusions, 4-year institutions",
+        "41" = "4-year institutions, noncompleters still enrolled (2011 onward)",
+        "42" = "4-year institutions, no longer enrolled (2011 onward)",
+        "43" = "Bachelor's or equivalent subcohort, noncompleters still enrolled (2011 onward)",
+        "44" = "Bachelor's or equivalent subcohort, no longer enrolled (2011 onward)",
+        "45" = "Other degree/certificate-seeking subcohort, noncompleters still enrolled (2011 onward)",
+        "46" = "Other degree/certificate-seeking subcohort, no longer enrolled (2011 onward)",
+        "47" = "Degree/certificate-seeking students (2-year institution), noncompleters still enrolled (2011 onward)",
+        "48" = "Degree/certificate-seeking students (2-year institution), no longer enrolled (2011 onward)"
+      ),
       paste0(
         "Composite NCES code identifying both the cohort universe (the ",
         "survey's SECTION) and the row's role within it (its CHRTSTAT). ",
@@ -474,6 +714,25 @@ get_ipeds_codebook <- function() {
     .cb_row(
       "grad_rate_status", "CHRTSTAT", "Graduation rate status code",
       "integer", "grad_rates", "institution",
+      codes = .codes(
+        "10" = "Revised cohort",
+        "11" = "Exclusions",
+        "12" = "Adjusted cohort (revised cohort minus exclusions)",
+        "13" = "Completers within 150% of normal time",
+        "14" = "Completers of programs of less than 2 years (150% of normal time)",
+        "15" = "Completers of programs of 2 but less than 4 years (150% of normal time)",
+        "16" = "Completers of bachelor's or equivalent degrees (150% of normal time)",
+        "17" = "Completers of bachelor's or equivalent degrees in 4 years or less",
+        "18" = "Completers of bachelor's or equivalent degrees in 5 years",
+        "19" = "Completers of bachelor's or equivalent degrees in 6 years",
+        "20" = "Transfer-out students",
+        "21" = "Still enrolled in long programs (2010 only)",
+        "22" = "Completers of programs within 100% of normal time, total",
+        "23" = "Completers of programs of less than 2 years within 100% of normal time",
+        "24" = "Completers of programs of 2 but less than 4 years within 100% of normal time",
+        "31" = "Noncompleters, still enrolled (2011 onward)",
+        "32" = "Noncompleters, no longer enrolled (2011 onward)"
+      ),
       paste0(
         "NCES code for the record's role in the rate calculation: ",
         "12 = adjusted cohort (denominator), 13 = completers within 150% of ",
@@ -623,7 +882,7 @@ get_ipeds_codebook <- function() {
       paste0(
         "Proportion of tracked degrees conferred at the doctoral level ",
         "(AWLEVEL 17, 18, 19). Raw count recoverable as value * agg_var. ",
-        "Doctoral codes changed in 2009 (9/10/11 became 17/18/19); this ",
+        "Doctoral codes changed in 2008 (9/10/11 became 17/18/19); this ",
         "package covers 2010+, so only post-revision codes appear. ",
         "Coverage: 2010-present."
       )

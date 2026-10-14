@@ -9,7 +9,63 @@ test_that("get_ipeds_codebook() returns the documented shape", {
   expect_identical(
     names(cb),
     c("variable", "raw_variable", "label", "unit",
-      "survey", "level", "notes")
+      "survey", "level", "notes", "codes")
+  )
+})
+
+test_that("get_ipeds_codebook() decodes every categorical variable", {
+  # The institution grain returns NCES's bare integers, so a variable whose
+  # unit declares it an integer category needs its numbers spelled out --
+  # otherwise sector_code = 4 is unreadable without leaving the package.
+  cb <- get_ipeds_codebook()
+
+  coded <- c(
+    "sector_code", "funding_source_code", "inst_level_code", "hbcu_code",
+    "has_hospital_code", "tribal_college_code", "degree_granting_status_code",
+    "carnegie_classification_code", "highest_level_offered_code",
+    "highest_degree_offered_code", "undergrad_degree_offered_code",
+    "grad_degree_offered_code", "urbanization_level_code", "land_grant_code",
+    "institution_size_code", "major_num", "ed_level",
+    "award_level_category", "cohort_type", "grad_rate_status"
+  )
+
+  expect_true(all(coded %in% cb$variable))
+  expect_true(all(nzchar(cb$codes[cb$variable %in% coded])))
+
+  # Counts are not categories, so they must not carry a code list
+  expect_true(all(!nzchar(
+    cb$codes[cb$variable %in% c("count_men", "count_women",
+                                "count_total_students", "inst_count")]
+  )))
+})
+
+test_that("get_ipeds_codebook()'s code lists parse as code = label pairs", {
+  cb <- get_ipeds_codebook()
+
+  for (v in cb$variable[nzchar(cb$codes)]) {
+    pairs <- strsplit(cb$codes[cb$variable == v][1], "; ", fixed = TRUE)[[1]]
+    expect_true(all(grepl("^-?[0-9]+ = .+", pairs)),
+                info = sprintf("%s has a malformed code list", v))
+
+    codes <- sub(" = .*$", "", pairs)
+    expect_equal(anyDuplicated(codes), 0,
+                 info = sprintf("%s lists a code twice", v))
+  }
+})
+
+test_that("get_ipeds_codebook() does not restate codes in notes", {
+  # Regression guard. highest_degree_offered_code once described a 0-6 scale
+  # in `notes` that does not exist in the data -- it is really 0, 11-14, 20,
+  # 30, 40, with 40 the LOWEST degree. Where a variable has a `codes` entry,
+  # that is the single place its numbers are defined.
+  cb <- get_ipeds_codebook()
+  hd <- cb[cb$variable == "highest_degree_offered_code", ]
+
+  expect_false(grepl("1 = Certificate", hd$notes, fixed = TRUE))
+  expect_true(grepl("40", hd$codes, fixed = TRUE))
+  expect_equal(
+    sub("^.*40 = ", "", hd$codes),
+    "Associate's degree"
   )
 })
 

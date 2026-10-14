@@ -29,9 +29,11 @@
 # but we guard defensively.
 .IC_GEO_AVAILABLE_YEAR <- 2009L
 
-# Doctoral AWLEVEL codes changed in 2009 (9/10/11 -> 17/18/19).
-# Package starts at 2010 so pre-revision codes should never appear,
-# but we warn if they do.
+# Doctoral AWLEVEL codes changed in 2008: C2007_A still reports a single
+# "Doctor's degrees" code 9, and C2008_A reports 17/18/19. Codes 10 and 11
+# were first-professional degree and first-professional certificate, folded
+# into the same revision. Package starts at 2010 so none of the three should
+# ever appear, but we warn if they do.
 .DOCTORAL_CODES_OLD <- c(9L, 10L, 11L)
 .DOCTORAL_CODES_NEW <- c(17L, 18L, 19L)
 
@@ -107,7 +109,7 @@ reconcile_ic_vintage <- function(df, year) {
 #'   \item All years: \code{UNITID} zero-padded to 6 digits
 #'   \item All years: \code{CIPCODE} restored to the canonical zero-padded
 #'     \code{"xx.xxxx"} string
-#'   \item 2010+: warns if pre-revision doctoral AWLEVEL codes (9/10/11) are
+#'   \item 2010+: warns if pre-2008 doctoral AWLEVEL codes (9/10/11) are
 #'     found (should not appear for years >= 2010)
 #' }
 #'
@@ -131,7 +133,7 @@ reconcile_completions_vintage <- function(df, year) {
     old_doc <- df$AWLEVEL[!is.na(df$AWLEVEL) & df$AWLEVEL %in% .DOCTORAL_CODES_OLD]
     if (length(old_doc) > 0) {
       warning(sprintf(
-        "reconcile_completions_vintage: pre-2009 doctoral AWLEVEL codes (%s) found in year %d. Expected 17/18/19 for years >= 2010. Check source data.",
+        "reconcile_completions_vintage: pre-2008 doctoral AWLEVEL codes (%s) found in year %d. Expected 17/18/19 for years >= 2008. Check source data.",
         paste(unique(old_doc), collapse = ", "), year
       ))
     }

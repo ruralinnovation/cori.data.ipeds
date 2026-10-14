@@ -35,7 +35,11 @@
 #   1. Look it up in the relevant dictionary above to confirm the NCES
 #      column name and which years carry it.
 #   2. Add a .cb_row() entry in R/get_ipeds_codebook.R with that column as
-#      `raw_variable`, and record any vintage caveats in `notes`.
+#      `raw_variable`, and record any vintage caveats in `notes`. If the
+#      variable is categorical, pass `codes = .codes(...)` with its value
+#      labels, taken from the Frequencies sheet of the NCES dictionary
+#      workbook for that file (e.g. HD2023_Dict.zip). validate_etl.R fails
+#      if a code reaches the output undecoded.
 #   3. If the column name or meaning changed across years, add the fix to
 #      the appropriate reconciler in R/reconcile_vintage.R.
 #   4. devtools::document(), then re-run the pipeline for affected years
