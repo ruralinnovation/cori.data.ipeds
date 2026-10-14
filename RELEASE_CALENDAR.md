@@ -43,8 +43,17 @@ year of the academic year (e.g., 2022--23 collection = `year = 2023`).*
 
 ## Processed Years Log
 
-Tracks which reference years have been written to S3. Mirrors the
-`_MANIFEST.csv` file stored at `s3://cori.data.ipeds/data_processed/`.
+Tracks which reference years have been written to S3. `write_ipeds_all()`
+returns a manifest data frame describing what it wrote -- capture it to fill
+this in:
+
+```r
+m <- write_ipeds_all(years = 2024)
+```
+
+The three S3 layers are `data_raw/survey={survey}/year={year}/`,
+`data_institution/survey={survey}/year={year}/`, and
+`data_county/year={year}/`.
 
 | Year | Datasets written | Processed at | Notes |
 |---|---|---|---|

@@ -2,16 +2,9 @@
 
 IPEDS_START_YEAR <- 2010L
 IPEDS_END_YEAR   <- 2024L
-IPEDS_SURVEYS    <- c("institutional_characteristics", "completions", "grad_rates")
+IPEDS_SURVEYS    <- c("institutional_characteristics", "completions",
+                      "completers", "grad_rates")
 
-
-# globalVariables() declarations to silence R CMD check NOTEs for symbols
-# used in stats::aggregate() formula notation and data frame column references.
-
-utils::globalVariables(c(
-  # process_ipeds_gr.R — formula LHS/RHS in aggregate()
-  "cohort_size",
-  "completers",
-  "transfers",
-  "county_fips"
-))
+# The completers survey (NCES file C{year}_C) was first published for 2012,
+# two years after the other three. Vintages before this are skipped.
+COMPLETERS_START_YEAR <- 2012L

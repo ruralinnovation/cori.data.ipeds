@@ -5,21 +5,29 @@ Version: 0.1.0
 Authors@R: person("CORI", "Data", email = "data@ruralinnovation.us", role = c("aut", "cre"))
 Description: Access and analyze Integrated Postsecondary Education Data System (IPEDS)
     data covering institutional characteristics, degree completions, and graduation rates
-    from 2000 to present. Provides tools to download source files from NCES, read
+    from 2010 to present. Provides tools to download source files from NCES, read
     processed data from S3 at both institution and county level, and analyze higher
     education trends across geographies.
 License: MIT + file LICENSE
+URL: https://ruralinnovation.github.io/cori.data.ipeds
 Encoding: UTF-8
 Imports:
+    cori.data.s3,
     DBI,
     duckdb,
+    stats,
     stringr,
     utils
 Remotes:
+    ruralinnovation/cori.charts,
     ruralinnovation/cori.db,
-    ruralinnovation/cori.data.pep
+    ruralinnovation/cori.data.pep,
+    ruralinnovation/cori.data.s3,
+    ruralinnovation/ruraldefinitions
 Suggests:
     cori.db,
+    ggbeeswarm,
+    readxl,
     cori.charts,
     cori.utils,
     cori.data.pep,
@@ -28,6 +36,9 @@ Suggests:
     ggrepel,
     knitr,
     rmarkdown,
-    scales
+    scales,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3
 RoxygenNote: 7.3.3
+Roxygen: list(markdown = TRUE)
 VignetteBuilder: knitr

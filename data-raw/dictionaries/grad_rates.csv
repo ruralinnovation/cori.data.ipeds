@@ -1,0 +1,1109 @@
+unit_of_analysis,var,description,source_table,year,db_tbl,download_table_url,alias,update
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 1991 subcohorts (4-yr institution)        1
+Bachelor's or equiv 1991 subcohort (4-yr institution)        2
+Other degree/certif-seeking 1991 subcohort (4-yr institution)        3
+Degree/certif-seeking students 1994 cohort ( 2-yr institution)        4
+Degree/certif-seeking students 1994 cohort ( <2-yr institution)        5",gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRRACE01,Nonresident alien men,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRRACE02,Nonresident alien women,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRRACE03,Black non-Hispanic men,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRRACE04,Black non-Hispanic women,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRRACE05,American Indian/Alaska Native men,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRRACE06,American Indian/Alaska Native women,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRRACE07,Asian or Pacific Islander men,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRRACE08,Asian or Pacific Islander women,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRRACE09,Hispanic men,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRRACE10,Hispanic women,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRRACE11,White non-Hispanic men,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRRACE12,White non-Hispanic women,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRRACE13,Race/ethnicity unknown men,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRRACE14,Race/ethnicity unknown women,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRRACE15,Total men,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRRACE16,Total women,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRRACE24,Grand total,gr1997,1997,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1997.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 1992 subcohorts (4-yr institution)        1
+Bachelor's or equiv 1992 subcohort (4-yr institution)        2
+Other degree/certif-seeking 1992 subcohort (4-yr institution)        3
+Degree/certif-seeking students 1995 cohort ( 2-yr institution)        4
+Degree/certif-seeking students 1995 cohort ( <2-yr institution)        5",gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRRACE01,Nonresident alien men,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRRACE02,Nonresident alien women,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRRACE03,Black non-Hispanic men,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRRACE04,Black non-Hispanic women,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRRACE05,American Indian/Alaska Native men,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRRACE06,American Indian/Alaska Native women,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRRACE07,Asian or Pacific Islander men,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRRACE08,Asian or Pacific Islander women,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRRACE09,Hispanic men,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRRACE10,Hispanic women,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRRACE11,White non-Hispanic men,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRRACE12,White non-Hispanic women,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRRACE13,Race/ethnicity unknown men,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRRACE14,Race/ethnicity unknown women,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRRACE15,Total men,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRRACE16,Total women,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRRACE24,Grand total,gr1998,1998,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1998.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 1993 subcohorts (4-yr institution)        1
+Bachelor's or equiv 1993 subcohort (4-yr institution)        2
+Other degree/certif-seeking 1993 subcohort (4-yr institution)        3
+Degree/certif-seeking students 1996 cohort ( 2-yr institution)        4
+Degree/certif-seeking students 1996 cohort ( <2-yr institution)        5",gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRRACE01,Nonresident alien men,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRRACE02,Nonresident alien women,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRRACE03,Black non-Hispanic men,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRRACE04,Black non-Hispanic women,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRRACE05,American Indian/Alaska Native men,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRRACE06,American Indian/Alaska Native women,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRRACE07,Asian or Pacific Islander men,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRRACE08,Asian or Pacific Islander women,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRRACE09,Hispanic men,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRRACE10,Hispanic women,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRRACE11,White non-Hispanic men,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRRACE12,White non-Hispanic women,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRRACE13,Race/ethnicity unknown men,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRRACE14,Race/ethnicity unknown women,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRRACE15,Total men,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRRACE16,Total women,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRRACE24,Grand total,gr1999,1999,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR1999.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 1994 subcohorts (4-yr institution)        1
+Bachelor's or equiv 1994 subcohort (4-yr institution)        2
+Other degree/certif-seeking 1994 subcohort (4-yr institution)        3
+Degree/certif-seeking students 1997 cohort ( 2-yr institution)        4
+Degree/certif-seeking students 1997 cohort ( <2-yr institution)        5",gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRRACE01,Nonresident alien men,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRRACE02,Nonresident alien women,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRRACE03,Black non-Hispanic men,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRRACE04,Black non-Hispanic women,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRRACE05,American Indian/Alaska Native men,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRRACE06,American Indian/Alaska Native women,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRRACE07,Asian or Pacific Islander men,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRRACE08,Asian or Pacific Islander women,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRRACE09,Hispanic men,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRRACE10,Hispanic women,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRRACE11,White non-Hispanic men,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRRACE12,White non-Hispanic women,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRRACE13,Race/ethnicity unknown men,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRRACE14,Race/ethnicity unknown women,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRRACE15,Total men,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRRACE16,Total women,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRRACE24,Grand total,gr2000,2000,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2000.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 1995 subcohorts (4-yr institution)        1
+Bachelor's or equiv 1995 subcohort (4-yr institution)        2
+Other degree/certif-seeking 1995 subcohort (4-yr institution)        3
+Degree/certif-seeking students 1998 cohort ( 2-yr institution)        4
+Degree/certif-seeking students 1998 cohort ( <2-yr institution)        5",gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRRACE01,Nonresident alien men,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRRACE02,Nonresident alien women,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRRACE03,Black non-Hispanic men,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRRACE04,Black non-Hispanic women,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRRACE05,American Indian/Alaska Native men,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRRACE06,American Indian/Alaska Native women,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRRACE07,Asian or Pacific Islander men,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRRACE08,Asian or Pacific Islander women,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRRACE09,Hispanic men,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRRACE10,Hispanic women,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRRACE11,White non-Hispanic men,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRRACE12,White non-Hispanic women,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRRACE13,Race/ethnicity unknown men,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRRACE14,Race/ethnicity unknown women,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRRACE15,Total men,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRRACE16,Total women,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRRACE24,Grand total,gr2001,2001,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2001.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 1996 subcohorts (4-yr institution)        1
+Bachelor's or equiv 1996 subcohort (4-yr institution)        2
+Other degree/certif-seeking 1996 subcohort (4-yr institution)        3
+Degree/certif-seeking students 1999 cohort ( 2-yr institution)        4
+Degree/certif-seeking students 1999 cohort ( <2-yr institution)        5",gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRRACE01,Nonresident alien men,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRRACE02,Nonresident alien women,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRRACE03,Black non-Hispanic men,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRRACE04,Black non-Hispanic women,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRRACE05,American Indian/Alaska Native men,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRRACE06,American Indian/Alaska Native women,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRRACE07,Asian or Pacific Islander men,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRRACE08,Asian or Pacific Islander women,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRRACE09,Hispanic men,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRRACE10,Hispanic women,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRRACE11,White non-Hispanic men,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRRACE12,White non-Hispanic women,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRRACE13,Race/ethnicity unknown men,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRRACE14,Race/ethnicity unknown women,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRRACE15,Total men,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRRACE16,Total women,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRRACE24,Grand total,gr2002,2002,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2002.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 1997 subcohorts (4-yr institution)        1
+Bachelor's or equiv 1997 subcohort (4-yr institution)        2
+Other degree/certif-seeking 1997 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2000 cohort ( 2-yr institution)        4
+Degree/certif-seeking students 2000 cohort ( <2-yr institution)        5",gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRRACE01,Nonresident alien men,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRRACE02,Nonresident alien women,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRRACE03,Black non-Hispanic men,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRRACE04,Black non-Hispanic women,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRRACE05,American Indian/Alaska Native men,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRRACE06,American Indian/Alaska Native women,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRRACE07,Asian or Pacific Islander men,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRRACE08,Asian or Pacific Islander women,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRRACE09,Hispanic men,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRRACE10,Hispanic women,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRRACE11,White non-Hispanic men,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRRACE12,White non-Hispanic women,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRRACE13,Race/ethnicity unknown men,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRRACE14,Race/ethnicity unknown women,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRRACE15,Total men,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRRACE16,Total women,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRRACE24,Grand total,gr2003,2003,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2003.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 1998 subcohorts (4-yr institution)        1
+Bachelor's or equiv 1998 subcohort (4-yr institution)        2
+Other degree/certif-seeking 1998 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2001 cohort ( 2-yr institution)        4",GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRRACE01,Nonresident alien men,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRRACE02,Nonresident alien women,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRRACE03,Black non-Hispanic men,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRRACE04,Black non-Hispanic women,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRRACE05,American Indian/Alaska Native men,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRRACE06,American Indian/Alaska Native women,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRRACE07,Asian or Pacific Islander men,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRRACE08,Asian or Pacific Islander women,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRRACE09,Hispanic men,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRRACE10,Hispanic women,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRRACE11,White non-Hispanic men,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRRACE12,White non-Hispanic women,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRRACE13,Race/ethnicity unknown men,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRRACE14,Race/ethnicity unknown women,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRRACE15,Total men,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRRACE16,Total women,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRRACE24,Grand total,GR2004/gr2004,2004,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2004.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 1999 subcohorts (4-yr institution)        1
+Bachelor's or equiv 1999 subcohort (4-yr institution)        2
+Other degree/certif-seeking 1999 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2002 cohort ( 2-yr institution)        4",GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRRACE01,Nonresident alien men,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRRACE02,Nonresident alien women,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRRACE03,Black non-Hispanic men,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRRACE04,Black non-Hispanic women,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRRACE05,American Indian/Alaska Native men,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRRACE06,American Indian/Alaska Native women,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRRACE07,Asian or Pacific Islander men,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRRACE08,Asian or Pacific Islander women,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRRACE09,Hispanic men,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRRACE10,Hispanic women,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRRACE11,White non-Hispanic men,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRRACE12,White non-Hispanic women,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRRACE13,Race/ethnicity unknown men,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRRACE14,Race/ethnicity unknown women,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRRACE15,Total men,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRRACE16,Total women,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRRACE24,Grand total,GR2005/gr2005,2005,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2005.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2000 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2000 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2000 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2003 cohort ( 2-yr institution)        4",GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRRACE01,Nonresident alien men,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRRACE02,Nonresident alien women,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRRACE03,Black non-Hispanic men,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRRACE04,Black non-Hispanic women,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRRACE05,American Indian/Alaska Native men,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRRACE06,American Indian/Alaska Native women,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRRACE07,Asian or Pacific Islander men,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRRACE08,Asian or Pacific Islander women,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRRACE09,Hispanic men,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRRACE10,Hispanic women,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRRACE11,White non-Hispanic men,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRRACE12,White non-Hispanic women,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRRACE13,Race/ethnicity unknown men,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRRACE14,Race/ethnicity unknown women,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRRACE15,Total men,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRRACE16,Total women,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRRACE24,Grand total,GR2006/gr2006,2006,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2006.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2001 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2001 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2001 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2004 cohort ( 2-yr institution)        4",GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRRACE01,Nonresident alien men,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRRACE02,Nonresident alien women,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRRACE03,Black non-Hispanic men,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRRACE04,Black non-Hispanic women,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRRACE05,American Indian/Alaska Native men,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRRACE06,American Indian/Alaska Native women,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRRACE07,Asian or Pacific Islander men,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRRACE08,Asian or Pacific Islander women,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRRACE09,Hispanic men,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRRACE10,Hispanic women,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRRACE11,White non-Hispanic men,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRRACE12,White non-Hispanic women,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRRACE13,Race/ethnicity unknown men,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRRACE14,Race/ethnicity unknown women,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRRACE15,Total men,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRRACE16,Total women,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRRACE24,Grand total,GR2007/gr2007,2007,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2007.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2002 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2002 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2002 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2005 cohort ( 2-yr institution)        4",GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,DVGRBKM,Black non-Hispanic men,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,DVGRBKW,Black non-Hispanic women,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,DVGRAIM,American Indian/Alaska Native men,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,DVGRAIW,American Indian/Alaska Native women,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,DVGRAPM,Asian or Pacific Islander men,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,DVGRAPW,Asian or Pacific Islander women,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,DVGRHSM,Hispanic men,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,DVGRHSW,Hispanic women,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,DVGRWHM,White non-Hispanic men,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,DVGRWHW,White non-Hispanic women,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2008/gr2008,2008,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2008.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2003 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2003 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2003 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2006 cohort ( 2-yr institution)        4",GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,DVGRBKM,Black non-Hispanic men,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,DVGRBKW,Black non-Hispanic women,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,DVGRAIM,American Indian/Alaska Native men,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,DVGRAIW,American Indian/Alaska Native women,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,DVGRAPM,Asian or Pacific Islander men,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,DVGRAPW,Asian or Pacific Islander women,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,DVGRHSM,Hispanic men,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,DVGRHSW,Hispanic women,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,DVGRWHM,White non-Hispanic men,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,DVGRWHW,White non-Hispanic women,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2009/gr2009,2009,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2009.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2004 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2004 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2004 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2007 cohort ( 2-yr institution)        4",GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRRACE03,Black non-Hispanic men,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRRACE04,Black non-Hispanic women,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRRACE05,American Indian/Alaska Native men,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRRACE06,American Indian/Alaska Native women,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRRACE07,Asian or Pacific Islander men,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_asian_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRRACE08,Asian or Pacific Islander women,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_asian_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRRACE09,Hispanic men,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRRACE10,Hispanic women,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRRACE11,White non-Hispanic men,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRRACE12,White non-Hispanic women,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2010/gr2010,2010,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2010.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2005 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2005 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2005 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2008 cohort ( 2-yr institution)        4",GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2011/gr2011,2011,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2011.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2006 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2006 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2006 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2009 cohort ( 2-yr institution)        4",GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2012/gr2012,2012,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2012.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2007 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2007 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2007 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2010 cohort ( 2-yr institution)        4",GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2013/gr2013,2013,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2013.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2008 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2008 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2008 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2011 cohort ( 2-yr institution)        4",GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2014/gr2014,2014,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2014.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2009 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2009 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2009 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2012 cohort ( 2-yr institution)        4",GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2015/gr2015,2015,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2015.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2010 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2010 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2010 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2013 cohort ( 2-yr institution)        4",GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2016/gr2016,2016,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2016.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2011 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2011 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2011 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2014 cohort ( 2-yr institution)        4",GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2017/gr2017,2017,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2017.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2012 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2012 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2012 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2015 cohort ( 2-yr institution)        4",GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2018/gr2018,2018,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2018.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2013 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2013 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2013 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2016 cohort ( 2-yr institution)        4",GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2019/gr2019,2019,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2019.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2014 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2014 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2014 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2017 cohort ( 2-yr institution)        4",GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2020/gr2020,2020,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2020.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2015 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2015 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2015 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2018 cohort ( 2-yr institution)        4",GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2021/gr2021,2021,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2021.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2016 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2016 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2016 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2019 cohort ( 2-yr institution)        4",GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,GR2022/gr2022,2022,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2022.zip,count_total_students,
+UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,unitid,
+UNITID/CHRTSTAT/COHORT,CHRTSTAT,"Graduation rate status in cohort
+
+Revised cohort        10
+Exclusions        11
+Adjusted cohort (revised cohort minus exclusions)        12
+Completers within 150% of normal time        13
+Completers of programs of less than 2 years (150% of normal time)        14
+Completers of programs of 2 but less than 4 years (150% of normal time)        15
+Completers of bachelor's or equivalent degrees (150% of normal time)        16
+Completers of bachelor's or equivalent degrees in 4 years or less        17
+Completers of bachelor's or equivalent degrees in 5 years        18
+Completers of bachelor's or equivalent degrees in 6 years        19
+Transfer-out students        20
+Still enrolled in long programs        21",gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,grad_rate_cat,
+UNITID/CHRTSTAT/COHORT,COHORT,"Class cohort
+
+Bachelor's/ equiv + other degree/certif-seeking 2017 subcohorts (4-yr institution)        1
+Bachelor's or equiv 2017 subcohort (4-yr institution)        2
+Other degree/certif-seeking 2017 subcohort (4-yr institution)        3
+Degree/certif-seeking students 2020 cohort ( 2-yr institution)        4",gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,gr2023,2023,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2023.zip,count_total_students,UNITID/CHRTSTAT/COHORT,UNITID,Unique ID for Each Institution (entity),gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,unitid,
+Still enrolled in long programs        21",gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,grad_rate_cat,
+Degree/certif-seeking students 2020 cohort ( 2-yr institution)        4",gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,cohort,
+UNITID/CHRTSTAT/COHORT,GRNRALM,Nonresident alien men,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_nonresident_men,
+UNITID/CHRTSTAT/COHORT,GRNRALW,Nonresident alien women,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_nonresident_women,
+UNITID/CHRTSTAT/COHORT,GRBKAAM,Black non-Hispanic men,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_black_men,
+UNITID/CHRTSTAT/COHORT,GRBKAAW,Black non-Hispanic women,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_black_women,
+UNITID/CHRTSTAT/COHORT,GRAIANM,American Indian/Alaska Native men,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_aian_men,
+UNITID/CHRTSTAT/COHORT,GRAIANW,American Indian/Alaska Native women,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_aian_women,
+UNITID/CHRTSTAT/COHORT,GRASIAM,Asian men,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_asian_men,
+UNITID/CHRTSTAT/COHORT,GRASIAW,Asian women,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_asian_women,
+UNITID/CHRTSTAT/COHORT,GRNHPIM,Pacific Islander men,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_nhpi_men,
+UNITID/CHRTSTAT/COHORT,GRNHPIW,Pacific Islander women,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_nhpi_women,
+UNITID/CHRTSTAT/COHORT,GRHISPM,Hispanic men,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_hispanic_men,
+UNITID/CHRTSTAT/COHORT,GRHISPW,Hispanic women,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_hispanic_women,
+UNITID/CHRTSTAT/COHORT,GRWHITM,White non-Hispanic men,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_white_men,
+UNITID/CHRTSTAT/COHORT,GRWHITW,White non-Hispanic women,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_white_women,
+UNITID/CHRTSTAT/COHORT,GRUNKNM,Race/ethnicity unknown men,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_unknown_race_men,
+UNITID/CHRTSTAT/COHORT,GRUNKNW,Race/ethnicity unknown women,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_unknown_race_women,
+UNITID/CHRTSTAT/COHORT,GR2MORM,Two or more races men,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_tomr_men,
+UNITID/CHRTSTAT/COHORT,GR2MORW,Two or more races women,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_tomr_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLM,Total men,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_men,
+UNITID/CHRTSTAT/COHORT,GRTOTLW,Total women,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_women,
+UNITID/CHRTSTAT/COHORT,GRTOTLT,Grand total,gr2024,2024,ipeds_grad_rate,https://nces.ed.gov/ipeds/datacenter/data/GR2024.zip,count_total_students,

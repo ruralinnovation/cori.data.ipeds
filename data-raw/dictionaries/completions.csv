@@ -1,0 +1,1044 @@
+unit_of_analysis,var,description,source_table,year,db_tbl,download_table_url,alias,update
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c1980_4ormore_cip,1980,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1980_4ORMORE_CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c1980_4ormore_cip,1980,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1980_4ORMORE_CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c1980_4ormore_cip,1980,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1980_4ORMORE_CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c1980_4ormore_cip,1980,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1980_4ORMORE_CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c1980_4ormore_cip,1980,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1980_4ORMORE_CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c1980subba_cip,1980,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1980SUBBA_CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate degree creditable toward bachelor's degree        2
+Associate degree not creditable toward bachelor's degree        3",c1980subba_cip,1980,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1980SUBBA_CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c1980subba_cip,1980,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1980SUBBA_CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c1980subba_cip,1980,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1980SUBBA_CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c1980subba_cip,1980,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1980SUBBA_CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c1984_cip,1984,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1984_CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c1984_cip,1984,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1984_CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c1984_cip,1984,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1984_CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c1984_cip,1984,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1984_CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c1984_cip,1984,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1984_CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c1985_cip,1985,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1985_CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c1985_cip,1985,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1985_CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c1985_cip,1985,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1985_CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c1985_cip,1985,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1985_CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c1985_cip,1985,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1985_CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c1986_cip,1986,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1986_CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c1986_cip,1986,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1986_CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c1986_cip,1986,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1986_CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c1986_cip,1986,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1986_CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c1986_cip,1986,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1986_CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c1987_cip,1987,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1987_CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c1987_cip,1987,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1987_CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c1987_cip,1987,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1987_CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c1987_cip,1987,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1987_CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c1987_cip,1987,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1987_CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c1988_cip,1988,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1988_CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c1988_cip,1988,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1988_CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c1988_cip,1988,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1988_CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c1988_cip,1988,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1988_CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c1988_cip,1988,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1988_CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c1989_cip,1989,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1989_CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c1989_cip,1989,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1989_CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c1989_cip,1989,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1989_CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c1989_cip,1989,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1989_CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c1989_cip,1989,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1989_CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c8990cip,1990,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C8990CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c8990cip,1990,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C8990CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c8990cip,1990,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C8990CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c8990cip,1990,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C8990CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c8990cip,1990,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C8990CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c1991_cip,1991,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1991_CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c1991_cip,1991,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1991_CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c1991_cip,1991,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1991_CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c1991_cip,1991,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1991_CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c1991_cip,1991,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1991_CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c1992_cip,1992,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1992_CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c1992_cip,1992,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1992_CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c1992_cip,1992,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1992_CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c1992_cip,1992,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1992_CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c1992_cip,1992,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1992_CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c1993_cip,1993,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1993_CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c1993_cip,1993,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1993_CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c1993_cip,1993,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1993_CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c1993_cip,1993,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1993_CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c1993_cip,1993,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1993_CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c1994_cip,1994,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1994_CIP.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c1994_cip,1994,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1994_CIP.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c1994_cip,1994,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1994_CIP.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c1994_cip,1994,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1994_CIP.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c1994_cip,1994,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C1994_CIP.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE01,Nonresident alien men,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/CIP,CRACE02,Nonresident alien women,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/CIP,CRACE03,Black non-Hispanic men,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_black_men,
+UNITID/AWLEVEL/CIP,CRACE04,Black non-Hispanic women,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_black_women,
+UNITID/AWLEVEL/CIP,CRACE05,American Indian/Alaskan Native men,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_aian_men,
+UNITID/AWLEVEL/CIP,CRACE06,American Indian/Alaskan Native women,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_aian_women,
+UNITID/AWLEVEL/CIP,CRACE07,Asian or Pacific Islander men,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/CIP,CRACE08,Asian or Pacific Islander women,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/CIP,CRACE09,Hispanic men,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/CIP,CRACE10,Hispanic women,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/CIP,CRACE11,White non-Hispanic men,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_white_men,
+UNITID/AWLEVEL/CIP,CRACE12,White non-Hispanic women,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_white_women,
+UNITID/AWLEVEL/CIP,CRACE13,Race/ethnicity unknown men,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/CIP,CRACE14,Race/ethnicity unknown women,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c9495_a,1995,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9495_A.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE01,Nonresident alien men,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/CIP,CRACE02,Nonresident alien women,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/CIP,CRACE03,Black non-Hispanic men,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_black_men,
+UNITID/AWLEVEL/CIP,CRACE04,Black non-Hispanic women,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_black_women,
+UNITID/AWLEVEL/CIP,CRACE05,American Indian/Alaskan Native men,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_aian_men,
+UNITID/AWLEVEL/CIP,CRACE06,American Indian/Alaskan Native women,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_aian_women,
+UNITID/AWLEVEL/CIP,CRACE07,Asian or Pacific Islander men,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/CIP,CRACE08,Asian or Pacific Islander women,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/CIP,CRACE09,Hispanic men,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/CIP,CRACE10,Hispanic women,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/CIP,CRACE11,White non-Hispanic men,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_white_men,
+UNITID/AWLEVEL/CIP,CRACE12,White non-Hispanic women,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_white_women,
+UNITID/AWLEVEL/CIP,CRACE13,Race/ethnicity unknown men,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/CIP,CRACE14,Race/ethnicity unknown women,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c9596_a,1996,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9596_A.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE01,Nonresident alien men,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/CIP,CRACE02,Nonresident alien women,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/CIP,CRACE03,Black non-Hispanic men,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_black_men,
+UNITID/AWLEVEL/CIP,CRACE04,Black non-Hispanic women,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_black_women,
+UNITID/AWLEVEL/CIP,CRACE05,American Indian/Alaskan Native men,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_aian_men,
+UNITID/AWLEVEL/CIP,CRACE06,American Indian/Alaskan Native women,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_aian_women,
+UNITID/AWLEVEL/CIP,CRACE07,Asian or Pacific Islander men,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/CIP,CRACE08,Asian or Pacific Islander women,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/CIP,CRACE09,Hispanic men,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/CIP,CRACE10,Hispanic women,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/CIP,CRACE11,White non-Hispanic men,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_white_men,
+UNITID/AWLEVEL/CIP,CRACE12,White non-Hispanic women,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_white_women,
+UNITID/AWLEVEL/CIP,CRACE13,Race/ethnicity unknown men,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/CIP,CRACE14,Race/ethnicity unknown women,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c9697_a,1997,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9697_A.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE01,Nonresident alien men,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/CIP,CRACE02,Nonresident alien women,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/CIP,CRACE03,Black non-Hispanic men,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_black_men,
+UNITID/AWLEVEL/CIP,CRACE04,Black non-Hispanic women,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_black_women,
+UNITID/AWLEVEL/CIP,CRACE05,American Indian/Alaskan Native men,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_aian_men,
+UNITID/AWLEVEL/CIP,CRACE06,American Indian/Alaskan Native women,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_aian_women,
+UNITID/AWLEVEL/CIP,CRACE07,Asian or Pacific Islander men,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/CIP,CRACE08,Asian or Pacific Islander women,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/CIP,CRACE09,Hispanic men,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/CIP,CRACE10,Hispanic women,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/CIP,CRACE11,White non-Hispanic men,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_white_men,
+UNITID/AWLEVEL/CIP,CRACE12,White non-Hispanic women,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_white_women,
+UNITID/AWLEVEL/CIP,CRACE13,Race/ethnicity unknown men,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/CIP,CRACE14,Race/ethnicity unknown women,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c9798_a,1998,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9798_A.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE01,Nonresident alien men,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/CIP,CRACE02,Nonresident alien women,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/CIP,CRACE03,Black non-Hispanic men,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_black_men,
+UNITID/AWLEVEL/CIP,CRACE04,Black non-Hispanic women,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_black_women,
+UNITID/AWLEVEL/CIP,CRACE05,American Indian/Alaskan Native men,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_aian_men,
+UNITID/AWLEVEL/CIP,CRACE06,American Indian/Alaskan Native women,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_aian_women,
+UNITID/AWLEVEL/CIP,CRACE07,Asian or Pacific Islander men,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/CIP,CRACE08,Asian or Pacific Islander women,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/CIP,CRACE09,Hispanic men,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/CIP,CRACE10,Hispanic women,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/CIP,CRACE11,White non-Hispanic men,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_white_men,
+UNITID/AWLEVEL/CIP,CRACE12,White non-Hispanic women,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_white_women,
+UNITID/AWLEVEL/CIP,CRACE13,Race/ethnicity unknown men,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/CIP,CRACE14,Race/ethnicity unknown women,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c9899_a,1999,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C9899_A.zip,count_women,
+UNITID/AWLEVEL/CIP,UNITID,Unique ID for Each Institution (entity),c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,unitid,
+UNITID/AWLEVEL/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,ed_level,
+UNITID/AWLEVEL/CIP,CIPCODE,CIP code,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,cipcode,
+UNITID/AWLEVEL/CIP,CRACE01,Nonresident alien men,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/CIP,CRACE02,Nonresident alien women,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/CIP,CRACE03,Black non-Hispanic men,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_black_men,
+UNITID/AWLEVEL/CIP,CRACE04,Black non-Hispanic women,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_black_women,
+UNITID/AWLEVEL/CIP,CRACE05,American Indian/Alaskan Native men,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_aian_men,
+UNITID/AWLEVEL/CIP,CRACE06,American Indian/Alaskan Native women,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_aian_women,
+UNITID/AWLEVEL/CIP,CRACE07,Asian or Pacific Islander men,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/CIP,CRACE08,Asian or Pacific Islander women,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/CIP,CRACE09,Hispanic men,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/CIP,CRACE10,Hispanic women,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/CIP,CRACE11,White non-Hispanic men,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_white_men,
+UNITID/AWLEVEL/CIP,CRACE12,White non-Hispanic women,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_white_women,
+UNITID/AWLEVEL/CIP,CRACE13,Race/ethnicity unknown men,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/CIP,CRACE14,Race/ethnicity unknown women,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/CIP,CRACE15,Total men,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_men,
+UNITID/AWLEVEL/CIP,CRACE16,Total women,c2000_a,2000,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2000_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE01,Nonresident alien men,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE02,Nonresident alien women,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE03,Black non-Hispanic men,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE04,Black non-Hispanic women,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE05,American Indian/Alaskan Native men,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE06,American Indian/Alaskan Native women,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE07,Asian or Pacific Islander men,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE08,Asian or Pacific Islander women,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE09,Hispanic men,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE10,Hispanic women,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE11,White non-Hispanic men,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE12,White non-Hispanic women,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE13,Race/ethnicity unknown men,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE14,Race/ethnicity unknown women,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE15,Total men,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE16,Total women,c2001_a,2001,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2001_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE01,Nonresident alien men,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE02,Nonresident alien women,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE03,Black non-Hispanic men,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE04,Black non-Hispanic women,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE05,American Indian/Alaskan Native men,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE06,American Indian/Alaskan Native women,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE07,Asian or Pacific Islander men,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE08,Asian or Pacific Islander women,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE09,Hispanic men,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE10,Hispanic women,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE11,White non-Hispanic men,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE12,White non-Hispanic women,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE13,Race/ethnicity unknown men,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE14,Race/ethnicity unknown women,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE15,Total men,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE16,Total women,c2002_a,2002,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2002_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE01,Nonresident alien men,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE02,Nonresident alien women,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE03,Black non-Hispanic men,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE04,Black non-Hispanic women,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE05,American Indian/Alaskan Native men,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE06,American Indian/Alaskan Native women,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE07,Asian or Pacific Islander men,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE08,Asian or Pacific Islander women,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE09,Hispanic men,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE10,Hispanic women,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE11,White non-Hispanic men,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE12,White non-Hispanic women,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE13,Race/ethnicity unknown men,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE14,Race/ethnicity unknown women,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE15,Total men,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE16,Total women,c2003_a,2003,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2003_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE01,Nonresident alien men,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE02,Nonresident alien women,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE03,Black non-Hispanic men,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE04,Black non-Hispanic women,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE05,American Indian/Alaskan Native men,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE06,American Indian/Alaskan Native women,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE07,Asian or Pacific Islander men,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE08,Asian or Pacific Islander women,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE09,Hispanic men,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE10,Hispanic women,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE11,White non-Hispanic men,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE12,White non-Hispanic women,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE13,Race/ethnicity unknown men,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE14,Race/ethnicity unknown women,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE15,Total men,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE16,Total women,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE24,Total students,C2004_A/c2004_a,2004,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2004_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE01,Nonresident alien men,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE02,Nonresident alien women,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE03,Black non-Hispanic men,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE04,Black non-Hispanic women,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE05,American Indian/Alaskan Native men,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE06,American Indian/Alaskan Native women,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE07,Asian or Pacific Islander men,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE08,Asian or Pacific Islander women,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE09,Hispanic men,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE10,Hispanic women,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE11,White non-Hispanic men,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE12,White non-Hispanic women,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE13,Race/ethnicity unknown men,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE14,Race/ethnicity unknown women,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE15,Total men,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE16,Total women,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE24,Total students,C2005_A/c2005_a,2005,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2005_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE01,Nonresident alien men,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE02,Nonresident alien women,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE03,Black non-Hispanic men,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE04,Black non-Hispanic women,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE05,American Indian/Alaskan Native men,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE06,American Indian/Alaskan Native women,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE07,Asian or Pacific Islander men,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE08,Asian or Pacific Islander women,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE09,Hispanic men,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE10,Hispanic women,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE11,White non-Hispanic men,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE12,White non-Hispanic women,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE13,Race/ethnicity unknown men,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE14,Race/ethnicity unknown women,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE15,Total men,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE16,Total women,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE24,Total students,C2006_A/c2006_a,2006,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2006_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degrees        9",C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE01,Nonresident alien men,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE02,Nonresident alien women,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE03,Black non-Hispanic men,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE04,Black non-Hispanic women,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE05,American Indian/Alaskan Native men,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE06,American Indian/Alaskan Native women,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE07,Asian or Pacific Islander men,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE08,Asian or Pacific Islander women,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE09,Hispanic men,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE10,Hispanic women,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE11,White non-Hispanic men,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE12,White non-Hispanic women,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE13,Race/ethnicity unknown men,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE14,Race/ethnicity unknown women,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE15,Total men,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE16,Total women,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE24,Total students,C2007_A/c2007_a,2007,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2007_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE03,Black non-Hispanic men,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE04,Black non-Hispanic women,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE05,American Indian/Alaskan Native men,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE06,American Indian/Alaskan Native women,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE07,Asian or Pacific Islander men,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE08,Asian or Pacific Islander women,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE09,Hispanic men,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE10,Hispanic women,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE11,White non-Hispanic men,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE12,White non-Hispanic women,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2008_A/c2008_a,2008,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2008_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE03,Black non-Hispanic men,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE04,Black non-Hispanic women,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE05,American Indian/Alaskan Native men,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE06,American Indian/Alaskan Native women,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE07,Asian or Pacific Islander men,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE08,Asian or Pacific Islander women,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE09,Hispanic men,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE10,Hispanic women,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE11,White non-Hispanic men,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE12,White non-Hispanic women,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2009_A/c2009_a,2009,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2009_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE03,Black non-Hispanic men,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE04,Black non-Hispanic women,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE05,American Indian/Alaskan Native men,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE06,American Indian/Alaskan Native women,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE07,Asian or Pacific Islander men,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_asian_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE08,Asian or Pacific Islander women,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_asian_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE09,Hispanic men,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE10,Hispanic women,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE11,White non-Hispanic men,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CRACE12,White non-Hispanic women,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2010_A/c2010_a,2010,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2010_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2011_A/c2011_a,2011,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2011_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2012_A/c2012_a,2012,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2012_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2013_A/c2013_a,2013,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2013_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2014_A/c2014_a,2014,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2014_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2015_A/c2015_a,2015,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2015_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2016_A/c2016_a,2016,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2016_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2017_A/c2017_a,2017,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2017_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2018_A/c2018_a,2018,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2018_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2019_A/c2019_a,2019,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2019_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2020_A/c2020_a,2020,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2020_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2021_A/c2021_a,2021,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2021_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,C2022_A/c2022_a,2022,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2022_A.zip,count_total_students,
+UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,unitid,
+UNITID/AWLEVEL/MAJORNUM/CIP,AWLEVEL,"Award level code
+
+Associate's degrees        3
+Bachelor's degrees        5
+Master's degrees        7
+Doctor's degree - research/scholarship        17
+Doctor's degree - professional        18
+Doctor's degree - other        19",c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,ed_level,
+UNITID/AWLEVEL/MAJORNUM/CIP,MAJORNUM,"First or Second Major
+
+First major        1
+Second major        2",c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,c2023_a,2023,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2023_A.zip,count_total_students,UNITID/AWLEVEL/MAJORNUM/CIP,UNITID,Unique ID for Each Institution (entity),c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,unitid,
+Doctor's degree - other        19",c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,ed_level,
+Second major        2",c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,major_num,
+UNITID/AWLEVEL/MAJORNUM/CIP,CIPCODE,CIP code,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,cipcode,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALM,Nonresident alien men,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_nonresident_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNRALW,Nonresident alien women,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_nonresident_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAM,Black non-Hispanic men,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_black_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CBKAAW,Black non-Hispanic women,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_black_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANM,American Indian/Alaskan Native men,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_aian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CAIANW,American Indian/Alaskan Native women,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_aian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAM,Asian men,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_asian_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CASIAW,Asian women,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_asian_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIM,Pacific Islander men,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_nhpi_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CNHPIW,Pacific Islander women,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_nhpi_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPM,Hispanic men,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_hispanic_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CHISPW,Hispanic women,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_hispanic_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITM,White non-Hispanic men,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_white_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CWHITW,White non-Hispanic women,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_white_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNM,Race/ethnicity unknown men,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_unknown_race_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CUNKNW,Race/ethnicity unknown women,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_unknown_race_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORM,Two or more races men,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_tomr_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,C2MORW,Two or more races women,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_tomr_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALM,Total men,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_men,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALW,Total women,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_women,
+UNITID/AWLEVEL/MAJORNUM/CIP,CTOTALT,Total students,c2024_a,2024,ipeds_completions,https://nces.ed.gov/ipeds/datacenter/data/C2024_A.zip,count_total_students,

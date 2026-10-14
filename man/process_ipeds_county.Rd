@@ -7,7 +7,8 @@
 process_ipeds_county(inst_list)
 }
 \arguments{
-\item{inst_list}{Named list with elements \code{ic}, \code{completions},
+\item{inst_list}{Named list with elements
+\code{institutional_characteristics}, \code{completions},
 \code{grad_rates}. Output of \code{process_ipeds_institution_all()}.}
 }
 \value{

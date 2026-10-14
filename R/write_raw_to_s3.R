@@ -19,6 +19,9 @@
 
 # NCES data download URLs follow a predictable pattern.
 # IC data lives in the HD (Header) file, not the IC (programs) file.
+# Completions splits across two files we use: C{year}_A is awards by program
+# (one row per institution x CIP x award level x major number) and C{year}_C
+# is the completer headcount (one row per institution x award level category).
 .raw_download_url <- function(survey, year) {
   table <- .raw_table_name(survey, year)
   sprintf("https://nces.ed.gov/ipeds/datacenter/data/%s.zip", table)
@@ -29,6 +32,7 @@
   switch(survey,
     institutional_characteristics = sprintf("HD%d",   year),
     completions                   = sprintf("C%d_A",  year),
+    completers                    = sprintf("C%d_C",  year),
     grad_rates                    = sprintf("GR%d",   year),
     stop(sprintf("Unknown survey '%s'", survey))
   )
@@ -38,6 +42,31 @@
 .raw_csv_candidates <- function(survey, year) {
   table <- .raw_table_name(survey, year)
   c(tolower(table), table)
+}
+
+
+# Normalise NCES column names so a codebook entry can match them.
+#
+# Three things in the source files break a naive match:
+#   - mixed case in earlier vintages
+#   - trailing spaces (CNRALW in completions, GRNRALW in grad rates, every
+#     year; DFRCGID in HD2010)
+#   - a UTF-8 byte-order mark, which NCES began shipping on some 2023+ files.
+#     Left in place the BOM becomes part of the first column name, so nothing
+#     matches UNITID and .select_codebook_columns() silently drops it --
+#     which is exactly how the completers county aggregation came back empty
+#     for 2023 and 2024. The BOM can arrive as the character U+FEFF, as the
+#     raw bytes EF BB BF, or already escaped to the literal text
+#     "<ef><bb><bf>" depending on the read path, so rather than matching each
+#     form we strip any leading non-alphanumeric characters. Every NCES
+#     column name is alphanumeric, so this cannot remove anything real.
+.normalize_nces_names <- function(x) {
+  x <- toupper(trimws(x))
+  # DuckDB escapes invalid UTF-8 bytes to visible text when it writes parquet,
+  # so a BOM can also reach us as the literal "<EF><BB><BF>". Strip that form
+  # first: the general rule below would stop at the "E" and leave a remnant.
+  x <- sub("^(<EF><BB><BF>)+", "", x)
+  sub("^[^A-Z0-9]+", "", x)
 }
 
 
@@ -67,9 +96,7 @@ read_ipeds_raw <- function(survey, year, staging_dir = "data/ipeds") {
 
   df <- .read_csv_safe(csv_path)
 
-  # Normalise column names to uppercase for consistency across vintages
-  # (some NCES files use mixed case in earlier years)
-  names(df) <- toupper(names(df))
+  names(df) <- .normalize_nces_names(names(df))
 
   # Add year as the only metadata column
   df$year <- as.integer(year)
@@ -122,27 +149,17 @@ write_ipeds_raw_to_s3 <- function(
                     survey, year, format(n, big.mark = ","), ncol(df) - 1L))
 
     dir.create(local_dir, recursive = TRUE, showWarnings = FALSE)
-    .write_raw_parquet(df, local_path)
+    .write_parquet(df, local_path)
   }
 
   if (sync_to_s3) {
     s3_uri <- sprintf("s3://%s/%sdata_raw/survey=%s/year=%d/",
                       s3_bucket, s3_path_prefix, survey, year)
     message(sprintf("  Uploading raw %s %d to S3...", survey, year))
-    exit_code <- base::system2("aws", args = c("s3", "cp", local_path, s3_uri))
-    if (exit_code != 0) {
-      stop(sprintf("AWS CLI upload failed: %s -> %s", local_path, s3_uri))
-    }
+    .s3_upload(local_path, s3_uri)
   }
 
-  invisible(data.frame(
-    survey       = survey,
-    year         = as.integer(year),
-    layer        = "raw",
-    processed_at = format(Sys.time(), "%Y-%m-%d %H:%M:%S"),
-    local_path   = local_path,
-    stringsAsFactors = FALSE
-  ))
+  invisible(.manifest_row(survey, year, "raw", local_path))
 }
 
 
@@ -198,18 +215,3 @@ write_ipeds_raw_batch <- function(
   invisible(do.call(rbind, results))
 }
 
-
-# Write a data frame to parquet via DuckDB ------------------------------------
-.write_raw_parquet <- function(df, path) {
-  # Sanitize character columns to valid UTF-8 before writing.
-  # IPEDS institution names and addresses sometimes contain latin1 characters.
-  chr_cols <- names(df)[sapply(df, is.character)]
-  for (col in chr_cols) {
-    df[[col]] <- iconv(df[[col]], from = "", to = "UTF-8", sub = "\uFFFD")
-  }
-
-  con <- DBI::dbConnect(duckdb::duckdb())
-  on.exit(DBI::dbDisconnect(con, shutdown = TRUE), add = TRUE)
-  DBI::dbWriteTable(con, "df", df, overwrite = TRUE)
-  DBI::dbExecute(con, sprintf("COPY df TO '%s' (FORMAT 'parquet')", path))
-}

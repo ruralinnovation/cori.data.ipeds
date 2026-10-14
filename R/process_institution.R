@@ -26,22 +26,6 @@
 .EXCLUDED_SECTORS  <- c(0L, 99L)
 
 
-# Codebook loading ------------------------------------------------------------
-
-#' Load the opinionated codebook
-#'
-#' Reads \code{inst/extdata/codebook.csv} (installed package) or falls back
-#' to the local development path. Returns a data frame.
-#'
-#' @export
-load_codebook <- function() {
-  path <- system.file("extdata", "codebook.csv", package = "cori.data.ipeds")
-  if (!nzchar(path)) path <- file.path("inst", "extdata", "codebook.csv")
-  if (!file.exists(path)) stop("codebook.csv not found")
-  utils::read.csv(path, stringsAsFactors = FALSE)
-}
-
-
 # Codebook mapping ------------------------------------------------------------
 
 #' Apply codebook renaming to a reconciled data frame
@@ -52,7 +36,8 @@ load_codebook <- function() {
 #'
 #' @param df Data frame. Reconciled raw data (output of \code{reconcile_vintage()}).
 #' @param survey Character. Survey name used to filter the codebook.
-#' @param codebook Data frame. Output of \code{load_codebook()}.
+#' @param codebook Data frame. Output of \code{get_ipeds_codebook()}; the
+#'   \code{raw_variable} column supplies the NCES source name.
 #'
 #' @return Data frame with codebook columns renamed to canonical names.
 #' @keywords internal
@@ -62,11 +47,11 @@ apply_codebook_mapping <- function(df, survey, codebook) {
   # under survey = "institutional_characteristics" with level = "both" in the codebook.
   cb <- codebook[
     (codebook$survey == survey | codebook$level == "both") &
-    nzchar(codebook$nces_var),
+    nzchar(codebook$raw_variable),
   ]
 
   for (i in seq_len(nrow(cb))) {
-    nces_name <- cb$nces_var[i]
+    nces_name <- cb$raw_variable[i]
     canonical <- cb$variable[i]
     if (nces_name %in% names(df)) {
       names(df)[names(df) == nces_name] <- canonical
@@ -86,8 +71,8 @@ apply_codebook_mapping <- function(df, survey, codebook) {
 #' lat/long from IC (for completions and grad rates), and returns the
 #' processed data frame.
 #'
-#' @param survey Character. One of \code{"institutional_characteristics"}, \code{"completions"},
-#'   \code{"grad_rates"}.
+#' @param survey Character. One of \code{"institutional_characteristics"},
+#'   \code{"completions"}, \code{"completers"}, \code{"grad_rates"}.
 #' @param year Integer. Vintage year.
 #' @param staging_dir Character. Local staging directory.
 #'   Default: \code{"data/ipeds"}.
@@ -106,7 +91,7 @@ process_ipeds_institution <- function(survey,
                                       staging_dir = "data/ipeds",
                                       codebook    = NULL,
                                       geo_lookup  = NULL) {
-  if (is.null(codebook)) codebook <- load_codebook()
+  if (is.null(codebook)) codebook <- get_ipeds_codebook()
 
   # Read from local raw parquet
   raw_path <- .raw_local_path(survey, year, staging_dir)
@@ -151,13 +136,16 @@ process_ipeds_institution <- function(survey,
 #' @param staging_dir Character.
 #' @param codebook Data frame or \code{NULL}.
 #'
-#' @return Named list with elements \code{ic}, \code{completions},
-#'   \code{grad_rates}.
+#' @return Named list with elements
+#'   \code{institutional_characteristics}, \code{completions},
+#'   \code{completers}, \code{grad_rates}. An element is \code{NULL} when
+#'   NCES has not published that survey for the year -- \code{completers}
+#'   starts in 2012, and grad rates lag the other surveys by about a year.
 #' @keywords internal
 process_ipeds_institution_all <- function(year,
                                            staging_dir = "data/ipeds",
                                            codebook    = NULL) {
-  if (is.null(codebook)) codebook <- load_codebook()
+  if (is.null(codebook)) codebook <- get_ipeds_codebook()
 
   message(sprintf("  Processing IC %d...", year))
   ic <- process_ipeds_institution("institutional_characteristics", year, staging_dir, codebook)
@@ -169,11 +157,16 @@ process_ipeds_institution_all <- function(year,
   comp <- process_ipeds_institution("completions", year, staging_dir,
                                     codebook, geo_lookup)
 
+  message(sprintf("  Processing completers %d...", year))
+  completers <- process_ipeds_institution("completers", year, staging_dir,
+                                          codebook, geo_lookup)
+
   message(sprintf("  Processing grad_rates %d...", year))
   gr <- process_ipeds_institution("grad_rates", year, staging_dir,
                                   codebook, geo_lookup)
 
-  list(institutional_characteristics = ic, completions = comp, grad_rates = gr)
+  list(institutional_characteristics = ic, completions = comp,
+       completers = completers, grad_rates = gr)
 }
 
 
