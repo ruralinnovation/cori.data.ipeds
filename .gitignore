@@ -54,3 +54,6 @@ vignettes/*.pdf
 
 .DS_Store
 .idea
+
+# exploratory chart output
+export/
