@@ -81,28 +81,31 @@ surveys in one call:
 get_ipeds(geoids = "33009", years = 2024)
 ```
 
-## Two grains: county and institution
+## Two levels: county and institution
 
-Where the sibling packages use `geography` to pick an aggregation level, this
-package uses it to pick a **grain**. Same function, same arguments, different
-shape of answer.
+`geography` selects the geographic unit, the same as everywhere else in the
+family. IPEDS is collected from institutions rather than places, so the finest
+unit available here is the institution itself — every record carries
+coordinates, address, city and county — and county output aggregates those
+points.
 
-```{r grains}
-# County grain (default): tidy long, one row per geoid x year x variable
+```{r levels}
+# County level (default): tidy long, one row per geoid x year x variable
 get_degrees(geoids = "33009", years = 2024)
 
-# Institution grain: wide, one row per the survey's natural grain
+# Institution level: wide, one row per institution and the survey's own
+# dimensions -- CIP code, award level, cohort type
 get_degrees(geography = "institution", geoids = "33009", years = 2024)
 ```
 
-The county grain is an aggregation restricted to degree-granting institutions,
+The county level is an aggregation restricted to degree-granting institutions,
 with NCES's grand-total rows and second majors already excluded. The
-institution grain is deliberately unfiltered — it keeps everything NCES
+institution level is deliberately unfiltered — it keeps everything NCES
 publishes, including the CIP detail, so you can aggregate on your own terms.
 
 Two consequences worth knowing before joining:
 
-- **`variables` applies to the county grain only.** At institution grain the
+- **`variables` applies to the county level only.** At institution level the
   output is wide, so select columns after the call.
 - **Absence is represented by no row.** A county with no degree-granting
   institution does not appear in the county output. Start joins from a full
@@ -110,7 +113,7 @@ Two consequences worth knowing before joining:
 
 ## What this package changes
 
-Both grains differ from the raw NCES files in the same ways:
+Both levels differ from the raw NCES files in the same ways:
 
 - **Canonical names.** `COUNTYCD` becomes `geoid`, `AWLEVEL` becomes
   `ed_level`, and so on. `get_ipeds_codebook()` is the mapping, and it drives
@@ -127,7 +130,7 @@ Both grains differ from the raw NCES files in the same ways:
 
 ## Decoding categorical variables
 
-Much of IPEDS is categorical, and the institution grain returns those columns
+Much of IPEDS is categorical, and the institution level returns those columns
 as the bare integers NCES publishes. The codebook's `codes` column carries the
 value labels.
 
@@ -148,7 +151,7 @@ sentinels are absent because the ETL converts them to `NA`.
 ## Mapping programs to occupations
 
 `get_cip_soc_crosswalk()` returns the NCES crosswalk from CIP program codes to
-SOC occupation codes, which turns the institution grain's CIP detail into a
+SOC occupation codes, which turns the institution level's CIP detail into a
 workforce measure.
 
 ```{r crosswalk}

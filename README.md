@@ -29,7 +29,8 @@ get_degrees(geoids = "33009", years = 2022)           # credentials conferred
 get_completers(geoids = "33009", years = 2022)        # students completing
 get_graduation_rates(geoids = "33009", years = 2022)  # completion outcomes
 
-# `geography` switches grain. County is tidy long; institution is wide.
+# `geography` selects the geographic unit. County is tidy long; institution
+# is point-level and wide.
 get_degrees(geography = "institution", geoids = "33009", years = 2022)
 # unitid | geoid | cipcode | major_num | ed_level | count_* | year
 
@@ -47,7 +48,7 @@ get_cip_soc_crosswalk()
 | Function | Measure | IPEDS survey |
 |---|---|---|
 | `get_institutions()` | Institutional presence and composition | Institutional Characteristics (`HD{year}`) |
-| `get_degrees()` | Credentials conferred, by program at institution grain | Completions (`C{year}_A`) |
+| `get_degrees()` | Credentials conferred, by program at institution level | Completions (`C{year}_A`) |
 | `get_completers()` | Student headcounts by award level (2012+) | Completions (`C{year}_C`) |
 | `get_graduation_rates()` | Completion and transfer-out rates | Graduation Rates (`GR{year}`) |
 | `get_ipeds()` | All of the above, or filtered across surveys | any |
@@ -55,7 +56,7 @@ get_cip_soc_crosswalk()
 ## Start exploring
 
 ```r
-# The package: surveys covered, the two grains, counting conventions
+# The package: surveys covered, the two levels, counting conventions
 vignette("introduction", package = "cori.data.ipeds")
 
 # A worked rural analysis, with charts

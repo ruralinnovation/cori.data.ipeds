@@ -230,7 +230,8 @@
 #' @param s3_bucket Character. Default: \code{"cori.data.ipeds"}.
 #' @param s3_path_prefix Character. Default: \code{""}.
 #'
-#' @return A wide data frame, one row per the survey's natural grain:
+#' @return A wide data frame, one row per institution and the survey's own
+#'   dimensions:
 #'   institution for `institutional_characteristics`, institution x CIP x
 #'   award level x major number for `completions`, and institution x cohort
 #'   type for `grad_rates`.

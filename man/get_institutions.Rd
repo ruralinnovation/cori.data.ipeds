@@ -19,27 +19,27 @@ get_institutions(
 \code{"institution"} for the wide per-institution table.}
 
 \item{geoids}{Character vector of 5-digit county FIPS codes. Default \code{NULL}
-returns all counties. Filters by county at either grain.}
+returns all counties. Filters by county at either level.}
 
 \item{years}{Integer vector of years. Default \code{NULL} returns all available.
 Coverage is 2010 to present.}
 
 \item{variables}{Character vector of county-level variable names, e.g.
-\code{"inst_count"}. County grain only -- see \code{\link[=get_ipeds_codebook]{get_ipeds_codebook()}}.}
+\code{"inst_count"}. County level only -- see \code{\link[=get_ipeds_codebook]{get_ipeds_codebook()}}.}
 
-\item{unitids}{Character vector of IPEDS unit IDs. Institution grain only.}
+\item{unitids}{Character vector of IPEDS unit IDs. Institution level only.}
 
 \item{s3_bucket, s3_path_prefix}{Storage location. Defaults are production.}
 }
 \value{
-County grain: \code{geoid}, \code{year}, \code{variable}, \code{value}, \code{agg_var},
-\code{survey}. Institution grain: the codebook's institution-level columns for
+County level: \code{geoid}, \code{year}, \code{variable}, \code{value}, \code{agg_var},
+\code{survey}. Institution level: the codebook's institution-level columns for
 this survey, plus derived flags, \code{year} and \code{survey}.
 }
 \description{
 Institutional presence and composition from the IPEDS Institutional
-Characteristics survey. At county grain this is counts of degree-granting
-institutions by control and level; at institution grain it is the
+Characteristics survey. At county level this is counts of degree-granting
+institutions by control and level; at institution level it is the
 institution directory, one row per institution with location, sector,
 classification and derived flags.
 }

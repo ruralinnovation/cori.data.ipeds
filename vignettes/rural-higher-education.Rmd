@@ -23,7 +23,7 @@ Four IPEDS surveys describe four separable things about rural higher education:
 and **whether students finish**. This vignette works through each against rural
 counties, then connects degree production to occupations.
 
-For the package itself — the surveys covered, the two grains, the counting
+For the package itself — the surveys covered, the two levels, the counting
 conventions — see
 `vignette("introduction", package = "cori.data.ipeds")`.
 
@@ -54,7 +54,7 @@ rural <- cbsa_2023 |>
 
 ## Where the four-year institutions are
 
-Whether a county has a **four-year** institution needs the institution grain,
+Whether a county has a **four-year** institution needs the institution level,
 because the county variables count institutions without distinguishing which
 offer a bachelor's.
 
@@ -99,7 +99,9 @@ from, so level and control can be crossed.
 ```{r institution-type}
 ic <- get_institutions(geography = "institution", years = YR) |>
   inner_join(rural, by = "geoid") |>
-  filter(is_degree_granting == 1) |>
+  # the level filter matters: without it, the 71 degree-granting
+  # less-than-two-year institutions fall into the "Two-year" bucket
+  filter(is_degree_granting == 1, is_4yr == 1 | is_2yr == 1) |>
   mutate(
     level   = if_else(is_4yr == 1, "Four-year", "Two-year"),
     control = if_else(is_public == 1, "Public", "Private")
@@ -220,7 +222,7 @@ knitr::include_graphics("figures/degrees_students.png")
 
 ## From degrees to occupations
 
-The institution grain keeps NCES's CIP detail, which `get_cip_soc_crosswalk()`
+The institution level keeps NCES's CIP detail, which `get_cip_soc_crosswalk()`
 maps to SOC occupation codes.
 
 ```{r tech}

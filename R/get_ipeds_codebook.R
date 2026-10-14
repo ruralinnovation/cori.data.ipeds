@@ -83,8 +83,8 @@
 #' surveys this package harmonizes: Institutional Characteristics, Completions,
 #' and Graduation Rates, 2010 to present.
 #'
-#' Use `level` to separate the two output grains: `"institution"` variables
-#' appear in [get_ipeds()]'s institution-grain output, `"county"` variables in
+#' Use `level` to separate the two output levels: `"institution"` variables
+#' appear in [get_ipeds()]'s institution-level output, `"county"` variables in
 #' [get_ipeds()]'s tidy output, and `"both"` marks the join keys present
 #' in every table.
 #'
@@ -92,7 +92,7 @@
 #' column renames, and taxonomy changes -- so cross-year comparability is
 #' documented alongside the variable rather than in separate prose.
 #'
-#' Much of IPEDS is categorical, and the institution-grain output returns
+#' Much of IPEDS is categorical, and the institution-level output returns
 #' those columns as the bare integers NCES publishes. `codes` carries the
 #' value labels for them, transcribed from the NCES data dictionary
 #' workbooks, so a `sector_code` of 4 can be resolved without leaving the
@@ -275,8 +275,11 @@ get_ipeds_codebook <- function() {
       ),
       paste0(
         "Whether the institution is a Historically Black College or ",
-        "University as designated by the U.S. Department of Education. ",
-        "1 = Yes, 2 = No. Coverage: 2010-present."
+        "University. Defined by the Higher Education Act of 1965 as ",
+        "amended: established prior to 1964, principal mission the ",
+        "education of Black Americans, and accredited. Distinct from ",
+        "land-grant status -- only 22 of the 102 HBCUs in 2023 are ",
+        "land-grant institutions. Coverage: 2010-present."
       )
     ),
     .cb_row(
@@ -296,9 +299,12 @@ get_ipeds_codebook <- function() {
         "2" = "No"
       ),
       paste0(
-        "Whether the institution is a tribal college or university as ",
-        "defined by the Tribally Controlled Colleges and Universities ",
-        "Assistance Act of 1978. 1 = Yes, 2 = No. Coverage: 2010-present."
+        "Whether the institution is one of the Tribal Colleges and ",
+        "Universities. NCES defines these operationally rather than by ",
+        "statute: tribally controlled and, with few exceptions, located on ",
+        "reservations, and all members of the American Indian Higher ",
+        "Education Consortium. Every tribal college also carries ",
+        "land_grant_code = 1. Coverage: 2010-present."
       )
     ),
     .cb_row(
@@ -452,10 +458,14 @@ get_ipeds_codebook <- function() {
         "2" = "Not a land grant institution"
       ),
       paste0(
-        "Whether the institution is a land-grant university designated under ",
-        "the Morrill Acts. 1 = Yes, 2 = No. Land-grant institutions receive ",
-        "federal funding for agriculture, engineering, and mechanical arts ",
-        "research and are disproportionately rural. Coverage: 2010-present."
+        "Whether the institution is a land-grant university. NCES defines ",
+        "this as designation by a state legislature or Congress to receive ",
+        "the benefits of the Morrill Acts of 1862 and 1890, but the flag in ",
+        "the data is broader: all 35 tribal colleges carry it under the 1994 ",
+        "land-grant designation, 29% of the 121 land-grant institutions in ",
+        "2023. Land-grant institutions receive federal funding for ",
+        "agriculture, engineering and mechanical arts research and are ",
+        "disproportionately rural. Coverage: 2010-present."
       )
     ),
     .cb_row(

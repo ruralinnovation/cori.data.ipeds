@@ -20,25 +20,25 @@ get_ipeds(
 \code{"institution"} for the wide per-institution table.}
 
 \item{geoids}{Character vector of 5-digit county FIPS codes. Default \code{NULL}
-returns all counties. Filters by county at either grain.}
+returns all counties. Filters by county at either level.}
 
 \item{years}{Integer vector of years. Default \code{NULL} returns all available.
 Coverage is 2010 to present.}
 
 \item{variables}{Character vector of county-level variable names, e.g.
-\code{"inst_count"}. County grain only -- see \code{\link[=get_ipeds_codebook]{get_ipeds_codebook()}}.}
+\code{"inst_count"}. County level only -- see \code{\link[=get_ipeds_codebook]{get_ipeds_codebook()}}.}
 
 \item{surveys}{Character vector of survey names: any of
 \code{"institutional_characteristics"}, \code{"completions"}, \code{"completers"},
-\code{"grad_rates"}. Default \code{NULL} returns all (county grain only).}
+\code{"grad_rates"}. Default \code{NULL} returns all (county level only).}
 
-\item{unitids}{Character vector of IPEDS unit IDs. Institution grain only.}
+\item{unitids}{Character vector of IPEDS unit IDs. Institution level only.}
 
 \item{s3_bucket, s3_path_prefix}{Storage location. Defaults are production.}
 }
 \value{
-County grain: tidy long across the requested surveys. Institution
-grain: the wide table for the one requested survey.
+County level: tidy long across the requested surveys. Institution
+level: the wide table for the one requested survey.
 }
 \description{
 The general getter underneath \code{\link[=get_institutions]{get_institutions()}}, \code{\link[=get_degrees]{get_degrees()}},
@@ -54,7 +54,7 @@ because each survey has a different wide schema.
 # Everything known about one county in one year
 get_ipeds(geoids = "33009", years = 2022)
 
-# One survey, institution grain
+# One survey, institution level
 get_ipeds(geography = "institution", surveys = "completions", years = 2022)
 }
 }

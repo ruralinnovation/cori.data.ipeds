@@ -30,7 +30,8 @@ institutions in those counties. Default: all.}
 \item{s3_path_prefix}{Character. Default: \code{""}.}
 }
 \value{
-A wide data frame, one row per the survey's natural grain:
+A wide data frame, one row per institution and the survey's own
+dimensions:
 institution for \code{institutional_characteristics}, institution x CIP x
 award level x major number for \code{completions}, and institution x cohort
 type for \code{grad_rates}.

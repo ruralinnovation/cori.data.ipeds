@@ -19,29 +19,29 @@ get_degrees(
 \code{"institution"} for the wide per-institution table.}
 
 \item{geoids}{Character vector of 5-digit county FIPS codes. Default \code{NULL}
-returns all counties. Filters by county at either grain.}
+returns all counties. Filters by county at either level.}
 
 \item{years}{Integer vector of years. Default \code{NULL} returns all available.
 Coverage is 2010 to present.}
 
 \item{variables}{Character vector of county-level variable names, e.g.
-\code{"inst_count"}. County grain only -- see \code{\link[=get_ipeds_codebook]{get_ipeds_codebook()}}.}
+\code{"inst_count"}. County level only -- see \code{\link[=get_ipeds_codebook]{get_ipeds_codebook()}}.}
 
-\item{unitids}{Character vector of IPEDS unit IDs. Institution grain only.}
+\item{unitids}{Character vector of IPEDS unit IDs. Institution level only.}
 
 \item{s3_bucket, s3_path_prefix}{Storage location. Defaults are production.}
 }
 \value{
-County grain: \code{geoid}, \code{year}, \code{variable}, \code{value}, \code{agg_var},
+County level: \code{geoid}, \code{year}, \code{variable}, \code{value}, \code{agg_var},
 \code{survey}, where \code{agg_var} is total degrees so \code{value * agg_var} recovers
-a raw count. Institution grain: \code{unitid}, \code{geoid}, \code{cipcode},
+a raw count. Institution level: \code{unitid}, \code{geoid}, \code{cipcode},
 \code{major_num}, \code{ed_level}, \code{count_men}, \code{count_women},
 \code{count_total_students}, \code{year}, \code{survey}.
 }
 \description{
-Credential production from the IPEDS Completions survey. At county grain
+Credential production from the IPEDS Completions survey. At county level
 this is total degrees conferred and the share by level and by sex; at
-institution grain it is awards by program, one row per institution x CIP
+institution level it is awards by program, one row per institution x CIP
 code x award level x major number.
 }
 \details{
