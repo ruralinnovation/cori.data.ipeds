@@ -3,9 +3,12 @@
 To pick up a new NCES IPEDS release, run `refresh_ipeds.R` — the pipeline is
 incremental, so it only needs the full year range, not just the new year.
 
-`build_dictionaries.R` documents the origin of `inst/extdata/codebook.csv`
-and the three legacy dictionary CSVs; rerun it if a variable mapping needs
-to change.
+The codebook is R code, not data: see `R/get_ipeds_codebook.R`. Adding or
+changing a variable means editing that file, then `devtools::document()`.
+
+`build_dictionaries.R` is provenance notes for `dictionaries/` -- the NCES
+variable inventories kept as reference when extending coverage. Nothing in
+the pipeline reads them, and running that script does nothing.
 
 `validate_etl.R` runs a battery of consistency checks against `data_county`
 and `data_institution` on S3 — run it after `refresh_ipeds.R` (or it's
