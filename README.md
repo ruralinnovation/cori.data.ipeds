@@ -51,6 +51,14 @@ get_cip_soc_crosswalk()
 | `get_graduation_rates()` | Completion and transfer-out rates | Graduation Rates |
 | `get_ipeds()` | All of the above, or filtered across surveys | any |
 
+## Start exploring
+
+For a worked rural analysis with charts:
+
+```r
+vignette("rural-higher-education", package = "cori.data.ipeds")
+```
+
 ## Output Format
 
 County-level functions return a six-column tidy format:
