@@ -55,8 +55,8 @@ test_that("get_ipeds() at institution grain returns institution-level rows for a
 
   expect_s3_class(df, "data.frame")
   expect_gt(nrow(df), 0)
-  expect_true(all(c("unitid", "county_fips", "year") %in% names(df)))
-  expect_true(all(df$county_fips == "33009"))
+  expect_true(all(c("unitid", "geoid", "year") %in% names(df)))
+  expect_true(all(df$geoid == "33009"))
 })
 
 test_that("get_ipeds() and get_ipeds() agree on Grafton's institution count", {

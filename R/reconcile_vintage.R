@@ -13,7 +13,7 @@
 #   - Warn on unexpected values for known break points
 #
 # Responsibilities explicitly NOT here:
-#   - Canonical renaming (COUNTYCD -> county_fips) -- that is process_institution.R
+#   - Canonical renaming (COUNTYCD -> geoid) -- that is process_institution.R
 #   - Aggregation or filtering -- that is process_institution.R / process_county.R
 #   - Download or parquet I/O -- that is write_raw_to_s3.R
 
@@ -29,9 +29,11 @@
 # but we guard defensively.
 .IC_GEO_AVAILABLE_YEAR <- 2009L
 
-# Doctoral AWLEVEL codes changed in 2009 (9/10/11 -> 17/18/19).
-# Package starts at 2010 so pre-revision codes should never appear,
-# but we warn if they do.
+# Doctoral AWLEVEL codes changed in 2008: C2007_A still reports a single
+# "Doctor's degrees" code 9, and C2008_A reports 17/18/19. Codes 10 and 11
+# were first-professional degree and first-professional certificate, folded
+# into the same revision. Package starts at 2010 so none of the three should
+# ever appear, but we warn if they do.
 .DOCTORAL_CODES_OLD <- c(9L, 10L, 11L)
 .DOCTORAL_CODES_NEW <- c(17L, 18L, 19L)
 
@@ -77,7 +79,7 @@ reconcile_ic_vintage <- function(df, year) {
 
   # -- COUNTYCD: zero-pad to 5 digits ----------------------------------------
   # Must happen after sentinel removal so negative integers are already NA.
-  df <- .pad_county_fips(df, col = "COUNTYCD")
+  df <- .pad_geoid(df, col = "COUNTYCD")
 
   # -- Geo columns: ensure present (defensive guard for pre-2009 data) --------
   # COUNTYCD, COUNTYNM, LATITUDE, LONGITUD were added to HD in 2009.
@@ -107,7 +109,7 @@ reconcile_ic_vintage <- function(df, year) {
 #'   \item All years: \code{UNITID} zero-padded to 6 digits
 #'   \item All years: \code{CIPCODE} restored to the canonical zero-padded
 #'     \code{"xx.xxxx"} string
-#'   \item 2010+: warns if pre-revision doctoral AWLEVEL codes (9/10/11) are
+#'   \item 2010+: warns if pre-2008 doctoral AWLEVEL codes (9/10/11) are
 #'     found (should not appear for years >= 2010)
 #' }
 #'
@@ -131,7 +133,7 @@ reconcile_completions_vintage <- function(df, year) {
     old_doc <- df$AWLEVEL[!is.na(df$AWLEVEL) & df$AWLEVEL %in% .DOCTORAL_CODES_OLD]
     if (length(old_doc) > 0) {
       warning(sprintf(
-        "reconcile_completions_vintage: pre-2009 doctoral AWLEVEL codes (%s) found in year %d. Expected 17/18/19 for years >= 2010. Check source data.",
+        "reconcile_completions_vintage: pre-2008 doctoral AWLEVEL codes (%s) found in year %d. Expected 17/18/19 for years >= 2008. Check source data.",
         paste(unique(old_doc), collapse = ", "), year
       ))
     }
@@ -278,7 +280,7 @@ reconcile_vintage <- function(survey, df, year) {
 
 # Zero-pad a county FIPS column to 5 characters.
 # Assumes sentinel codes have already been replaced with NA.
-.pad_county_fips <- function(df, col = "COUNTYCD") {
+.pad_geoid <- function(df, col = "COUNTYCD") {
   if (col %in% names(df)) {
     df[[col]] <- ifelse(
       is.na(df[[col]]),

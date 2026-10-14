@@ -8,7 +8,7 @@
   survey,
   years = NULL,
   unitids = NULL,
-  county_fips = NULL,
+  geoids = NULL,
   s3_bucket = "cori.data.ipeds",
   s3_path_prefix = ""
 )
@@ -22,8 +22,8 @@ headcounts by award level, 2012 onward), or \code{"grad_rates"}.}
 
 \item{unitids}{Character vector. IPEDS unit IDs to return. Default: all.}
 
-\item{county_fips}{Character vector. 5-digit county FIPS codes. Returns
-all institutions in those counties. Default: all.}
+\item{geoids}{Character vector. 5-digit county GEOIDs. Returns all
+institutions in those counties. Default: all.}
 
 \item{s3_bucket}{Character. Default: \code{"cori.data.ipeds"}.}
 
@@ -58,16 +58,16 @@ Returns wide-format data — column structure varies by survey.
 }
 \details{
 Because each survey has a different schema, only one survey can be
-queried per call. Use \code{county_fips} to pull all institutions in
+queried per call. Use \code{geoids} to pull all institutions in
 one or more counties, then aggregate on your own terms.
 }
 \examples{
 \dontrun{
 # All institutions in Grafton County NH
-get_ipeds("institutional_characteristics", county_fips = "33009")
+get_institutions(geography = "institution", geoids = "33009")
 
 # Completions for a specific institution
-get_ipeds("completions", unitids = "182670")
+get_degrees(geography = "institution", unitids = "182670")
 }
 }
 \seealso{

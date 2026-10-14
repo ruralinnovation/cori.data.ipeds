@@ -324,6 +324,36 @@ for (sv in IPEDS_SURVEYS) {
     FALSE
   })
   check(sprintf("institution-grain read returns rows for %s", sv), ok)
+
+  # -- every published code is decoded in the codebook ----------------------
+  #
+  # The institution grain returns NCES's bare integers. If a vintage
+  # introduces a new code -- as AWLEVEL 20/21 did in 2020 and GRTYPE 41-48
+  # did in 2011 -- it must be added to the codebook's `codes` column, or
+  # users silently get an integer nobody can resolve.
+  if (ok) {
+    cb_sv  <- get_ipeds_codebook()
+    cb_sv  <- cb_sv[(cb_sv$survey == sv | cb_sv$level == "both") &
+                      nzchar(cb_sv$codes), ]
+    undecoded <- character(0)
+
+    for (v in intersect(cb_sv$variable, names(inst))) {
+      labelled <- sub(" = .*$", "",
+                      strsplit(cb_sv$codes[cb_sv$variable == v][1],
+                               "; ", fixed = TRUE)[[1]])
+      present <- unique(as.character(inst[[v]][!is.na(inst[[v]])]))
+      missing <- setdiff(present, labelled)
+      if (length(missing)) {
+        undecoded <- c(undecoded, sprintf("%s: %s", v,
+                                          paste(sort(missing), collapse = ", ")))
+      }
+    }
+
+    check(sprintf("%s codes are all decoded in the codebook", sv),
+      length(undecoded) == 0,
+      paste(undecoded, collapse = " | ")
+    )
+  }
 }
 
 

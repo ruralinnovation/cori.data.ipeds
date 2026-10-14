@@ -43,7 +43,7 @@
 #' @keywords internal
 apply_codebook_mapping <- function(df, survey, codebook) {
   # Apply mappings for this survey AND cross-survey variables (level = "both")
-  # e.g. unitid and county_fips appear in all three surveys but are defined
+  # e.g. unitid and geoid appear in all three surveys but are defined
   # under survey = "institutional_characteristics" with level = "both" in the codebook.
   cb <- codebook[
     (codebook$survey == survey | codebook$level == "both") &
@@ -225,7 +225,7 @@ process_ipeds_institution_all <- function(year,
 # Build a unitid -> geo lookup data frame from a processed IC data frame.
 .geo_lookup_from_ic <- function(ic_df) {
   geo_cols <- intersect(
-    c("unitid", "county_fips", "st_abbr", "latitude", "longitude"),
+    c("unitid", "geoid", "st_abbr", "latitude", "longitude"),
     names(ic_df)
   )
   lookup <- unique(ic_df[, geo_cols, drop = FALSE])

@@ -70,7 +70,7 @@
 
 # Internal: build a WHERE clause from optional filter vectors.
 .ipeds_where <- function(geoids = NULL, years = NULL, variables = NULL,
-                          surveys = NULL, unitids = NULL, county_fips = NULL) {
+                          surveys = NULL, unitids = NULL) {
   clauses <- character(0)
 
   if (!is.null(geoids))
@@ -92,10 +92,6 @@
   if (!is.null(unitids))
     clauses <- c(clauses, sprintf(
       "unitid IN (%s)", paste0("'", unitids, "'", collapse = ", ")
-    ))
-  if (!is.null(county_fips))
-    clauses <- c(clauses, sprintf(
-      "county_fips IN (%s)", paste0("'", county_fips, "'", collapse = ", ")
     ))
 
   if (length(clauses) == 0) return("")
@@ -221,7 +217,7 @@
 #' Returns wide-format data — column structure varies by survey.
 #'
 #' Because each survey has a different schema, only one survey can be
-#' queried per call. Use \code{county_fips} to pull all institutions in
+#' queried per call. Use \code{geoids} to pull all institutions in
 #' one or more counties, then aggregate on your own terms.
 #'
 #' @param survey Character. One of \code{"institutional_characteristics"},
@@ -229,8 +225,8 @@
 #'   headcounts by award level, 2012 onward), or \code{"grad_rates"}.
 #' @param years Integer vector. Years to return. Default: all available.
 #' @param unitids Character vector. IPEDS unit IDs to return. Default: all.
-#' @param county_fips Character vector. 5-digit county FIPS codes. Returns
-#'   all institutions in those counties. Default: all.
+#' @param geoids Character vector. 5-digit county GEOIDs. Returns all
+#'   institutions in those counties. Default: all.
 #' @param s3_bucket Character. Default: \code{"cori.data.ipeds"}.
 #' @param s3_path_prefix Character. Default: \code{""}.
 #'
@@ -261,17 +257,17 @@
 #' @examples
 #' \dontrun{
 #' # All institutions in Grafton County NH
-#' get_ipeds("institutional_characteristics", county_fips = "33009")
+#' get_institutions(geography = "institution", geoids = "33009")
 #'
 #' # Completions for a specific institution
-#' get_ipeds("completions", unitids = "182670")
+#' get_degrees(geography = "institution", unitids = "182670")
 #' }
 #' @keywords internal
 .ipeds_institution_query <- function(
     survey,
     years          = NULL,
     unitids        = NULL,
-    county_fips    = NULL,
+    geoids         = NULL,
     s3_bucket      = "cori.data.ipeds",
     s3_path_prefix = ""
 ) {
@@ -288,9 +284,9 @@
 
 
   where <- .ipeds_where(
-    years       = years,
-    unitids     = unitids,
-    county_fips = county_fips
+    years   = years,
+    unitids = unitids,
+    geoids  = geoids
   )
 
   query <- sprintf(
@@ -302,7 +298,7 @@
 
   # Enforce consistent types on key columns
   if ("unitid"      %in% names(out)) out$unitid      <- as.character(out$unitid)
-  if ("county_fips" %in% names(out)) out$county_fips <- as.character(out$county_fips)
+  if ("geoid"       %in% names(out)) out$geoid       <- as.character(out$geoid)
   if ("year"        %in% names(out)) out$year        <- as.integer(out$year)
 
   if (nrow(out) == 0) {

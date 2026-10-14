@@ -31,12 +31,13 @@ get_graduation_rates(geoids = "33009", years = 2022)  # completion outcomes
 
 # `geography` switches grain. County is tidy long; institution is wide.
 get_degrees(geography = "institution", geoids = "33009", years = 2022)
-# unitid | county_fips | cipcode | major_num | ed_level | count_* | year
+# unitid | geoid | cipcode | major_num | ed_level | count_* | year
 
 # Everything about a county, across all four surveys, in one call
 get_ipeds(geoids = "33009", years = 2022)
 
-# Variable definitions, coverage and vintage caveats
+# Variable definitions, coverage, vintage caveats and value labels
+# (what sector_code = 4 means, and the other 19 categorical columns)
 get_ipeds_codebook()
 
 # Map programs to occupations
@@ -51,6 +52,16 @@ get_cip_soc_crosswalk()
 | `get_graduation_rates()` | Completion and transfer-out rates | Graduation Rates |
 | `get_ipeds()` | All of the above, or filtered across surveys | any |
 
+## Start exploring
+
+```r
+# The package: surveys covered, the two grains, counting conventions
+vignette("introduction", package = "cori.data.ipeds")
+
+# A worked rural analysis, with charts
+vignette("rural-higher-education", package = "cori.data.ipeds")
+```
+
 ## Output Format
 
 County-level functions return a six-column tidy format:
@@ -64,7 +75,7 @@ County-level functions return a six-column tidy format:
 | `agg_var` | numeric | Denominator or aggregation weight. For `share_degrees_*` variables: total degrees conferred (raw count = `value * agg_var`). For `grad_rate_*` variables: adjusted cohort size. `NA` for institution count variables. |
 | `survey` | character | Source survey: `"institutional_characteristics"`, `"completions"`, or `"grad_rates"` |
 
-Institution-level functions return wide format. Column structure varies by survey — see `get_ipeds(geography = "institution", surveys = )` documentation. `county_fips` is a foreign key to the county-level data.
+Institution-level functions return wide format. Column structure varies by survey — see `get_ipeds(geography = "institution", surveys = )` documentation. `geoid` is the county key, the same column the county-level output uses.
 
 ### County variables
 

@@ -30,10 +30,12 @@ test_that(".ipeds_where() combines multiple filters with AND, in a fixed order",
 })
 
 test_that(".ipeds_where() supports the institution-level filter set", {
-  where <- .ipeds_where(unitids = "182670", county_fips = "33009")
+  # Institution and county grain both filter on `geoid`, so one clause builder
+  # serves both -- there is no separate county_fips argument.
+  where <- .ipeds_where(unitids = "182670", geoids = "33009")
   expect_equal(
     where,
-    "WHERE unitid IN ('182670') AND county_fips IN ('33009')"
+    "WHERE geoid IN ('33009') AND unitid IN ('182670')"
   )
 })
 

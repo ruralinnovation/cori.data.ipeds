@@ -32,7 +32,7 @@ test_that("tracked award levels are degrees only", {
   data.frame(
     unitid               = c("000001", "000001", "000001", "000001",
                              "000001", "000002"),
-    county_fips          = rep("11111", 6),
+    geoid          = rep("11111", 6),
     cipcode              = c("51.0000", "52.0000", "99.0000", "99.0000",
                              "51.0000", "51.0000"),
     major_num            = c(1L, 1L, 1L, 1L, 2L, 1L),
@@ -93,7 +93,7 @@ test_that(".county_completions() level shares still sum to 1", {
 .fake_grad_rates <- function() {
   data.frame(
     unitid               = c("000001", "000001", "000001", "000003"),
-    county_fips          = rep("11111", 4),
+    geoid          = rep("11111", 4),
     cohort_type          = c(2L, 3L, 4L, 2L),
     count_total_students = c(1000L, 700L, 100L, 555L),
     year                 = rep(2022L, 4),
@@ -156,7 +156,7 @@ test_that("process_ipeds_county() refuses to aggregate without IC", {
   data.frame(
     unitid               = c("000001", "000001", "000001", "000001",
                              "000001", "000004"),
-    county_fips          = rep("11111", 6),
+    geoid          = rep("11111", 6),
     # 3 = associate, 5 = bachelor's, 7 = master's, 9 = doctoral,
     # 2 = a certificate level that must not be aggregated
     award_level_category = c(3L, 5L, 7L, 9L, 2L, 5L),
@@ -208,7 +208,7 @@ test_that(".county_completers() returns NULL when the level column is missing", 
 test_that("process_ipeds_county() aggregates completers alongside the other surveys", {
   out <- process_ipeds_county(list(
     institutional_characteristics = data.frame(
-      unitid = "000001", county_fips = "11111", is_degree_granting = 1L,
+      unitid = "000001", geoid = "11111", is_degree_granting = 1L,
       sector_code = 1L, is_public = 1L, is_nonprofit = 0L, is_4yr = 1L,
       is_2yr = 0L, is_hbcu = 0L, is_tribal = 0L, year = 2022L,
       stringsAsFactors = FALSE
@@ -243,7 +243,7 @@ test_that(".normalize_nces_names() uppercases and trims", {
 test_that(".normalize_nces_names() strips a UTF-8 BOM in any representation", {
   # NCES began shipping BOMs on some 2023+ files. Left in place, the first
   # column name stops matching UNITID and the column is dropped -- which is
-  # how completers 2023/2024 lost unitid and county_fips.
+  # how completers 2023/2024 lost unitid and geoid.
   expect_equal(.normalize_nces_names("﻿UNITID"), "UNITID")
   expect_equal(.normalize_nces_names("<ef><bb><bf>UNITID"), "UNITID")
   expect_equal(
@@ -267,7 +267,7 @@ test_that(".county_grad_rates() omits a county with no numerator rows rather tha
   # affected 23% of county-years before this was fixed.
   df <- data.frame(
     unitid               = c("000001", "000001"),
-    county_fips          = c("11111", "11111"),
+    geoid          = c("11111", "11111"),
     cohort_type          = c(2L, 3L),      # cohort + completers, no type 4
     count_total_students = c(1000L, 700L),
     year                 = c(2022L, 2022L),
@@ -283,7 +283,7 @@ test_that(".county_grad_rates() keeps a genuinely reported zero", {
   # Distinct from the case above: here type 4 IS reported, as zero.
   df <- data.frame(
     unitid               = c("000001", "000001", "000001"),
-    county_fips          = rep("11111", 3),
+    geoid          = rep("11111", 3),
     cohort_type          = c(2L, 3L, 4L),
     count_total_students = c(1000L, 700L, 0L),
     year                 = rep(2022L, 3),

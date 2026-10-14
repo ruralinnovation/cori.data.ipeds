@@ -25,7 +25,7 @@ Known era fixes applied:
 \item All years: \code{UNITID} zero-padded to 6 digits
 \item All years: \code{CIPCODE} restored to the canonical zero-padded
 \code{"xx.xxxx"} string
-\item 2010+: warns if pre-revision doctoral AWLEVEL codes (9/10/11) are
+\item 2010+: warns if pre-2008 doctoral AWLEVEL codes (9/10/11) are
 found (should not appear for years >= 2010)
 }
 }

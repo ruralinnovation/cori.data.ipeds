@@ -53,7 +53,7 @@ finish <- function(fig, title, subtitle, source, note = NULL, file,
 
 county_labels <- q_(get_institutions(geography = "institution", years = YR)) |>
   filter(!is.na(county_name), !is.na(st_abbr)) |>
-  distinct(geoid = county_fips, county_name, st_abbr) |>
+  distinct(geoid, county_name, st_abbr) |>
   group_by(geoid) |> slice(1) |> ungroup() |>
   mutate(county_label = paste0(county_name, ", ", st_abbr)) |>
   select(geoid, county_label)
@@ -68,8 +68,8 @@ county_labels <- q_(get_institutions(geography = "institution", years = YR)) |>
 # than as a continuous surface.
 
 has_4yr <- q_(get_institutions(geography = "institution", years = YR)) |>
-  filter(is_degree_granting == 1, is_4yr == 1, !is.na(county_fips)) |>
-  distinct(geoid = county_fips) |>
+  filter(is_degree_granting == 1, is_4yr == 1, !is.na(geoid)) |>
+  distinct(geoid) |>
   mutate(has_university = TRUE)
 
 counties <- tigris::counties(cb = TRUE, progress_bar = FALSE) |>
@@ -138,7 +138,6 @@ finish(fig,
 # 2. Institution composition, faceted by level and control --------------------
 
 ic <- q_(get_institutions(geography = "institution", years = YR)) |>
-  mutate(geoid = county_fips) |>
   inner_join(rural, by = "geoid") |>
   filter(is_degree_granting == 1, is_4yr == 1 | is_2yr == 1) |>
   mutate(
@@ -278,7 +277,7 @@ cips <- xw |>
 tech <- q_(get_degrees(geography = "institution", years = TECH_YRS)) |>
   filter(cipcode %in% cips, major_num == 1L, cipcode != "99.0000",
          ed_level %in% c(3L, 5L, 7L, 17L, 18L, 19L)) |>
-  group_by(geoid = county_fips) |>
+  group_by(geoid) |>
   summarise(tech_degrees = sum(count_total_students, na.rm = TRUE), .groups = "drop")
 
 top <- rural |>
