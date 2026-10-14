@@ -4,14 +4,13 @@
 #' Download a single IPEDS ZIP file from NCES
 #'
 #' Downloads the ZIP for a given survey vintage. Skips the download if the
-#' file already exists locally. The URL comes directly from the data
-#' dictionary — no URL construction needed.
+#' file already exists locally.
 #'
 #' @param survey Character. One of \code{"institutional_characteristics"}, \code{"completions"},
 #'   \code{"grad_rates"}.
 #' @param year Integer. Survey year.
-#' @param download_url Character. Full URL to the NCES ZIP file (from the
-#'   data dictionary \code{download_url} column).
+#' @param download_url Character. Full URL to the NCES ZIP file, as built by
+#'   \code{.raw_download_url()} from the survey and year.
 #' @param staging_dir Character. Root staging directory.
 #'   Default: \code{"data/ipeds"}.
 #'
@@ -103,8 +102,9 @@ unzip_ipeds <- function(survey, year, staging_dir = "data/ipeds") {
 #'
 #' IPEDS ZIPs sometimes include both a revised file (\code{*_rv.csv}) and an
 #' original (\code{*_a.csv}). The revised file is always preferred when present.
-#' Some years encode two possible filenames in the dictionary
-#' (\code{source_table_candidates}); this function tries each in turn.
+#' Candidate filenames come from \code{.raw_csv_candidates()}, which supplies
+#' both the lowercase and uppercase spelling of the NCES table name; this
+#' function tries each in turn.
 #'
 #' @param extract_dir Character. Path to the extracted ZIP contents.
 #' @param source_table_candidates Character vector. One or more candidate
@@ -162,12 +162,14 @@ resolve_ipeds_csv <- function(extract_dir, source_table_candidates) {
   options(timeout = 600)
 
   df <- tryCatch(
-    utils::read.csv(path, stringsAsFactors = FALSE, na.strings = c("", ".", "NA")),
+    utils::read.csv(path, stringsAsFactors = FALSE, check.names = FALSE,
+                      na.strings = c("", ".", "NA")),
     error = function(e) NULL,
     warning = function(w) {
       if (grepl("incomplete final line", conditionMessage(w))) {
         suppressWarnings(
-          utils::read.csv(path, stringsAsFactors = FALSE, na.strings = c("", ".", "NA"))
+          utils::read.csv(path, stringsAsFactors = FALSE, check.names = FALSE,
+                      na.strings = c("", ".", "NA"))
         )
       } else {
         NULL
@@ -180,6 +182,7 @@ resolve_ipeds_csv <- function(extract_dir, source_table_candidates) {
     df <- utils::read.csv(
       path,
       stringsAsFactors = FALSE,
+      check.names      = FALSE,
       fileEncoding     = "latin1",
       na.strings       = c("", ".", "NA")
     )

@@ -44,10 +44,8 @@ write_ipeds_institution_to_s3 <- function(
   results     <- list()
 
   for (sv in IPEDS_SURVEYS) {
-    local_dir  <- file.path(staging_dir, "s3_institution",
-                            sprintf("survey=%s", sv),
-                            sprintf("year=%d",   year))
-    local_path <- file.path(local_dir, "part-0.parquet")
+    local_path <- .institution_local_path(sv, year, staging_dir)
+    local_dir  <- dirname(local_path)
 
     if (!overwrite && file.exists(local_path)) {
       message(sprintf("  institution %s %d: already written locally, skipping", sv, year))
@@ -266,9 +264,10 @@ write_ipeds_all <- function(
   if (length(out) == 0) NULL else out
 }
 
-# Write a data frame to parquet via DuckDB.
+# Write a data frame to parquet via DuckDB. Used by all three layers.
 .write_parquet <- function(df, path) {
-  # Sanitize character columns to valid UTF-8.
+  # Sanitize character columns to valid UTF-8. IPEDS institution names and
+  # addresses sometimes contain latin1 characters.
   chr_cols <- names(df)[sapply(df, is.character)]
   for (col in chr_cols) {
     df[[col]] <- iconv(df[[col]], from = "", to = "UTF-8", sub = "\uFFFD")
