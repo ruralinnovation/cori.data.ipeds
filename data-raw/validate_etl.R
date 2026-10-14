@@ -4,20 +4,20 @@
 # data_county and data_institution layers. Designed to be run after
 # write_ipeds_all() completes (maintainer-only; see data-raw/refresh_ipeds.R).
 #
-# Usage (either works):
+# Usage (the package must be loaded -- this script calls its internals):
 #   devtools::load_all(); source("data-raw/validate_etl.R")
-#   Rscript data-raw/validate_etl.R
 #
-# Requirements: DBI, duckdb, AWS credentials in environment or ~/.aws/config
+# Requirements: DBI, duckdb, and S3 read access. Credentials are resolved by
+# cori.data.s3::connect_to_s3() via .ipeds_duckdb_con(), the same path the
+# public read functions use, so this validates what users actually hit.
 
 library(DBI)
-library(duckdb)
 
 local({
 
 S3_BUCKET      <- "cori.data.ipeds"
 S3_PREFIX      <- ""
-EXPECTED_YEARS <- 2010:2024
+EXPECTED_YEARS <- IPEDS_START_YEAR:IPEDS_END_YEAR
 EXPECTED_VARS  <- c(
   # IC
   "inst_count", "public_inst_count", "nonprofit_inst_count",
@@ -27,9 +27,14 @@ EXPECTED_VARS  <- c(
   "share_degrees_assoc", "share_degrees_bach",
   "share_degrees_masters", "share_degrees_doctoral",
   "share_degrees_men", "share_degrees_women",
+  # Completers (student headcounts; 2012+ only)
+  "count_students_assoc", "count_students_bach",
+  "count_students_masters", "count_students_doctoral",
   # Grad rates (not available for the most recent year -- NCES lag)
   "grad_rate_150pct", "transfer_out_rate"
 )
+COMPLETER_VARS   <- c("count_students_assoc", "count_students_bach",
+                      "count_students_masters", "count_students_doctoral")
 SHARE_LEVEL_VARS <- c("share_degrees_assoc", "share_degrees_bach",
                       "share_degrees_masters", "share_degrees_doctoral")
 SHARE_SEX_VARS   <- c("share_degrees_men", "share_degrees_women")
@@ -57,19 +62,8 @@ check <- function(label, expr, detail = NULL) {
   }
 }
 
-con <- dbConnect(duckdb())
+con <- .ipeds_duckdb_con(S3_BUCKET)
 on.exit(dbDisconnect(con, shutdown = TRUE), add = TRUE)
-
-dbExecute(con, "INSTALL httpfs; LOAD httpfs;")
-dbExecute(con, "INSTALL aws;   LOAD aws;")
-dbExecute(con, sprintf("SET temp_directory = '%s';", tempdir()))
-dbExecute(con, "CREATE OR REPLACE SECRET s3_secret (
-  TYPE S3,
-  PROVIDER CREDENTIAL_CHAIN,
-  CHAIN 'env;config',
-  REGION 'us-east-1',
-  URL_STYLE 'path'
-);")
 
 glob <- sprintf("s3://%s/%sdata_county/year=*/part-0.parquet", S3_BUCKET, S3_PREFIX)
 
@@ -104,7 +98,7 @@ check("No unexpected years present",
 cat("\n--- 2. Variable coverage ---\n")
 
 vars_present <- unique(df$variable)
-non_gr_vars  <- setdiff(EXPECTED_VARS, GR_VARS)
+non_gr_vars  <- setdiff(EXPECTED_VARS, c(GR_VARS, COMPLETER_VARS))
 latest_year  <- max(EXPECTED_YEARS)
 
 check("All non-grad-rate variables present across all years",
@@ -312,10 +306,9 @@ check("Grafton County 2023: grad rate present and > 0.5",
 
 cat("\n--- 9. Institution-level checks ---\n")
 
-for (sv in c("institutional_characteristics", "completions", "grad_rates")) {
+for (sv in IPEDS_SURVEYS) {
   ok <- tryCatch({
-    inst <- get_ipeds_institution(
-      survey         = sv,
+    inst <- get_ipeds(geography = "institution", surveys = sv,
       s3_bucket      = S3_BUCKET,
       s3_path_prefix = S3_PREFIX
     )
@@ -330,7 +323,194 @@ for (sv in c("institutional_characteristics", "completions", "grad_rates")) {
     cat(sprintf("  ERROR reading %s: %s\n", sv, conditionMessage(e)))
     FALSE
   })
-  check(sprintf("get_ipeds_institution() returns rows for %s", sv), ok)
+  check(sprintf("institution-grain read returns rows for %s", sv), ok)
+}
+
+
+# 9b. Completers coverage ----------------------------------------------------
+
+cat("\n--- 9b. Completers coverage ---\n")
+
+check("Completer variables present for 2012 onward",
+  {
+    yrs <- unique(df$year[df$variable == "count_students_bach"])
+    all(intersect(EXPECTED_YEARS, 2012:max(EXPECTED_YEARS)) %in% yrs)
+  },
+  "count_students_bach missing for some year from 2012 on"
+)
+
+check("Completer variables absent before 2012 (NCES did not publish C_C)",
+  !any(df$year[df$variable %in% COMPLETER_VARS] < 2012),
+  "completer rows found before 2012 -- NCES published no C{year}_C then"
+)
+
+check("Degree-level completers do not exceed degrees conferred",
+  {
+    # A student can earn two degrees at one level, so completers <= degrees
+    # within a county-year at the matching level.
+    deg <- df[df$variable == "count_degrees_total", c("geoid", "year", "value")]
+    names(deg)[3] <- "degrees"
+    stu <- stats::aggregate(
+      df$value[df$variable %in% COMPLETER_VARS],
+      by = list(geoid = df$geoid[df$variable %in% COMPLETER_VARS],
+                year  = df$year[df$variable %in% COMPLETER_VARS]),
+      FUN = sum, na.rm = TRUE
+    )
+    names(stu)[3] <- "students"
+    m <- merge(deg, stu, by = c("geoid", "year"))
+    # Cross-level summing overcounts students, so allow headroom; this is a
+    # smoke test for an order-of-magnitude error, not an identity.
+    nrow(m) > 0 && mean(m$students <= m$degrees * 1.5) > 0.95
+  },
+  "summed degree-level completers look implausible against count_degrees_total"
+)
+
+
+# 10. Regression guards ------------------------------------------------------
+#
+# Both defects these catch produced values that passed every range check:
+# grad rates sat at exactly 1.0 (plausible-looking, in [0, 1]) because the
+# aggregation summed a categorical column, and degree counts were ~2.05x too
+# high because NCES grand-total rows and second majors were summed alongside
+# the detail rows.
+
+cat("\n--- 10. Regression guards ---\n")
+
+gr_rate <- df[df$variable == "grad_rate_150pct", ]
+
+check("grad_rate_150pct is not degenerate at 1.0",
+  {
+    nrow(gr_rate) > 0 && mean(gr_rate$value == 1, na.rm = TRUE) < 0.05
+  },
+  sprintf("%.1f%% of county-years are exactly 1.0 -- the aggregation is probably summing a category code, not a count",
+          100 * mean(gr_rate$value == 1, na.rm = TRUE))
+)
+
+check("grad rate agg_var carries a positive adjusted cohort",
+  nrow(gr_rate) > 0 && all(gr_rate$agg_var > 0, na.rm = TRUE) &&
+    !all(is.na(gr_rate$agg_var)),
+  "agg_var should hold the adjusted cohort size so the completer count is recoverable as value * agg_var"
+)
+
+for (yr in intersect(EXPECTED_YEARS, unique(df$year))) {
+  national <- sum(df$value[df$variable == "count_degrees_total" & df$year == yr],
+                  na.rm = TRUE)
+  # Observed range across 2010-2024 is 3.41M (2010) to 4.21M (2021) -- real
+  # growth in degree production, so the band has to span it. It still catches
+  # the defect it exists for: double-counting put 2022 at 9.4M.
+  check(sprintf("count_degrees_total national total is plausible for %d", yr),
+    national > 3.0e6 && national < 6e6,
+    sprintf("got %s; expected roughly 3.4-4.3M degrees (associate through doctoral). Over ~6M means CIPCODE 99 grand totals or second majors are being summed.",
+            format(national, big.mark = ","))
+  )
+}
+
+
+# 11. Codebook integrity ----------------------------------------------------
+#
+# The codebook drives renaming, column selection and the public documentation,
+# so a drift between it and what actually lands on S3 is silent and
+# user-visible. These checks compare the two directly rather than trusting
+# either one.
+
+cat("\n--- 11. Codebook integrity ---\n")
+
+cb <- tryCatch(get_ipeds_codebook(), error = function(e) NULL)
+
+check("get_ipeds_codebook() loads", !is.null(cb))
+
+if (!is.null(cb)) {
+
+  # -- county variables: codebook vs what is actually published -------------
+  published_vars <- sort(unique(df$variable))
+  cb_county      <- sort(unique(cb$variable[cb$level == "county"]))
+  check("Every county variable in the codebook is published",
+    length(setdiff(cb_county, published_vars)) == 0,
+    sprintf("in codebook, never published: %s",
+            paste(setdiff(cb_county, published_vars), collapse = ", "))
+  )
+  check("Every published county variable is in the codebook",
+    length(setdiff(published_vars, cb_county)) == 0,
+    sprintf("published, undocumented: %s",
+            paste(setdiff(published_vars, cb_county), collapse = ", "))
+  )
+
+  # -- institution columns: codebook vs each survey's wide output -----------
+  DERIVED_IC_FLAGS <- c("is_public", "is_nonprofit", "is_forprofit",
+                        "is_4yr", "is_2yr", "is_degree_granting",
+                        "is_hbcu", "is_tribal")
+
+  for (sv in IPEDS_SURVEYS) {
+    inst <- tryCatch(
+      get_ipeds(geography = "institution", surveys = sv, years = latest_year,
+                s3_bucket = S3_BUCKET, s3_path_prefix = S3_PREFIX),
+      error = function(e) NULL
+    )
+    if (is.null(inst) || nrow(inst) == 0) {
+      # grad rates lag a year, so the latest vintage may legitimately be empty
+      cat(sprintf("  SKIP  %s: no %d data to compare\n", sv, latest_year))
+      next
+    }
+    got <- setdiff(names(inst), c("year", "survey", DERIVED_IC_FLAGS))
+    expected <- cb$variable[(cb$survey == sv | cb$level == "both") &
+                              cb$level != "county"]
+    check(sprintf("%s institution columns match the codebook", sv),
+      setequal(got, expected),
+      sprintf("codebook only: %s | output only: %s",
+              paste(setdiff(expected, got), collapse = ", "),
+              paste(setdiff(got, expected), collapse = ", "))
+    )
+  }
+
+  # -- declared units vs actual column types -------------------------------
+  comp <- tryCatch(
+    get_ipeds(geography = "institution", surveys = "completions",
+              years = latest_year, s3_bucket = S3_BUCKET,
+              s3_path_prefix = S3_PREFIX),
+    error = function(e) NULL
+  )
+  if (!is.null(comp) && nrow(comp) > 0) {
+    check("cipcode is stored as character, as the codebook declares",
+      is.character(comp$cipcode),
+      "numeric cipcode drops the leading zero on the 01-09 CIP families and breaks the SOC crosswalk join"
+    )
+    unit_ok <- vapply(c("major_num", "ed_level", "count_total_students"),
+      function(v) {
+        u <- cb$unit[cb$variable == v & cb$survey == "completions"][1]
+        !grepl("character", u) || is.character(comp[[v]])
+      }, logical(1))
+    check("Declared units match actual column types", all(unit_ok))
+  }
+
+  # -- notes must not reference an API that no longer exists ----------------
+  STALE <- c("get_ipeds_county", "get_ipeds_institution", "inst/extdata",
+             "cohort_size", "load_codebook")
+  stale_hits <- unlist(lapply(STALE, function(pat)
+    cb$variable[grepl(pat, cb$notes, fixed = TRUE)]))
+  check("Codebook notes contain no stale API references",
+    length(stale_hits) == 0,
+    sprintf("stale references in: %s", paste(unique(stale_hits), collapse = ", "))
+  )
+
+  # -- every variable is actually documented --------------------------------
+  check("Every variable has a label, unit and notes",
+    all(nzchar(cb$label)) && all(nzchar(cb$unit)) && all(nzchar(cb$notes))
+  )
+
+  # -- coverage claims in notes vs published year ranges --------------------
+  coverage_claim <- function(variable, first_year) {
+    yrs <- unique(df$year[df$variable == variable])
+    if (!length(yrs)) return(FALSE)
+    min(yrs) == first_year
+  }
+  check("Completer variables start in the year the codebook claims",
+    coverage_claim("count_students_bach", COMPLETERS_START_YEAR),
+    sprintf("count_students_bach should start at %d", COMPLETERS_START_YEAR)
+  )
+  check("Degree variables start in the package's first year",
+    coverage_claim("count_degrees_total", IPEDS_START_YEAR),
+    sprintf("count_degrees_total should start at %d", IPEDS_START_YEAR)
+  )
 }
 
 
