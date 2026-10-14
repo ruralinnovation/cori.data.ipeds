@@ -46,10 +46,10 @@ get_cip_soc_crosswalk()
 
 | Function | Measure | IPEDS survey |
 |---|---|---|
-| `get_institutions()` | Institutional presence and composition | Institutional Characteristics |
-| `get_degrees()` | Credentials conferred, by program at institution grain | Completions |
-| `get_completers()` | Students completing, by award level (2012+) | Completions (completers file) |
-| `get_graduation_rates()` | Completion and transfer-out rates | Graduation Rates |
+| `get_institutions()` | Institutional presence and composition | Institutional Characteristics (`HD{year}`) |
+| `get_degrees()` | Credentials conferred, by program at institution grain | Completions (`C{year}_A`) |
+| `get_completers()` | Student headcounts by award level (2012+) | Completions (`C{year}_C`) |
+| `get_graduation_rates()` | Completion and transfer-out rates | Graduation Rates (`GR{year}`) |
 | `get_ipeds()` | All of the above, or filtered across surveys | any |
 
 ## Start exploring
