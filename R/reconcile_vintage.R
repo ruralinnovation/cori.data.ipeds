@@ -10,7 +10,6 @@
 #   - Normalize column names that changed across eras (e.g. CARNEGIE -> C00CARNEGIE)
 #   - Convert IPEDS negative sentinel codes (-1, -2, -3) to NA
 #   - Zero-pad identifier columns (UNITID, COUNTYCD)
-#   - Ensure expected columns exist (add NA column if a vintage lacks it)
 #   - Warn on unexpected values for known break points
 #
 # Responsibilities explicitly NOT here:
@@ -106,8 +105,8 @@ reconcile_ic_vintage <- function(df, year) {
 #' \itemize{
 #'   \item All years: IPEDS sentinel codes converted to NA
 #'   \item All years: \code{UNITID} zero-padded to 6 digits
-#'   \item All years: race/demographic count columns not present in a given
-#'     vintage are added as \code{NA_integer_} for schema consistency
+#'   \item All years: \code{CIPCODE} restored to the canonical zero-padded
+#'     \code{"xx.xxxx"} string
 #'   \item 2010+: warns if pre-revision doctoral AWLEVEL codes (9/10/11) are
 #'     found (should not appear for years >= 2010)
 #' }
@@ -124,6 +123,9 @@ reconcile_completions_vintage <- function(df, year) {
   # -- UNITID: zero-pad to 6 digits ------------------------------------------
   df <- .pad_unitid(df)
 
+  # -- CIPCODE: restore the canonical "xx.xxxx" string -----------------------
+  df <- .pad_cipcode(df)
+
   # -- Warn if pre-2009 doctoral codes appear ---------------------------------
   if ("AWLEVEL" %in% names(df)) {
     old_doc <- df$AWLEVEL[!is.na(df$AWLEVEL) & df$AWLEVEL %in% .DOCTORAL_CODES_OLD]
@@ -134,11 +136,6 @@ reconcile_completions_vintage <- function(df, year) {
       ))
     }
   }
-
-  # -- Race/demographic columns: ensure consistent schema --------------------
-  # The set of race/ethnicity count columns expanded over time.
-  # Add any missing columns as NA so bind_rows across vintages works cleanly.
-  df <- .ensure_columns(df, .COMPLETIONS_RACE_COLS, fill = NA_integer_)
 
   df
 }
@@ -153,8 +150,6 @@ reconcile_completions_vintage <- function(df, year) {
 #' \itemize{
 #'   \item All years: IPEDS sentinel codes converted to NA
 #'   \item All years: \code{UNITID} zero-padded to 6 digits
-#'   \item All years: race/demographic count columns not present in a given
-#'     vintage are added as \code{NA_integer_} for schema consistency
 #' }
 #'
 #' @param df Data frame. Raw grad rates data loaded from \code{data_raw}.
@@ -169,8 +164,38 @@ reconcile_gr_vintage <- function(df, year) {
   # -- UNITID: zero-pad to 6 digits ------------------------------------------
   df <- .pad_unitid(df)
 
-  # -- Race/demographic columns: ensure consistent schema --------------------
-  df <- .ensure_columns(df, .GR_RACE_COLS, fill = NA_integer_)
+  df
+}
+
+
+#' Reconcile a raw completers vintage data frame
+#'
+#' Applies all known era-specific fixes to a raw completers data frame
+#' (NCES \code{C{year}_C}) loaded from \code{data_raw}.
+#'
+#' Known era fixes applied:
+#' \itemize{
+#'   \item All years: IPEDS sentinel codes converted to NA
+#'   \item All years: \code{UNITID} zero-padded to 6 digits
+#' }
+#'
+#' \code{AWLEVELC} is left as NCES reports it. Its degree-level codes
+#' (3, 5, 7, 9) are stable across every published vintage, but its
+#' certificate-level codes are not: code 1 appears 2012-2019 and is replaced
+#' by codes 11 and 12 from 2020. County aggregations therefore use the
+#' degree-level codes only.
+#'
+#' @param df Data frame. Raw completers data loaded from \code{data_raw}.
+#' @param year Integer. Vintage year.
+#' @return Data frame with reconciled column names and values.
+#' @keywords internal
+reconcile_completers_vintage <- function(df, year) {
+
+  # -- Sentinel codes -> NA ---------------------------------------------------
+  df <- .replace_sentinel_codes(df)
+
+  # -- UNITID: zero-pad to 6 digits ------------------------------------------
+  df <- .pad_unitid(df)
 
   df
 }
@@ -182,8 +207,8 @@ reconcile_gr_vintage <- function(df, year) {
 #'
 #' Dispatches to the appropriate per-survey reconciler.
 #'
-#' @param survey Character. One of \code{"institutional_characteristics"}, \code{"completions"},
-#'   \code{"grad_rates"}.
+#' @param survey Character. One of \code{"institutional_characteristics"},
+#'   \code{"completions"}, \code{"completers"}, \code{"grad_rates"}.
 #' @param df Data frame. Raw data for the vintage.
 #' @param year Integer. Vintage year.
 #' @return Reconciled data frame.
@@ -192,40 +217,11 @@ reconcile_vintage <- function(survey, df, year) {
   switch(survey,
     institutional_characteristics = reconcile_ic_vintage(df, year),
     completions                   = reconcile_completions_vintage(df, year),
+    completers                    = reconcile_completers_vintage(df, year),
     grad_rates                    = reconcile_gr_vintage(df, year),
     stop(sprintf("Unknown survey '%s'", survey))
   )
 }
-
-
-# Known demographic column sets -----------------------------------------------
-
-# Race/ethnicity count columns in the completions survey.
-# Not all columns exist in all vintages; missing ones are filled with NA.
-.COMPLETIONS_RACE_COLS <- c(
-  "CAIANM", "CAIANW",   # American Indian / Alaska Native
-  "CASIAM", "CASIAW",   # Asian
-  "CBKAAM", "CBKAAW",   # Black or African American
-  "CHISPM", "CHISPW",   # Hispanic
-  "CNHPIM", "CNHPIW",   # Native Hawaiian / Pacific Islander
-  "CWHITM", "CWHITW",   # White
-  "C2MORM", "C2MORW",   # Two or more races
-  "CUNKM",  "CUNKW",    # Race unknown
-  "CNRALM", "CNRALW"    # Non-resident alien
-)
-
-# Race/ethnicity count columns in the grad rates survey.
-.GR_RACE_COLS <- c(
-  "GRAIANT",             # American Indian / Alaska Native total
-  "GRASIAT",             # Asian total
-  "GBKAAT",              # Black or African American total
-  "GHISPT",              # Hispanic total
-  "GNHPIT",              # Native Hawaiian / Pacific Islander total
-  "GWHITT",              # White total
-  "G2MORT",              # Two or more races total
-  "GUNKT",               # Race unknown total
-  "GNRALT"               # Non-resident alien total
-)
 
 
 # Internal helpers ------------------------------------------------------------
@@ -259,6 +255,27 @@ reconcile_vintage <- function(survey, df, year) {
   df
 }
 
+# Format CIPCODE as the canonical zero-padded "xx.xxxx" string.
+#
+# NCES quotes this column in the source CSV, but utils::read.csv type-converts
+# it to numeric anyway, which silently drops the leading zero on the 01-09 CIP
+# families: 01.0000 becomes 1 and 09.0702 becomes 9.0702. Any join against the
+# NCES CIP-SOC crosswalk then fails for those families while appearing to work
+# for 10 and above. A CIP code is always two digits and four decimals, so
+# sprintf restores the original string losslessly.
+#
+# Must run after .replace_sentinel_codes() so missing values are already NA.
+.pad_cipcode <- function(df, col = "CIPCODE") {
+  if (col %in% names(df)) {
+    df[[col]] <- ifelse(
+      is.na(df[[col]]),
+      NA_character_,
+      sprintf("%07.4f", as.numeric(df[[col]]))
+    )
+  }
+  df
+}
+
 # Zero-pad a county FIPS column to 5 characters.
 # Assumes sentinel codes have already been replaced with NA.
 .pad_county_fips <- function(df, col = "COUNTYCD") {
@@ -268,15 +285,6 @@ reconcile_vintage <- function(survey, df, year) {
       NA_character_,
       stringr::str_pad(as.character(df[[col]]), width = 5, side = "left", pad = "0")
     )
-  }
-  df
-}
-
-# Ensure a set of columns exists in df, filling missing ones with `fill`.
-.ensure_columns <- function(df, cols, fill = NA) {
-  missing <- setdiff(cols, names(df))
-  if (length(missing) > 0) {
-    df[missing] <- fill
   }
   df
 }
