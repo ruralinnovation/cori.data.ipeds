@@ -22,8 +22,7 @@ remotes::install_github("ruralinnovation/cori.data.ipeds")
 ```r
 library(cori.data.ipeds)
 
-# One function per measure, `geography` first — same shape as
-# cori.data.qcew::get_employment() and the rest of the family.
+# One function per measure, `geography` is the first column
 get_institutions(geoids = "33009", years = 2022)      # institutional presence
 get_degrees(geoids = "33009", years = 2022)           # credentials conferred
 get_completers(geoids = "33009", years = 2022)        # students completing
@@ -32,13 +31,12 @@ get_graduation_rates(geoids = "33009", years = 2022)  # completion outcomes
 # `geography` selects the geographic unit. County is tidy long; institution
 # is point-level and wide.
 get_degrees(geography = "institution", geoids = "33009", years = 2022)
-# unitid | geoid | cipcode | major_num | ed_level | count_* | year
 
 # Everything about a county, across all four surveys, in one call
 get_ipeds(geoids = "33009", years = 2022)
 
 # Variable definitions, coverage, vintage caveats and value labels
-# (what sector_code = 4 means, and the other 19 categorical columns)
+# (i.e. what sector_code = 4 means, and the other 19 categorical columns)
 get_ipeds_codebook()
 
 # Map programs to occupations
@@ -76,7 +74,7 @@ County-level functions return a six-column tidy format:
 | `agg_var` | numeric | Denominator or aggregation weight. For `share_degrees_*` variables: total degrees conferred (raw count = `value * agg_var`). For `grad_rate_*` variables: adjusted cohort size. `NA` for institution count variables. |
 | `survey` | character | Source survey: `"institutional_characteristics"`, `"completions"`, or `"grad_rates"` |
 
-Institution-level functions return wide format. Column structure varies by survey — see `get_ipeds(geography = "institution", surveys = )` documentation. `geoid` is the county key, the same column the county-level output uses.
+Institution-level functions return wide format. Column structure varies by survey.
 
 ### County variables
 
@@ -118,7 +116,7 @@ Graduation rates are cohort-weighted across a county's institutions -- the count
 
 ## Refreshing the Data
 
-The S3 data is maintained by CORI/RISI staff using internal pipeline functions. The pipeline is incremental — already-processed vintages are skipped, so only new NCES releases need to be added each year.
+The S3 data is maintained by CORI staff using internal pipeline functions. The pipeline is incremental — already-processed vintages are skipped, so only new NCES releases need to be added each year.
 
 ## Planned Next Steps
 
