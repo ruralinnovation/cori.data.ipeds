@@ -78,7 +78,7 @@ Institution-level functions return wide format. Column structure varies by surve
 
 ### County variables
 
-All county-level aggregations are restricted to **degree-granting institutions only** (`degree_granting_status = 1`). Non-degree-granting entities (cosmetology schools, professional development organizations, etc.) appear in the wide institution tables but are excluded from county output.
+All county-level aggregations are restricted to **degree-granting institutions only** (`is_degree_granting = 1`). Non-degree-granting entities (cosmetology schools, professional development organizations, etc.) appear in the wide institution tables but are excluded from county output.
 
 | Variable | Survey | Description |
 |---|---|---|
