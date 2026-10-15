@@ -266,9 +266,7 @@ rural |>
 #>   Rural       89086
 ```
 
-Across 2022–2024, rural counties produced 7.4% of degrees in programs that feed
-computer and mathematical occupations. Of the 494 rural counties that produce
-any, Merrimack County, NH, leads with 14,836.
+Across 2022–2024 rural counties produced 7.4% of degrees in programs feeding computer and mathematical occupations. 494 rural counties produce any; the top ten account for much (42%) of the volume, with Merrimack County NH at 14,836.
 
 ```{r tech-chart, echo = FALSE, eval = TRUE, out.width = "100%", fig.alt = "Horizontal bar chart of the ten rural counties producing the most degrees in programs mapping to computer and mathematical occupations over 2022 to 2024, led by Merrimack County NH with 14,836."}
 knitr::include_graphics("figures/tech_pipeline.png")
