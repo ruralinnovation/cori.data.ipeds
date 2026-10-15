@@ -124,35 +124,6 @@ The package reads data from an S3 bucket maintained by CORI staff using internal
 pipeline functions. The pipeline is incremental: already-processed vintages are
 skipped, so only new NCES releases need to be added each year.
 
-## Planned Next Steps
-
-### Extend historical coverage to 2000–2009
-
-NCES did not include county FIPS codes or coordinates in IPEDS institutional
-characteristics files before 2009. The award level coding scheme for
-completions also changed in 2009 (doctoral degrees were split from
-"first-professional" into three separate categories), and the IC "highest
-degree offered" variable used a different code set before 2009. Extending
-coverage to 2000 requires associating institutions to counties via one of
-two methods:
-
-1. **HUD ZIP→county crosswalk** *(preferred)*: The U.S. Department of Housing
-   and Urban Development publishes quarterly [USPS ZIP-to-county crosswalk
-   files](https://www.huduser.gov/portal/datasets/usps_crosswalk.html). IPEDS
-   records a ZIP code for every institution back to 2000. Where a ZIP spans
-   multiple counties, the residential address ratio is used to assign the
-   dominant county. This approach is clean, reproducible, and requires no
-   external API.
-
-2. **Geocoding / place matching** *(fallback)*: For institutions where the ZIP
-   crosswalk is ambiguous (ZIP straddles a county line with a near-even split),
-   full street addresses or city/state can be geocoded or matched to Census
-   Designated Places and then linked to counties via a place-to-county
-   relationship file.
-
-The HUD crosswalk is the right primary path for a first implementation. Place
-matching would serve as a validation or gap-fill step.
-
 ## Data Source
 
 Produced by the [National Center for Education Statistics (NCES)](https://nces.ed.gov/), U.S. Department of Education. Released annually, typically 9–12 months after the reference year.
