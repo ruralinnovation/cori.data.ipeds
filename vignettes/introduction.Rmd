@@ -37,7 +37,7 @@ Not covered: enrollment (`EF`), finance (`F`), staff (`S`), admissions (`ADM`),
 student financial aid (`SFA`) and outcome measures (`OM`). Those are separate
 IPEDS surveys with their own grains, and nothing here reads them.
 
-Data is available at the **county and institution level** from **2010 to the
+Data is available at the **county and institutional level** from **2010 to the
 present**, with two exceptions the data itself enforces: completers begin in
 2012, because NCES published no `C_C` file before that, and graduation rates
 lag the other surveys by about a year.
@@ -53,7 +53,7 @@ library(cori.data.ipeds)
 get_ipeds_codebook()
 ```
 
-All `get_*` functions follow the family signature,
+All `get_*` functions follow the same signature,
 `get_*(geography, geoids, years, variables)`, and at county level return
 **tidy (long) format**: `geoid | year | variable | value | agg_var | survey`.
 `agg_var` carries the denominator where the variable is a rate or share, so
@@ -73,7 +73,7 @@ completers <- get_completers(geoids = "33009", years = 2024)
 grad_rates <- get_graduation_rates(geoids = "33009", years = 2012:2023)
 ```
 
-`get_ipeds()` is the general getter underneath those four, for pulling across
+`get_ipeds()` is the general getter for pulling across the four
 surveys in one call:
 
 ```{r general}
@@ -137,7 +137,7 @@ value labels.
 ```{r codes}
 cb <- get_ipeds_codebook()
 
-# Which variables are categorical?
+# Categorical variable labels
 cb[nzchar(cb$codes), c("variable", "label")]
 
 # What do sector_code's numbers mean?
