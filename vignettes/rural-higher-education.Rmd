@@ -175,7 +175,8 @@ is driven largely by Southern New Hampshire University.
 
 ## How many students finish
 
-`grad_rate_150pct` is already cohort-weighted within each county, so
+`grad_rate_150pct` covers the full-time, first-time bachelor's cohort at
+four-year institutions, and is already cohort-weighted within each county, so
 aggregating across counties requires weighting by `agg_var`.
 
 ```{r grad-rates}
@@ -195,7 +196,7 @@ Between 2010 and 2023, the weighted rate rose from 49.8% to 52.9% in rural
 counties and from 55.3% to 61.7% in nonrural counties, so the gap widened from
 5.5 to 8.8 points. The series ends in 2023 because of NCES's publication lag.
 
-```{r grad-rate-chart, echo = FALSE, eval = TRUE, out.width = "100%", fig.alt = "Line chart of cohort-weighted completion rates within 150% of normal time from 2010 to 2023. Rural rises from 50 to 53 percent and nonrural from 55 to 62 percent, so both improve while the gap widens."}
+```{r grad-rate-chart, echo = FALSE, eval = TRUE, out.width = "100%", fig.alt = "Line chart of cohort-weighted six-year completion rates from 2010 to 2023. Rural rises from 50 to 53 percent and nonrural from 55 to 62 percent, so both improve while the gap widens."}
 knitr::include_graphics("figures/grad_rate.png")
 ```
 
