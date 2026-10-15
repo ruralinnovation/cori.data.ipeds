@@ -216,9 +216,9 @@ completers |>
 #>   count_students_masters     941849
 ```
 
-Of the 4,137,499 degrees conferred, against 4,014,514 completers, most of the
-gap falls at the associate level, where degrees exceed students by roughly 10%.
-At every other level the difference is under 2%.
+Of the 4,137,499 degrees conferred, most of the gap between degrees and
+students falls at the associate level, where degrees exceed students by roughly
+10%. At every other level the difference is under 2%.
 
 ```{r completers-chart, echo = FALSE, eval = TRUE, out.width = "100%", fig.alt = "Grouped bar chart comparing degrees conferred with students completing at each award level. The gap is widest at associate level."}
 knitr::include_graphics("figures/degrees_students.png")
