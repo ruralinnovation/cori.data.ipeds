@@ -54,7 +54,7 @@ get_ipeds_codebook()
 ```
 
 All four data getters follow the same signature,
-`get_*(geography, geoids, years, variables)`, and at county level return
+`get_*(geography, geoids, years, variables, unitids)`, and at county level return
 **tidy (long) format**: `geoid | year | variable | value | agg_var | survey`.
 `agg_var` carries the denominator where the variable is a rate or share, so
 counties can be rolled up correctly.
