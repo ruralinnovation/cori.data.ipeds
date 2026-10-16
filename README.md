@@ -1,13 +1,13 @@
 # cori.data.ipeds
 
-Access and analyze [Integrated Postsecondary Education Data System (IPEDS)](https://nces.ed.gov/ipeds/) data at both the institution and county level. Covers institutional characteristics, degree completions, and graduation rates from 2010 to present.
+Access and analyze [Integrated Postsecondary Education Data System (IPEDS)](https://nces.ed.gov/ipeds/) data at both the institution and county levels. Covers institutional characteristics, degree completions, and graduation rates from 2010 to the present.
 
 ## Surveys Covered
 
 | Survey | Unit of Analysis | Years |
 |---|---|---|
 | Institutional Characteristics (IC) | Institution | 2010–present |
-| Completions (C) | Institution / CIP / Award Level | 2010–present |
+| Completions (C) | Institution / CIP / Award Level | 2010–present (student counts 2012–present) |
 | Graduation Rates (GR) | Institution / Cohort | 2010–present |
 
 ## Installation
@@ -22,22 +22,21 @@ remotes::install_github("ruralinnovation/cori.data.ipeds")
 ```r
 library(cori.data.ipeds)
 
-# One function per measure, `geography` first — same shape as
-# cori.data.qcew::get_employment() and the rest of the family.
+# One function per measure; `geography` is the first argument
 get_institutions(geoids = "33009", years = 2022)      # institutional presence
-get_degrees(geoids = "33009", years = 2022)           # credentials conferred
+get_degrees(geoids = "33009", years = 2022)           # degrees conferred
 get_completers(geoids = "33009", years = 2022)        # students completing
 get_graduation_rates(geoids = "33009", years = 2022)  # completion outcomes
 
-# `geography` switches grain. County is tidy long; institution is wide.
+# `geography` selects the geographic unit. County is tidy long; institution
+# is point-level and wide.
 get_degrees(geography = "institution", geoids = "33009", years = 2022)
-# unitid | geoid | cipcode | major_num | ed_level | count_* | year
 
-# Everything about a county, across all four surveys, in one call
+# Everything about a county, across all four functions, in one call
 get_ipeds(geoids = "33009", years = 2022)
 
 # Variable definitions, coverage, vintage caveats and value labels
-# (what sector_code = 4 means, and the other 19 categorical columns)
+# (e.g., what sector_code = 4 means, plus the other 19 categorical columns)
 get_ipeds_codebook()
 
 # Map programs to occupations
@@ -46,16 +45,16 @@ get_cip_soc_crosswalk()
 
 | Function | Measure | IPEDS survey |
 |---|---|---|
-| `get_institutions()` | Institutional presence and composition | Institutional Characteristics |
-| `get_degrees()` | Credentials conferred, by program at institution grain | Completions |
-| `get_completers()` | Students completing, by award level (2012+) | Completions (completers file) |
-| `get_graduation_rates()` | Completion and transfer-out rates | Graduation Rates |
-| `get_ipeds()` | All of the above, or filtered across surveys | any |
+| `get_institutions()` | Institutional presence and composition | Institutional Characteristics (`HD{year}`) |
+| `get_degrees()` | Degrees conferred (by program at the institution level) | Completions (`C{year}_A`) |
+| `get_completers()` | Student headcounts by award level (2012+) | Completions (`C{year}_C`) |
+| `get_graduation_rates()` | Completion and transfer-out rates | Graduation Rates (`GR{year}`) |
+| `get_ipeds()` | All of the above in one call, optionally filtered | All of the above |
 
 ## Start exploring
 
 ```r
-# The package: surveys covered, the two grains, counting conventions
+# Package overview: surveys covered, county and institution levels, counting conventions
 vignette("introduction", package = "cori.data.ipeds")
 
 # A worked rural analysis, with charts
@@ -75,11 +74,11 @@ County-level functions return a six-column tidy format:
 | `agg_var` | numeric | Denominator or aggregation weight. For `share_degrees_*` variables: total degrees conferred (raw count = `value * agg_var`). For `grad_rate_*` variables: adjusted cohort size. `NA` for institution count variables. |
 | `survey` | character | Source survey: `"institutional_characteristics"`, `"completions"`, or `"grad_rates"` |
 
-Institution-level functions return wide format. Column structure varies by survey — see `get_ipeds(geography = "institution", surveys = )` documentation. `geoid` is the county key, the same column the county-level output uses.
+Institution-level functions return wide format. Column structure varies by survey.
 
 ### County variables
 
-All county-level aggregations are restricted to **degree-granting institutions only** (`degree_granting_status = 1`). Non-degree-granting entities (cosmetology schools, professional development organizations, etc.) appear in the wide institution tables but are excluded from county output.
+All county-level aggregations are restricted to **degree-granting institutions only** (`is_degree_granting = 1`). Non-degree-granting entities (cosmetology schools, professional development organizations, etc.) appear in the wide institution tables but are excluded from county output.
 
 | Variable | Survey | Description |
 |---|---|---|
@@ -92,9 +91,9 @@ All county-level aggregations are restricted to **degree-granting institutions o
 | `tribal_count` | institutional_characteristics | Tribal colleges |
 | `count_degrees_total` | completions | Total degrees conferred (associate through doctoral) |
 | `share_degrees_assoc` | completions | Share of degrees that are associate level (AWLEVEL 3) |
-| `share_degrees_bach` | completions | Share of degrees that are bachelor's level |
-| `share_degrees_masters` | completions | Share of degrees that are master's level |
-| `share_degrees_doctoral` | completions | Share of degrees that are doctoral level |
+| `share_degrees_bach` | completions | Share of degrees that are bachelor's level (AWLEVEL 5) |
+| `share_degrees_masters` | completions | Share of degrees that are master's level (AWLEVEL 7) |
+| `share_degrees_doctoral` | completions | Share of degrees that are doctoral level (AWLEVEL 17, 18, 19) |
 | `share_degrees_men` | completions | Share of degrees awarded to men |
 | `share_degrees_women` | completions | Share of degrees awarded to women |
 | `grad_rate_150pct` | grad_rates | 150% graduation rate (bachelor's cohort) |
@@ -104,48 +103,26 @@ The four `share_degrees_*` level variables sum to exactly 1. Raw counts are reco
 
 ### Counting conventions
 
-IPEDS ships rows that will double-count degrees if summed naively. The county aggregations handle this; if you aggregate the institution-level tables yourself, you need to as well.
+IPEDS includes rows that will double-count degrees if summed naively. The county aggregations handle this; if you aggregate the institution-level tables yourself, you need to as well.
 
 | Convention | What it is | How county output handles it |
 |---|---|---|
-| `cipcode` 99 | Each institution's grand total across all programs, shipped alongside the per-program rows | Excluded. Including it exactly doubles every degree count. |
+| `cipcode` 99 | Each institution's grand total across all programs, included alongside the per-program rows | Excluded. Including it exactly doubles every degree count. |
 | `major_num` 2 | Second major of a double-majoring student | Excluded, so counts are credentials awarded rather than major-credential pairs. |
 | Award level | `ed_level` spans certificates through doctorates | Only degrees are counted: AWLEVEL 3, 5, 7, 17, 18, 19. Certificate levels (1, 2, 4, 6, 8) are excluded entirely, including the sub-associate "1 to 2 year" award (code 2). |
 | Cohort type | `grad_rates` rows cover four different cohort universes | Only the four-year full-time first-time bachelor's cohort (`cohort_type` 2, 3, 4) is aggregated. |
 
-Graduation rates are cohort-weighted across a county's institutions -- the county-wide completer total over the county-wide adjusted cohort -- not an unweighted mean of institutional rates. NCES publishes graduation rates about a year behind the other two surveys, so the most recent year typically has completions and institutional characteristics but no grad rates.
+Graduation rates are cohort-weighted across a county's institutions (the
+county-wide completer total over the county-wide adjusted cohort), not an
+unweighted mean of institutional rates. NCES publishes graduation rates about a
+year after the other two surveys, so the most recent year typically has
+completions and institutional characteristics but no graduation rates.
 
 ## Refreshing the Data
 
-The S3 data is maintained by CORI/RISI staff using internal pipeline functions. The pipeline is incremental — already-processed vintages are skipped, so only new NCES releases need to be added each year.
-
-## Planned Next Steps
-
-### Extend historical coverage to 2000–2009
-
-NCES did not include county FIPS codes or coordinates in IPEDS institutional
-characteristics files before 2009. The award level coding scheme for
-completions also changed in 2009 (doctoral degrees were split from
-"first-professional" into three separate categories), and the IC "highest
-degree offered" variable used a different code set pre-2009. Extending
-coverage to 2000 requires associating institutions to counties via one of
-two methods:
-
-1. **HUD ZIP→county crosswalk** *(preferred)*: The U.S. Department of Housing
-   and Urban Development publishes quarterly [USPS ZIP-to-county crosswalk
-   files](https://www.huduser.gov/portal/datasets/usps_crosswalk.html). Every
-   IPEDS institution has a ZIP code back to 2000. Where a ZIP spans multiple
-   counties, the residential address ratio is used to assign the dominant
-   county. This approach is clean, reproducible, and requires no external API.
-
-2. **Geocoding / place matching** *(fallback)*: For institutions where the ZIP
-   crosswalk is ambiguous (ZIP straddles a county line with a near-even split),
-   full street addresses or city/state can be geocoded or matched to Census
-   designated places and then linked to counties via a place-to-county
-   relationship file.
-
-The HUD crosswalk is the right primary path for a first implementation. Place
-matching would serve as a validation or gap-fill step.
+The package reads data from an S3 bucket maintained by CORI staff using internal
+pipeline functions. The pipeline is incremental: already-processed vintages are
+skipped, so only new NCES releases need to be added each year.
 
 ## Data Source
 

@@ -5,11 +5,15 @@
 # get_employment(geography, geoids, years) or cori.data.bds's
 # get_business_dynamics(geography, geoids, years, variables).
 #
-# Where the siblings use `geography` to pick an aggregation level (county,
-# state, nation), this package uses it to pick a grain:
+# `geography` selects the geographic unit, as it does everywhere else in the
+# family. IPEDS is collected from institutions rather than places, so the
+# finest unit available here is the institution itself -- every record carries
+# coordinates, address, city and county -- and county output aggregates those
+# points:
 #
 #   geography = "county"       tidy long, one row per geoid x year x variable
-#   geography = "institution"  wide, one row per the survey's natural grain
+#   geography = "institution"  wide, one row per institution and the survey's
+#                              own dimensions (CIP, award level, cohort type)
 #
 # Each measure maps to one IPEDS survey:
 #
@@ -60,24 +64,24 @@ MEASURE_SURVEY <- c(
 #' Get higher education institutions
 #'
 #' Institutional presence and composition from the IPEDS Institutional
-#' Characteristics survey. At county grain this is counts of degree-granting
-#' institutions by control and level; at institution grain it is the
+#' Characteristics survey. At county level this is counts of degree-granting
+#' institutions by control and level; at institution level it is the
 #' institution directory, one row per institution with location, sector,
 #' classification and derived flags.
 #'
 #' @param geography Grain: `"county"` (default) for tidy long output, or
 #'   `"institution"` for the wide per-institution table.
 #' @param geoids Character vector of 5-digit county FIPS codes. Default `NULL`
-#'   returns all counties. Filters by county at either grain.
+#'   returns all counties. Filters by county at either level.
 #' @param years Integer vector of years. Default `NULL` returns all available.
 #'   Coverage is 2010 to present.
 #' @param variables Character vector of county-level variable names, e.g.
-#'   `"inst_count"`. County grain only -- see [get_ipeds_codebook()].
-#' @param unitids Character vector of IPEDS unit IDs. Institution grain only.
+#'   `"inst_count"`. County level only -- see [get_ipeds_codebook()].
+#' @param unitids Character vector of IPEDS unit IDs. Institution level only.
 #' @param s3_bucket,s3_path_prefix Storage location. Defaults are production.
 #'
-#' @return County grain: `geoid`, `year`, `variable`, `value`, `agg_var`,
-#'   `survey`. Institution grain: the codebook's institution-level columns for
+#' @return County level: `geoid`, `year`, `variable`, `value`, `agg_var`,
+#'   `survey`. Institution level: the codebook's institution-level columns for
 #'   this survey, plus derived flags, `year` and `survey`.
 #'
 #' @seealso [get_degrees()], [get_completers()], [get_graduation_rates()],
@@ -103,9 +107,9 @@ get_institutions <- function(geography      = "county",
 
 #' Get degrees conferred
 #'
-#' Credential production from the IPEDS Completions survey. At county grain
+#' Credential production from the IPEDS Completions survey. At county level
 #' this is total degrees conferred and the share by level and by sex; at
-#' institution grain it is awards by program, one row per institution x CIP
+#' institution level it is awards by program, one row per institution x CIP
 #' code x award level x major number.
 #'
 #' County figures count degrees only -- associate through doctoral -- and
@@ -114,9 +118,9 @@ get_institutions <- function(geography      = "county",
 #'
 #' @inheritParams get_institutions
 #'
-#' @return County grain: `geoid`, `year`, `variable`, `value`, `agg_var`,
+#' @return County level: `geoid`, `year`, `variable`, `value`, `agg_var`,
 #'   `survey`, where `agg_var` is total degrees so `value * agg_var` recovers
-#'   a raw count. Institution grain: `unitid`, `geoid`, `cipcode`,
+#'   a raw count. Institution level: `unitid`, `geoid`, `cipcode`,
 #'   `major_num`, `ed_level`, `count_men`, `count_women`,
 #'   `count_total_students`, `year`, `survey`.
 #'
@@ -153,8 +157,8 @@ get_degrees <- function(geography      = "county",
 #'
 #' @inheritParams get_institutions
 #'
-#' @return County grain: `geoid`, `year`, `variable`, `value`, `agg_var`,
-#'   `survey`. Institution grain: `unitid`, `geoid`,
+#' @return County level: `geoid`, `year`, `variable`, `value`, `agg_var`,
+#'   `survey`. Institution level: `unitid`, `geoid`,
 #'   `award_level_category`, `count_men`, `count_women`,
 #'   `count_total_students`, `year`, `survey`.
 #'
@@ -192,8 +196,8 @@ get_completers <- function(geography      = "county",
 #'
 #' @inheritParams get_institutions
 #'
-#' @return County grain: `geoid`, `year`, `variable`, `value`, `agg_var`,
-#'   `survey`. Institution grain: `unitid`, `geoid`, `cohort_type`,
+#' @return County level: `geoid`, `year`, `variable`, `value`, `agg_var`,
+#'   `survey`. Institution level: `unitid`, `geoid`, `cohort_type`,
 #'   `grad_rate_status`, `count_men`, `count_women`, `count_total_students`,
 #'   `year`, `survey`.
 #'
@@ -228,10 +232,10 @@ get_graduation_rates <- function(geography      = "county",
 #' @inheritParams get_institutions
 #' @param surveys Character vector of survey names: any of
 #'   `"institutional_characteristics"`, `"completions"`, `"completers"`,
-#'   `"grad_rates"`. Default `NULL` returns all (county grain only).
+#'   `"grad_rates"`. Default `NULL` returns all (county level only).
 #'
-#' @return County grain: tidy long across the requested surveys. Institution
-#'   grain: the wide table for the one requested survey.
+#' @return County level: tidy long across the requested surveys. Institution
+#'   level: the wide table for the one requested survey.
 #'
 #' @seealso [get_ipeds_codebook()]
 #'
@@ -240,7 +244,7 @@ get_graduation_rates <- function(geography      = "county",
 #' # Everything known about one county in one year
 #' get_ipeds(geoids = "33009", years = 2022)
 #'
-#' # One survey, institution grain
+#' # One survey, institution level
 #' get_ipeds(geography = "institution", surveys = "completions", years = 2022)
 #' }
 #' @export

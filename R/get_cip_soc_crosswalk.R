@@ -11,7 +11,7 @@
 #' Returns the National Center for Education Statistics crosswalk mapping
 #' Classification of Instructional Programs (CIP) codes to Standard
 #' Occupational Classification (SOC) codes. Joining it to the `cipcode` column
-#' of [get_degrees()]'s institution-grain output turns degree production
+#' of [get_degrees()]'s institution-level output turns degree production
 #' into occupational supply, which is the usual bridge from education data to
 #' workforce and economic development analysis.
 #'

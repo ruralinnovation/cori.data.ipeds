@@ -20,8 +20,8 @@ surveys this package harmonizes: Institutional Characteristics, Completions,
 and Graduation Rates, 2010 to present.
 }
 \details{
-Use \code{level} to separate the two output grains: \code{"institution"} variables
-appear in \code{\link[=get_ipeds]{get_ipeds()}}'s institution-grain output, \code{"county"} variables in
+Use \code{level} to separate the two output levels: \code{"institution"} variables
+appear in \code{\link[=get_ipeds]{get_ipeds()}}'s institution-level output, \code{"county"} variables in
 \code{\link[=get_ipeds]{get_ipeds()}}'s tidy output, and \code{"both"} marks the join keys present
 in every table.
 
@@ -29,7 +29,7 @@ in every table.
 column renames, and taxonomy changes -- so cross-year comparability is
 documented alongside the variable rather than in separate prose.
 
-Much of IPEDS is categorical, and the institution-grain output returns
+Much of IPEDS is categorical, and the institution-level output returns
 those columns as the bare integers NCES publishes. \code{codes} carries the
 value labels for them, transcribed from the NCES data dictionary
 workbooks, so a \code{sector_code} of 4 can be resolved without leaving the

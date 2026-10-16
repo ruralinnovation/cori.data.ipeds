@@ -11,20 +11,20 @@ vignette: >
 knitr::opts_chunk$set(
   collapse   = TRUE,
   comment    = "#>",
-  eval       = FALSE,
+  eval       = TRUE,
   fig.width  = 8.888889,
   fig.height = 6.25,
   dpi        = 300
 )
 ```
 
-Four IPEDS surveys describe four separable things about rural higher education:
-**where** institutions are, **what kind** they are, **how much** they produce,
-and **whether students finish**. This vignette works through each against rural
-counties, then connects degree production to occupations.
+Four IPEDS surveys each capture a distinct dimension of rural higher education:
+**where** institutions are, **what kind** they are, **how many degrees** they
+confer, and **whether their students finish**. This vignette compares rural and
+nonrural counties on each, then links degrees to the occupations they prepare
+students for.
 
-For the package itself — the surveys covered, the two grains, the counting
-conventions — see
+For an overview of the package (the surveys it covers, its county and institution levels, and its counting conventions), see
 `vignette("introduction", package = "cori.data.ipeds")`.
 
 ```{r libraries}
@@ -54,9 +54,9 @@ rural <- cbsa_2023 |>
 
 ## Where the four-year institutions are
 
-Whether a county has a **four-year** institution needs the institution grain,
-because the county variables count institutions without distinguishing which
-offer a bachelor's.
+Identifying counties with a **four-year** institution requires institution-level
+data, because the county-level variables count institutions without
+distinguishing which ones offer bachelor's degrees.
 
 ```{r access}
 has_university <- get_institutions(geography = "institution", years = YR) |>
@@ -82,10 +82,10 @@ access |>
 #>   Rural        1983      341    1642         82.8
 ```
 
-341 rural counties contain a four-year institution, 35% of all counties
-nationally that do. A further 227 rural counties contain a degree-granting
-institution with no bachelor's program, so 568 hold postsecondary capacity of
-some kind.
+Of the 973 counties nationally with a four-year institution, 341 (35%) are
+rural. Another 227 rural counties have a degree-granting institution that offers
+no bachelor's degree, bringing the number of rural counties with some
+postsecondary capacity to 568.
 
 ```{r access-chart, echo = FALSE, eval = TRUE, out.width = "100%", fig.alt = "County choropleth map of the United States. Counties containing a four-year degree-granting university are colored, rural ones in green and nonrural in purple, against grey for counties without. Rural counties with a university appear as scattered isolated dots across largely empty interior regions."}
 knitr::include_graphics("figures/access_map.png")
@@ -93,13 +93,15 @@ knitr::include_graphics("figures/access_map.png")
 
 ## What kind of institutions
 
-The institution directory carries the derived flags the county counts are built
-from, so level and control can be crossed.
+The institution directory includes the flags used to build the county counts,
+so level and control can be cross-tabulated.
 
 ```{r institution-type}
 ic <- get_institutions(geography = "institution", years = YR) |>
   inner_join(rural, by = "geoid") |>
-  filter(is_degree_granting == 1) |>
+  # the level filter matters: without it, the 71 degree-granting
+  # less-than-two-year institutions fall into the "Two-year" bucket
+  filter(is_degree_granting == 1, is_4yr == 1 | is_2yr == 1) |>
   mutate(
     level   = if_else(is_4yr == 1, "Four-year", "Two-year"),
     control = if_else(is_public == 1, "Public", "Private")
@@ -123,7 +125,8 @@ ic |>
 
 The largest single category of nonrural institution is the private four-year
 college, at 52.5%; the largest rural category is the public two-year college,
-at 39.9%. Rural institutions are 67.7% public, against 34.2% nonrural.
+at 39.9%. Rural institutions are 67.7% public, compared with 34.2% of nonrural
+institutions.
 
 ```{r institution-type-chart, echo = FALSE, eval = TRUE, out.width = "100%", fig.alt = "Faceted bar chart of institution shares by level and control. Among rural institutions the largest group is public two-year at 40 percent; among nonrural it is private four-year at 53 percent."}
 knitr::include_graphics("figures/institution_type.png")
@@ -131,8 +134,8 @@ knitr::include_graphics("figures/institution_type.png")
 
 ## Degrees conferred, per resident
 
-`count_degrees_total` is a count, so it needs a denominator. Population comes
-from `cori.data.pep` on the same `geoid`.
+Because `count_degrees_total` is a raw count, comparing counties requires a
+denominator. Population comes from `cori.data.pep`, joined on `geoid`.
 
 ```{r per-capita}
 pop <- get_population(geography = "county", years = YR) |>
@@ -156,21 +159,25 @@ per_capita |>
 #>   Rural       9.4
 ```
 
-The aggregate conceals the distribution. One dot per county spans more than two
-orders of magnitude, with a long rural right tail: Merrimack County NH confers
-255 degrees per 1,000 residents, Whitley County KY 171, Whitman County WA 151.
+The aggregate rate hides wide variation. Plotted one dot per county, rates span
+more than two orders of magnitude, with a long rural right tail: Merrimack
+County, NH, confers 255 degrees per 1,000 residents; Whitley County, KY, 171;
+and Whitman County, WA, 151.
 
 ```{r per-capita-chart, echo = FALSE, eval = TRUE, out.width = "100%", fig.alt = "Beeswarm plot of degrees conferred per 1,000 residents, one dot per county, on a log scale. Both rural and nonrural distributions are wide, with a long rural right tail."}
 knitr::include_graphics("figures/per_capita.png")
 ```
 
 This variable measures production, not attainment: degrees are credited to the
-county of the institution, not the student's home.
+county where the institution is located, not where the student lives. Some
+outliers reflect large online programs; Merrimack County's total, for example,
+is driven largely by Southern New Hampshire University.
 
 ## How many students finish
 
-`grad_rate_150pct` is already cohort-weighted within a county, so rolling
-counties up means weighting by `agg_var`.
+`grad_rate_150pct` covers the full-time, first-time bachelor's cohort at
+four-year institutions, and is already cohort-weighted within each county, so
+aggregating across counties requires weighting by `agg_var`.
 
 ```{r grad-rates}
 trend <- grad_rates |>
@@ -185,9 +192,9 @@ trend <- grad_rates |>
 #   Rural         52.9        47.3
 ```
 
-Rural institutions move from 49.8% to 52.9% between 2010 and 2023, nonrural
-from 55.3% to 61.7%. The series ends at 2023 because of the NCES publication
-lag.
+Between 2010 and 2023, the weighted rate rose from 49.8% to 52.9% in rural
+counties and from 55.3% to 61.7% in nonrural counties, so the gap widened from
+5.5 to 8.8 points. The series ends in 2023 because of NCES's publication lag.
 
 ```{r grad-rate-chart, echo = FALSE, eval = TRUE, out.width = "100%", fig.alt = "Line chart of cohort-weighted six-year completion rates from 2010 to 2023. Rural rises from 50 to 53 percent and nonrural from 55 to 62 percent, so both improve while the gap widens."}
 knitr::include_graphics("figures/grad_rate.png")
@@ -195,9 +202,9 @@ knitr::include_graphics("figures/grad_rate.png")
 
 ## Awards versus students
 
-The Completions survey ships two files: `C_A` counts **awards** and `C_C`
-counts **students**. Someone earning two degrees at one level is one completer
-but two degrees.
+The Completions survey includes two files: `C_A` counts **awards** and `C_C`
+counts **students**. A student who earns two degrees at the same level counts
+as one completer but two awards.
 
 ```{r completers}
 completers |>
@@ -210,9 +217,9 @@ completers |>
 #>   count_students_masters     941849
 ```
 
-Against 4,137,499 degrees conferred, the difference concentrates at the
-associate level — roughly 10% more degrees than students, against under 2% at
-every other level.
+Of the 4,137,499 degrees conferred, most of the gap between degrees and
+students falls at the associate level, where degrees exceed students by roughly
+10%. At every other level the difference is under 2%.
 
 ```{r completers-chart, echo = FALSE, eval = TRUE, out.width = "100%", fig.alt = "Grouped bar chart comparing degrees conferred with students completing at each award level. The gap is widest at associate level."}
 knitr::include_graphics("figures/degrees_students.png")
@@ -220,8 +227,10 @@ knitr::include_graphics("figures/degrees_students.png")
 
 ## From degrees to occupations
 
-The institution grain keeps NCES's CIP detail, which `get_cip_soc_crosswalk()`
-maps to SOC occupation codes.
+Institution-level data retain NCES's detailed CIP program codes, which
+`get_cip_soc_crosswalk()` maps to SOC occupation codes. Match the crosswalk
+vintage to the completions year: `"2010"` for 2010–2019 and `"2020"` for 2020
+onward.
 
 ```{r tech}
 xw <- get_cip_soc_crosswalk("2020")   # CIP 2020 to SOC 2018
@@ -257,32 +266,27 @@ rural |>
 #>   Rural       89086
 ```
 
-Across 2022–2024 rural counties produced 7.4% of degrees in programs feeding
-computer and mathematical occupations. 494 rural counties produce any; the top
-ten account for most of the volume, with Merrimack County NH at 14,836.
+Across 2022–2024 rural counties produced 7.4% of degrees in programs feeding computer and mathematical occupations. 494 rural counties produce any; the top ten account for much (42%) of the volume, with Merrimack County NH at 14,836.
 
 ```{r tech-chart, echo = FALSE, eval = TRUE, out.width = "100%", fig.alt = "Horizontal bar chart of the ten rural counties producing the most degrees in programs mapping to computer and mathematical occupations over 2022 to 2024, led by Merrimack County NH with 14,836."}
 knitr::include_graphics("figures/tech_pipeline.png")
 ```
 
-Match the crosswalk vintage to the completions year: `"2010"` for 2010–2019 and
-`"2020"` for 2020 onward.
 
 ## Replicating this for your state
 
-The institution table carries `st_abbr`, which gives the county set for a state;
-every getter then takes those geoids.
+A county's `geoid` begins with its two-digit state FIPS code, which gives the
+county set for a state; every getter then takes those geoids.
 
 ```{r state}
-MY_STATE <- "MT"
+MY_STATE_FIPS <- "30"   # Montana
 
-state_counties <- get_institutions(geography = "institution", years = YR) |>
-  filter(st_abbr == MY_STATE) |>
-  distinct(geoid) |>
+state_counties <- rural |>
+  filter(substr(geoid, 1, 2) == MY_STATE_FIPS) |>
   pull(geoid)
 
 get_degrees(geoids = state_counties, years = YR)
-get_graduation_rates(geoids = state_counties, years = 2012:2023)
+get_graduation_rates(geoids = state_counties, years = 2010:2023)
 ```
 
 ## Data sources
