@@ -20,17 +20,14 @@ Imports:
     utils
 Remotes:
     ruralinnovation/cori.charts,
-    ruralinnovation/cori.db,
     ruralinnovation/cori.data.pep,
     ruralinnovation/cori.data.s3,
     ruralinnovation/ruraldefinitions
 Suggests:
-    cori.db,
     dplyr,
     ggbeeswarm,
     readxl,
     cori.charts,
-    cori.utils,
     cori.data.pep,
     ruraldefinitions,
     ggplot2,
