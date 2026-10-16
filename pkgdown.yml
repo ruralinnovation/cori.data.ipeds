@@ -1,0 +1,10 @@
+pandoc: 3.8.3
+pkgdown: 2.2.1
+pkgdown_sha: ~
+articles:
+  introduction: introduction.html
+  rural-higher-education: rural-higher-education.html
+last_built: 2026-10-16T23:54Z
+urls:
+  reference: https://ruralinnovation.github.io/cori.data.ipeds/reference
+  article: https://ruralinnovation.github.io/cori.data.ipeds/articles
